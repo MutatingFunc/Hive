@@ -71,7 +71,7 @@ class LoginController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let target = segue.destination as? DeviceListController, let response = sender as? (sessionID: SessionID, devices: [Device]) {
+		if let target = segue.destination as? DeviceListController, let response = sender as? LoginInfo {
 			target.deviceList = DeviceList(sessionID: response.sessionID, devices: response.devices)
 		}
 	}

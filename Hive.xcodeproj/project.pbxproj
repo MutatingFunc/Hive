@@ -20,10 +20,8 @@
 		1A4FF228218F10AC00EAC20F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FF226218F10AC00EAC20F /* LaunchScreen.storyboard */; };
 		1A4FF233218F10AD00EAC20F /* HiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF232218F10AD00EAC20F /* HiveTests.swift */; };
 		1A4FF23E218F10AD00EAC20F /* HiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF23D218F10AD00EAC20F /* HiveUITests.swift */; };
-		1A4FF250218F114F00EAC20F /* DeviceListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */; };
 		1A4FF251218F114F00EAC20F /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24D218F114F00EAC20F /* LoginRequest.swift */; };
 		1A4FF252218F114F00EAC20F /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24E218F114F00EAC20F /* ErrorResponse.swift */; };
-		1A4FF253218F114F00EAC20F /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24F218F114F00EAC20F /* SetBrightness.swift */; };
 		1A4FF256218F118700EAC20F /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF255218F118700EAC20F /* SettingsManager.swift */; };
 		1A4FF258218F11AB00EAC20F /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF257218F11AB00EAC20F /* RequestHandler.swift */; };
 		1A4FF25B218F11CD00EAC20F /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF25A218F11CD00EAC20F /* Shared.swift */; };
@@ -33,6 +31,8 @@
 		1A4FF268218F2EC200EAC20F /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF267218F2EC200EAC20F /* Segues.swift */; };
 		1A4FF26A218F356600EAC20F /* DeviceListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF269218F356600EAC20F /* DeviceListController.swift */; };
 		1A4FF26C218F35BC00EAC20F /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF26B218F35BC00EAC20F /* DeviceList.swift */; };
+		1AD9C34D218F9A71004882E9 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24F218F114F00EAC20F /* SetBrightness.swift */; };
+		1AD9C34E218F9A74004882E9 /* DeviceListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */; };
 		2CEE0CE241147C7B097FCC00 /* Pods_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */; };
 /* End PBXBuildFile section */
 
@@ -190,9 +190,9 @@
 		1A4FF24B218F114F00EAC20F /* API */ = {
 			isa = PBXGroup;
 			children = (
-				1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */,
-				1A4FF24D218F114F00EAC20F /* LoginRequest.swift */,
 				1A4FF24E218F114F00EAC20F /* ErrorResponse.swift */,
+				1A4FF24D218F114F00EAC20F /* LoginRequest.swift */,
+				1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */,
 				1A4FF24F218F114F00EAC20F /* SetBrightness.swift */,
 			);
 			path = API;
@@ -405,16 +405,16 @@
 				1A4FF262218F19F600EAC20F /* Device.swift in Sources */,
 				1A4FF26A218F356600EAC20F /* DeviceListController.swift in Sources */,
 				1A4FF252218F114F00EAC20F /* ErrorResponse.swift in Sources */,
-				1A4FF253218F114F00EAC20F /* SetBrightness.swift in Sources */,
 				1A4FF268218F2EC200EAC20F /* Segues.swift in Sources */,
 				1A4FF266218F238E00EAC20F /* Login.swift in Sources */,
 				1A29E05C218F6BCB00D0351F /* Light.swift in Sources */,
 				1A29E05A218F5A4E00D0351F /* LoginCredentials.swift in Sources */,
-				1A4FF250218F114F00EAC20F /* DeviceListRequest.swift in Sources */,
 				1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */,
 				1A29E05E218F6F1600D0351F /* Colors.swift in Sources */,
 				1A4FF256218F118700EAC20F /* SettingsManager.swift in Sources */,
 				1A4FF25D218F120000EAC20F /* APIManager.swift in Sources */,
+				1AD9C34E218F9A74004882E9 /* DeviceListRequest.swift in Sources */,
+				1AD9C34D218F9A71004882E9 /* SetBrightness.swift in Sources */,
 				1A4FF220218F10AC00EAC20F /* LoginController.swift in Sources */,
 				1A4FF21E218F10AC00EAC20F /* AppDelegate.swift in Sources */,
 				1A29E058218F57EA00D0351F /* Reuseable.swift in Sources */,

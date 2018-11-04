@@ -14,7 +14,7 @@ struct Light {
 		self.api = api; self.sessionID = sessionID; self.device = device
 	}
 	
-	mutating func setBrightness(_ brightness: Int, completion: @escaping (_ success: Bool) -> ()) -> Progress {
+	mutating func setBrightness(_ brightness: Float, completion: @escaping () -> ()) -> Progress {
 		self.device.isOn = brightness > 0
 		if brightness > 0 {
 			self.device.brightness = brightness

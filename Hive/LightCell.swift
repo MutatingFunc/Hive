@@ -31,9 +31,9 @@ class LightCell: UITableViewCell, ReuseIdentifiable {
 	}
 	
 	@IBAction func brightnessSliderChanged() {
-		let brightness = Int(brightnessSlider.value.rounded(.toNearestOrAwayFromZero))
+		let brightness = brightnessSlider.value
 		loadingIndicator.startAnimating()
-		_ = self.light.setBrightness(brightness) {[weak self] success in
+		_ = self.light.setBrightness(brightness) {[weak self] in
 			self?.loadingIndicator.stopAnimating()
 		}
 	}
