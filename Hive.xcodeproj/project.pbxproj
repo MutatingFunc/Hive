@@ -33,6 +33,8 @@
 		1A4FF26C218F35BC00EAC20F /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF26B218F35BC00EAC20F /* DeviceList.swift */; };
 		1AD9C34D218F9A71004882E9 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24F218F114F00EAC20F /* SetBrightness.swift */; };
 		1AD9C34E218F9A74004882E9 /* DeviceListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */; };
+		1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */; };
+		1AD9C3522190DDBC004882E9 /* ColourLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C3512190DDBC004882E9 /* ColourLight.swift */; };
 		2CEE0CE241147C7B097FCC00 /* Pods_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		1A4FF267218F2EC200EAC20F /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		1A4FF269218F356600EAC20F /* DeviceListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListController.swift; sourceTree = "<group>"; };
 		1A4FF26B218F35BC00EAC20F /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLightCell.swift; sourceTree = "<group>"; };
+		1AD9C3512190DDBC004882E9 /* ColourLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLight.swift; sourceTree = "<group>"; };
 		5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B458DB081403984B608DCA0D /* Pods-Hive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.release.xcconfig"; sourceTree = "<group>"; };
 		ED6A0ABABC83F921D16A6739 /* Pods-Hive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				1A4FF269218F356600EAC20F /* DeviceListController.swift */,
 				1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */,
 				1A29E053218F54C000D0351F /* LightCell.swift */,
+				1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */,
 				1A4FF221218F10AC00EAC20F /* Main.storyboard */,
 				1A4FF224218F10AC00EAC20F /* Assets.xcassets */,
 				1A4FF226218F10AC00EAC20F /* LaunchScreen.storyboard */,
@@ -217,6 +222,7 @@
 				1A4FF265218F238E00EAC20F /* Login.swift */,
 				1A4FF26B218F35BC00EAC20F /* DeviceList.swift */,
 				1A29E05B218F6BCB00D0351F /* Light.swift */,
+				1AD9C3512190DDBC004882E9 /* ColourLight.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */,
 				1A4FF262218F19F600EAC20F /* Device.swift in Sources */,
 				1A4FF26A218F356600EAC20F /* DeviceListController.swift in Sources */,
 				1A4FF252218F114F00EAC20F /* ErrorResponse.swift in Sources */,
@@ -415,6 +422,7 @@
 				1A4FF25D218F120000EAC20F /* APIManager.swift in Sources */,
 				1AD9C34E218F9A74004882E9 /* DeviceListRequest.swift in Sources */,
 				1AD9C34D218F9A71004882E9 /* SetBrightness.swift in Sources */,
+				1AD9C3522190DDBC004882E9 /* ColourLight.swift in Sources */,
 				1A4FF220218F10AC00EAC20F /* LoginController.swift in Sources */,
 				1A4FF21E218F10AC00EAC20F /* AppDelegate.swift in Sources */,
 				1A29E058218F57EA00D0351F /* Reuseable.swift in Sources */,

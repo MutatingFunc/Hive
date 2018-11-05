@@ -21,7 +21,7 @@ struct LoginResponse: JSONCodable {
 	//let user
 	let token: String
 	let products: [Product]
-	//let actions: [Action]
+	let actions: [Action]
 }
 
 struct Product: JSONCodable {
@@ -31,6 +31,10 @@ struct Product: JSONCodable {
 	let state: State
 	struct Props: JSONCodable {
 		let online: Bool
+		let colourTemperature: ColourTemperatureLimits?
+		struct ColourTemperatureLimits: JSONCodable {
+			let min: Int, max: Int
+		}
 	}
 }
 struct State: JSONCodable {
@@ -42,11 +46,19 @@ struct State: JSONCodable {
 	}
 	let isGroup: Bool? // ?? false
 	let brightness: Float?
-	let hue: Int? //1 to 100?
-	let saturation: Int? //1 to 100?
-	let mode: String?
-	let colourMode: String?
-	let colourTemperature: Int? //includes 4695
+	let hue: Int? //1 to 100
+	let saturation: Int? //1 to 100
+	let mode: Mode?
+	enum Mode: String, JSONCodable {
+		case manual = "MANUAL"
+		case schedule = "SCHEDULE"
+	}
+	let colourMode: ColourMode?
+	enum ColourMode: String, JSONCodable {
+		case colour = "COLOUR"
+		case white = "WHITE"
+	}
+	let colourTemperature: Int? //2700 to 6535
 }
 
 struct Action: JSONCodable {

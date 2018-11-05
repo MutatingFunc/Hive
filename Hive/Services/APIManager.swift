@@ -11,6 +11,7 @@ import Foundation
 protocol APIManaging {
 	func login(with credentials: LoginCredentials, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress
 	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
+	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 }
 
 struct SessionID {
@@ -53,7 +54,7 @@ extension APIManager: APIManaging {
 		let setOnRequest = APIManager.basicRequest(
 			url: APIManager.updateDeviceURL(deviceType: light.typeName, deviceID: light.id),
 			method: .post,
-			body: SetOnRequest(status: light.isOn ? .on : .off),
+			body: SetOnRequest(status: .off),
 			sessionID: sessionID
 		)
 		let progress = Progress(totalUnitCount: 2)
@@ -66,6 +67,37 @@ extension APIManager: APIManaging {
 		progress.addChild(progress1, withPendingUnitCount: 1)
 		progress.addChild(progress2, withPendingUnitCount: 1)
 		return progress
+	}
+	
+	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+		let body: JSONCodable
+		switch light.state {
+		case let .colour(hue: h, saturation: s, brightness: b):
+			let h = Float(h) * 360 / 100
+			body = SetHSBRequest(hue: Int(h), saturation: Int(s), value: Int(b))
+		case let .white(temperature: h, brightness: b):
+			let h = (h * Float(light.maxTemp - light.minTemp) + Float(light.minTemp)) / 100
+			body = SetLightTemperatureRequest(colourTemperature: Int(h), brightness: Int(b))
+		}
+		let setStateRequest = APIManager.basicRequest(
+			url: APIManager.updateDeviceURL(deviceType: light.typeName, deviceID: light.id),
+			method: .post,
+			body: light.isOn
+				? body
+				: SetOnRequest(status: .off),
+			sessionID: sessionID
+		)
+		
+		switch light.state {
+		case .colour:
+			return requestHandler.perform(setStateRequest, ofType: SetHSBResponse.self) {response in
+				completion()
+			}
+		case .white:
+			return requestHandler.perform(setStateRequest, ofType: SetLightTemperatureResponse.self) {response in
+				completion()
+			}
+		}
 	}
 }
 
@@ -104,6 +136,30 @@ private extension APIManager {
 					isOn: product.state.status == .on,
 					brightness: product.state.brightness ?? 100
 				)
+				case "colourtuneablelight":
+					let minColourTemp = product.props.colourTemperature?.min ?? 2700
+					let maxColourTemp = product.props.colourTemperature?.max ?? 6535
+					return ColourLightDevice(
+						isOnline: product.props.online,
+						name: product.state.name,
+						id: product.id,
+						typeName: product.type,
+						isOn: product.state.status == .on,
+						state: product.state.colourMode == .colour
+							? ColourLightDevice.State.colour(
+									hue: Float(product.state.hue ?? 0) * 100 / 360,
+									saturation: Float(product.state.saturation ?? 100),
+									brightness: product.state.brightness?.rounded() ?? 100
+								)
+							: ColourLightDevice.State.white(
+									temperature:
+										Float((product.state.colourTemperature ?? maxColourTemp) - minColourTemp) * 100
+										/ Float(maxColourTemp - minColourTemp),
+									brightness: product.state.brightness?.rounded() ?? 100
+								),
+						minTemp: minColourTemp,
+						maxTemp: maxColourTemp
+					)
 				case _: return UnknownDevice(
 					isOnline: product.props.online,
 					name: product.state.name,

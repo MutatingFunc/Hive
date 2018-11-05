@@ -30,3 +30,13 @@ struct LightDevice: Device {
 		self.isOnline = isOnline; self.name = name; self.id = id; self.typeName = typeName; self.isOn = isOn; self.brightness = brightness
 	}
 }
+struct ColourLightDevice: Device {
+	var isOnline: Bool, name: String, id: String, typeName: String
+	var isOn: Bool
+	enum State {
+		case white(temperature: Float, brightness: Float)
+		case colour(hue: Float, saturation: Float, brightness: Float)
+	}
+	var state: State
+	var minTemp: Int, maxTemp: Int
+}
