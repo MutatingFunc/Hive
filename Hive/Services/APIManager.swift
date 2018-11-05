@@ -12,6 +12,7 @@ protocol APIManaging {
 	func login(with credentials: LoginCredentials, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress
 	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
+	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 }
 
 struct SessionID {
@@ -74,7 +75,6 @@ extension APIManager: APIManaging {
 				: SetOnRequest(status: .off),
 			sessionID: sessionID
 		)
-		
 		switch light.state {
 		case .colour:
 			return requestHandler.perform(setStateRequest, ofType: SetHSBResponse.self) {response in
@@ -84,6 +84,18 @@ extension APIManager: APIManaging {
 			return requestHandler.perform(setStateRequest, ofType: SetLightTemperatureResponse.self) {response in
 				completion()
 			}
+		}
+	}
+	
+	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+		let quickActionRequest = APIManager.basicRequest(
+			url: APIManager.performActionURL(deviceType: action.typeName, deviceID: action.id),
+			method: .post,
+			body: QuickActionRequest(),
+			sessionID: sessionID
+		)
+		return requestHandler.perform(quickActionRequest, ofType: QuickActionResponse.self) {response in
+			completion()
 		}
 	}
 }
@@ -109,55 +121,70 @@ private extension APIManager {
 	static func updateDeviceURL(deviceType: String, deviceID: String) -> URL {
 		return URL(string: "https://beekeeper-uk.hivehome.com/1.0/nodes/\(deviceType)/\(deviceID)")!
 	}
+	static func performActionURL(deviceType: String, deviceID: String) -> URL {
+		return URL(string: "https://beekeeper-uk.hivehome.com/1.0/actions/\(deviceID)/\(deviceType)")!
+	}
 	
 	static func loginInfo(_ response: LoginResponse) throws -> LoginInfo {
-		return LoginInfo(
-			sessionID: SessionID(rawValue: response.token),
-			devices: response.products.map {product in
-				switch product.type {
-				case "warmwhitelight": return LightDevice(
+		let devices = response.products.map {product -> Device in
+			switch product.type {
+			case "warmwhitelight": return LightDevice(
+				isGroup: product.isGroup ?? false,
+				isOnline: product.props.online,
+				name: product.state.name,
+				id: product.id,
+				typeName: product.type,
+				isOn: product.state.status == .on,
+				brightness: product.state.brightness ?? 100
+				)
+			case "colourtuneablelight":
+				let minColourTemp = product.props.colourTemperature?.min ?? 2700
+				let maxColourTemp = product.props.colourTemperature?.max ?? 6535
+				return ColourLightDevice(
 					isGroup: product.isGroup ?? false,
 					isOnline: product.props.online,
 					name: product.state.name,
 					id: product.id,
 					typeName: product.type,
 					isOn: product.state.status == .on,
-					brightness: product.state.brightness ?? 100
+					state: product.state.colourMode == .colour
+						? ColourLightDevice.State.colour(
+							hue: Float(product.state.hue ?? 0) * 100 / 360,
+							saturation: Float(product.state.saturation ?? 100),
+							brightness: product.state.brightness?.rounded() ?? 100
+							)
+						: ColourLightDevice.State.white(
+							temperature:
+							Float((product.state.colourTemperature ?? maxColourTemp) - minColourTemp) * 100
+								/ Float(maxColourTemp - minColourTemp),
+							brightness: product.state.brightness?.rounded() ?? 100
+					),
+					minTemp: minColourTemp,
+					maxTemp: maxColourTemp
 				)
-				case "colourtuneablelight":
-					let minColourTemp = product.props.colourTemperature?.min ?? 2700
-					let maxColourTemp = product.props.colourTemperature?.max ?? 6535
-					return ColourLightDevice(
-						isGroup: product.isGroup ?? false,
-						isOnline: product.props.online,
-						name: product.state.name,
-						id: product.id,
-						typeName: product.type,
-						isOn: product.state.status == .on,
-						state: product.state.colourMode == .colour
-							? ColourLightDevice.State.colour(
-									hue: Float(product.state.hue ?? 0) * 100 / 360,
-									saturation: Float(product.state.saturation ?? 100),
-									brightness: product.state.brightness?.rounded() ?? 100
-								)
-							: ColourLightDevice.State.white(
-									temperature:
-										Float((product.state.colourTemperature ?? maxColourTemp) - minColourTemp) * 100
-										/ Float(maxColourTemp - minColourTemp),
-									brightness: product.state.brightness?.rounded() ?? 100
-								),
-						minTemp: minColourTemp,
-						maxTemp: maxColourTemp
-					)
-				case _: return UnknownDevice(
-					isGroup: product.isGroup ?? false,
-					isOnline: product.props.online,
-					name: product.state.name,
-					id: product.id,
-					typeName: product.type
-					)
-				}
+			case _: return UnknownDevice(
+				isGroup: product.isGroup ?? false,
+				isOnline: product.props.online,
+				name: product.state.name,
+				id: product.id,
+				typeName: product.type
+				)
 			}
+		}
+		let actions = response.actions.compactMap {action -> Device? in
+			guard let condition = action.events.first, condition.group == .when && condition.type == "quick-action" else {
+				return nil
+			}
+			return ActionDevice(
+				isOnline: action.enabled,
+				name: action.name,
+				id: action.id,
+				typeName: condition.type
+			)
+		}
+		return LoginInfo(
+			sessionID: SessionID(rawValue: response.token),
+			devices: (actions + devices).sorted(by: {$0.name.lexicographicallyPrecedes($1.name)})
 		)
 	}
 }

@@ -1,5 +1,5 @@
 //
-//  SetBrightness.swift
+//  SetBrightnessRequest.swift
 //  Hive
 //
 //  Created by James Froggatt on 28.09.2018.

@@ -20,11 +20,11 @@ struct LoginRequest: JSONCodable {
 struct LoginResponse: JSONCodable {
 	//let user
 	let token: String
-	let products: [Product]
-	let actions: [Action]
+	let products: [ProductResponse]
+	let actions: [ActionResponse]
 }
 
-struct Product: JSONCodable {
+struct ProductResponse: JSONCodable {
 	let id: String
 	let type: String
 	let props: Props
@@ -61,9 +61,19 @@ struct State: JSONCodable {
 	let colourTemperature: Int? //2700 to 6535
 }
 
-struct Action: JSONCodable {
+struct ActionResponse: JSONCodable {
 	let id: String
 	let name: String
 	let enabled: Bool
-	//let events
+	let events: [EventItem]
+	struct EventItem: JSONCodable {
+		var group: Group
+		enum Group: String, JSONCodable {
+			case when = "when"
+			case then = "then"
+		}
+		var type: String
+		var id: String?
+		var duration: Int? //seconds
+	}
 }

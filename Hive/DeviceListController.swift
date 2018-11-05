@@ -33,6 +33,10 @@ extension DeviceListController: UITableViewDataSource, UITableViewDelegate {
 			let cell = tableView.dequeueReusableCell(for: indexPath) as ColourLightCell
 			cell.setDevice(deviceList.colourLight(device))
 			return cell
+		case let device as ActionDevice:
+			let cell = tableView.dequeueReusableCell(for: indexPath) as ActionCell
+			cell.setDevice(deviceList.action(device))
+			return cell
 		case let device:
 			let cell = tableView.dequeueReusableCell(for: indexPath) as DefaultDeviceCell
 			cell.setDevice(device)

@@ -10,6 +10,7 @@ import UIKit
 
 class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
+	@IBOutlet var saturationLabel: UILabel!
 	@IBOutlet var colourControl: UISegmentedControl!
 	@IBOutlet var colourSlider: UISlider!
 	@IBOutlet var saturationSlider: UISlider!
@@ -24,7 +25,10 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	var light: ColourLight! {
 		didSet {
 			nameLabel.text = light.device.name
-			nameLabel.textColor = UIColor(named: light.device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
+			self.isUserInteractionEnabled = light.device.isOnline
+			[nameLabel, saturationLabel].forEach{
+				$0.textColor = UIColor(named: light.device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
+			}
 			switch light.device.state {
 			case let .colour(hue: h, saturation: s, brightness: b):
 				colourControl.selectedSegmentIndex = 0
@@ -55,7 +59,9 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 			colourControl.selectedSegmentIndex == 0
 				? .colour(hue: colour, saturation: saturation, brightness: brightness)
 				: .white(temperature: colour, brightness: brightness)
+		self.setHighlighted(true, animated: true)
 		_ = self.light.setState(state) {[weak self] in
+			self?.setHighlighted(false, animated: true)
 			self?.loadingIndicator.stopAnimating()
 		}
 	}

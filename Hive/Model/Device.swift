@@ -41,3 +41,8 @@ struct ColourLightDevice: Device {
 	var state: State
 	var minTemp: Int, maxTemp: Int
 }
+
+struct ActionDevice: Device {
+	let isGroup: Bool = false
+	var isOnline: Bool, name: String, id: String, typeName: String
+}

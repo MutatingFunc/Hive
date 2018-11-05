@@ -21,6 +21,7 @@ class LightCell: UITableViewCell, ReuseIdentifiable {
 	var light: Light! {
 		didSet {
 			nameLabel.text = light.device.name
+			self.isUserInteractionEnabled = light.device.isOnline
 			nameLabel.textColor = UIColor(named: light.device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
 			brightnessSlider.value = light.device.isOn ? Float(light.device.brightness) : 0
 		}
@@ -33,7 +34,9 @@ class LightCell: UITableViewCell, ReuseIdentifiable {
 	@IBAction func brightnessSliderChanged() {
 		let brightness = brightnessSlider.value.rounded()
 		loadingIndicator.startAnimating()
+		self.setHighlighted(true, animated: true)
 		_ = self.light.setBrightness(brightness) {[weak self] in
+			self?.setHighlighted(false, animated: true)
 			self?.loadingIndicator.stopAnimating()
 		}
 	}

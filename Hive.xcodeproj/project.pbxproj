@@ -31,7 +31,10 @@
 		1A4FF268218F2EC200EAC20F /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF267218F2EC200EAC20F /* Segues.swift */; };
 		1A4FF26A218F356600EAC20F /* DeviceListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF269218F356600EAC20F /* DeviceListController.swift */; };
 		1A4FF26C218F35BC00EAC20F /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF26B218F35BC00EAC20F /* DeviceList.swift */; };
-		1AD9C34D218F9A71004882E9 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24F218F114F00EAC20F /* SetBrightness.swift */; };
+		1AA41EE62190FC3F00DC21EB /* ActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE52190FC3F00DC21EB /* ActionRequest.swift */; };
+		1AA41EE82191024900DC21EB /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE72191024900DC21EB /* ActionCell.swift */; };
+		1AA41EEA2191036F00DC21EB /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE92191036F00DC21EB /* Action.swift */; };
+		1AD9C34D218F9A71004882E9 /* SetBrightnessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24F218F114F00EAC20F /* SetBrightnessRequest.swift */; };
 		1AD9C34E218F9A74004882E9 /* DeviceListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */; };
 		1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */; };
 		1AD9C3522190DDBC004882E9 /* ColourLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C3512190DDBC004882E9 /* ColourLight.swift */; };
@@ -78,7 +81,7 @@
 		1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListRequest.swift; sourceTree = "<group>"; };
 		1A4FF24D218F114F00EAC20F /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		1A4FF24E218F114F00EAC20F /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
-		1A4FF24F218F114F00EAC20F /* SetBrightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBrightness.swift; sourceTree = "<group>"; };
+		1A4FF24F218F114F00EAC20F /* SetBrightnessRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBrightnessRequest.swift; sourceTree = "<group>"; };
 		1A4FF255218F118700EAC20F /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		1A4FF257218F11AB00EAC20F /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		1A4FF25A218F11CD00EAC20F /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
@@ -88,6 +91,9 @@
 		1A4FF267218F2EC200EAC20F /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		1A4FF269218F356600EAC20F /* DeviceListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListController.swift; sourceTree = "<group>"; };
 		1A4FF26B218F35BC00EAC20F /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		1AA41EE52190FC3F00DC21EB /* ActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequest.swift; sourceTree = "<group>"; };
+		1AA41EE72191024900DC21EB /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
+		1AA41EE92191036F00DC21EB /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLightCell.swift; sourceTree = "<group>"; };
 		1AD9C3512190DDBC004882E9 /* ColourLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLight.swift; sourceTree = "<group>"; };
 		5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +172,7 @@
 				1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */,
 				1A29E053218F54C000D0351F /* LightCell.swift */,
 				1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */,
+				1AA41EE72191024900DC21EB /* ActionCell.swift */,
 				1A4FF221218F10AC00EAC20F /* Main.storyboard */,
 				1A4FF224218F10AC00EAC20F /* Assets.xcassets */,
 				1A4FF226218F10AC00EAC20F /* LaunchScreen.storyboard */,
@@ -198,7 +205,8 @@
 				1A4FF24E218F114F00EAC20F /* ErrorResponse.swift */,
 				1A4FF24D218F114F00EAC20F /* LoginRequest.swift */,
 				1A4FF24C218F114F00EAC20F /* DeviceListRequest.swift */,
-				1A4FF24F218F114F00EAC20F /* SetBrightness.swift */,
+				1A4FF24F218F114F00EAC20F /* SetBrightnessRequest.swift */,
+				1AA41EE52190FC3F00DC21EB /* ActionRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 				1A4FF26B218F35BC00EAC20F /* DeviceList.swift */,
 				1A29E05B218F6BCB00D0351F /* Light.swift */,
 				1AD9C3512190DDBC004882E9 /* ColourLight.swift */,
+				1AA41EE92191036F00DC21EB /* Action.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */,
+				1AA41EEA2191036F00DC21EB /* Action.swift in Sources */,
 				1A4FF262218F19F600EAC20F /* Device.swift in Sources */,
 				1A4FF26A218F356600EAC20F /* DeviceListController.swift in Sources */,
 				1A4FF252218F114F00EAC20F /* ErrorResponse.swift in Sources */,
@@ -421,8 +431,10 @@
 				1A4FF256218F118700EAC20F /* SettingsManager.swift in Sources */,
 				1A4FF25D218F120000EAC20F /* APIManager.swift in Sources */,
 				1AD9C34E218F9A74004882E9 /* DeviceListRequest.swift in Sources */,
-				1AD9C34D218F9A71004882E9 /* SetBrightness.swift in Sources */,
+				1AA41EE62190FC3F00DC21EB /* ActionRequest.swift in Sources */,
+				1AD9C34D218F9A71004882E9 /* SetBrightnessRequest.swift in Sources */,
 				1AD9C3522190DDBC004882E9 /* ColourLight.swift in Sources */,
+				1AA41EE82191024900DC21EB /* ActionCell.swift in Sources */,
 				1A4FF220218F10AC00EAC20F /* LoginController.swift in Sources */,
 				1A4FF21E218F10AC00EAC20F /* AppDelegate.swift in Sources */,
 				1A29E058218F57EA00D0351F /* Reuseable.swift in Sources */,

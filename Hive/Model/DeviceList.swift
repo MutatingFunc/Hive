@@ -20,4 +20,7 @@ struct DeviceList {
 	func colourLight(_ device: ColourLightDevice) -> ColourLight {
 		return ColourLight(api: api, sessionID: sessionID, device: device)
 	}
+	func action(_ device: ActionDevice) -> Action {
+		return Action(api: api, sessionID: sessionID, device: device)
+	}
 }
