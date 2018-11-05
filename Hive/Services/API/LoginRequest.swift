@@ -28,7 +28,6 @@ struct Product: JSONCodable {
 	let id: String
 	let type: String
 	let props: Props
-	let state: State
 	struct Props: JSONCodable {
 		let online: Bool
 		let colourTemperature: ColourTemperatureLimits?
@@ -36,6 +35,8 @@ struct Product: JSONCodable {
 			let min: Int, max: Int
 		}
 	}
+	let state: State
+	let isGroup: Bool? // ?? false
 }
 struct State: JSONCodable {
 	let name: String
@@ -44,7 +45,6 @@ struct State: JSONCodable {
 		case on = "ON"
 		case off = "OFF"
 	}
-	let isGroup: Bool? // ?? false
 	let brightness: Float?
 	let hue: Int? //1 to 100
 	let saturation: Int? //1 to 100

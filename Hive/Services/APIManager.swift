@@ -44,29 +44,16 @@ extension APIManager: APIManaging {
 	
 	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
 		let setBrightnessRequest = APIManager.basicRequest(
-			url: APIManager.updateDeviceURL(deviceType: light.typeName, deviceID: light.id),
+			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
 			method: .post,
 			body: light.isOn
 				? SetBrightnessRequest(brightness: light.brightness)
-				: SetOnRequest(status: light.isOn ? .on : .off),
+				: SetOnRequest(status: .off),
 			sessionID: sessionID
 		)
-		let setOnRequest = APIManager.basicRequest(
-			url: APIManager.updateDeviceURL(deviceType: light.typeName, deviceID: light.id),
-			method: .post,
-			body: SetOnRequest(status: .off),
-			sessionID: sessionID
-		)
-		let progress = Progress(totalUnitCount: 2)
-		let progress2 = Progress(totalUnitCount: 1)
-		let progress1 = requestHandler.perform(setBrightnessRequest, ofType: SetBrightnessResponse.self) {[requestHandler] response in
-			progress2.addChild(requestHandler.perform(setOnRequest, ofType: SetOnResponse.self) {response in
-				completion()
-			}, withPendingUnitCount: 1)
+		return requestHandler.perform(setBrightnessRequest, ofType: SetBrightnessResponse.self) {response in
+			completion()
 		}
-		progress.addChild(progress1, withPendingUnitCount: 1)
-		progress.addChild(progress2, withPendingUnitCount: 1)
-		return progress
 	}
 	
 	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
@@ -80,7 +67,7 @@ extension APIManager: APIManaging {
 			body = SetLightTemperatureRequest(colourTemperature: Int(h), brightness: Int(b))
 		}
 		let setStateRequest = APIManager.basicRequest(
-			url: APIManager.updateDeviceURL(deviceType: light.typeName, deviceID: light.id),
+			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
 			method: .post,
 			body: light.isOn
 				? body
@@ -129,6 +116,7 @@ private extension APIManager {
 			devices: response.products.map {product in
 				switch product.type {
 				case "warmwhitelight": return LightDevice(
+					isGroup: product.isGroup ?? false,
 					isOnline: product.props.online,
 					name: product.state.name,
 					id: product.id,
@@ -140,6 +128,7 @@ private extension APIManager {
 					let minColourTemp = product.props.colourTemperature?.min ?? 2700
 					let maxColourTemp = product.props.colourTemperature?.max ?? 6535
 					return ColourLightDevice(
+						isGroup: product.isGroup ?? false,
 						isOnline: product.props.online,
 						name: product.state.name,
 						id: product.id,
@@ -161,6 +150,7 @@ private extension APIManager {
 						maxTemp: maxColourTemp
 					)
 				case _: return UnknownDevice(
+					isGroup: product.isGroup ?? false,
 					isOnline: product.props.online,
 					name: product.state.name,
 					id: product.id,

@@ -9,29 +9,30 @@
 import Foundation
 
 protocol Device {
+	var isGroup: Bool {get}
 	var isOnline: Bool {get}
 	var name: String {get}
 	var id: String {get}
 	var typeName: String {get}
 }
-struct UnknownDevice: Device {
-	var isOnline: Bool, name: String, id: String, typeName: String
-	init(isOnline: Bool, name: String, id: String, typeName: String) {
-		self.isOnline = isOnline; self.name = name; self.id = id; self.typeName = typeName
+extension Device {
+	var apiTypeName: String {
+		return isGroup ? "productgroup" : typeName
 	}
 }
 
+struct UnknownDevice: Device {
+	var isGroup: Bool, isOnline: Bool, name: String, id: String, typeName: String
+}
+
 struct LightDevice: Device {
-	var isOnline: Bool, name: String, id: String, typeName: String
+	var isGroup: Bool, isOnline: Bool, name: String, id: String, typeName: String
 	var isOn: Bool
 	/// From 1 to 100
 	var brightness: Float
-	init(isOnline: Bool, name: String, id: String, typeName: String, isOn: Bool, brightness: Float) {
-		self.isOnline = isOnline; self.name = name; self.id = id; self.typeName = typeName; self.isOn = isOn; self.brightness = brightness
-	}
 }
 struct ColourLightDevice: Device {
-	var isOnline: Bool, name: String, id: String, typeName: String
+	var isGroup: Bool, isOnline: Bool, name: String, id: String, typeName: String
 	var isOn: Bool
 	enum State {
 		case white(temperature: Float, brightness: Float)
