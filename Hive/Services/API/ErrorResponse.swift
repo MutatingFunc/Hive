@@ -9,8 +9,12 @@
 import Foundation
 
 //status code 400
-struct ErrorResponse: JSONCodable {
+struct ErrorResponse: JSONCodable, LocalizedError {
 	let errors: [Error]
+	
+	var errorDescription: String? {
+		return errors.first?.localizedDescription ?? "Unknown error"
+	}
 	
 	struct Error: JSONCodable, LocalizedError {
 		let code: String

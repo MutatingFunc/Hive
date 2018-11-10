@@ -343,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="2036" y="-564.46776611694156"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Root Nav-->
         <scene sceneID="ESI-Mh-GwS">
             <objects>
-                <navigationController storyboardIdentifier="RootNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbf-eI-Kob" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbf-eI-Kob" customClass="RootNav" customModule="Hive" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mjz-jm-34b">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>

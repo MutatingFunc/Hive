@@ -33,18 +33,20 @@ class LoginController: UIViewController {
 	}
 
 	@IBAction func submitPressed() {
-		let credentials = saveCredentials()
+		let credentials = enteredCredentials()
 		login(credentials: credentials)
 	}
 	
-	func saveCredentials() -> LoginCredentials {
-		let credentials = LoginCredentials(username: usernameField.text ?? "", password: passwordField.text ?? "")
+	func enteredCredentials() -> LoginCredentials {
+		return LoginCredentials(username: usernameField.text ?? "", password: passwordField.text ?? "")
+	}
+	
+	func saveCredentials(_ credentials: LoginCredentials) {
 		do {
 			try credentials.saveToKeychain()
 		} catch {
 			self.showError(error, domain: KeychainError.domain)
 		}
-		return credentials
 	}
 	
 	func login(credentials: LoginCredentials) {
@@ -59,10 +61,9 @@ class LoginController: UIViewController {
 			self?.loginProgressView.isHidden = true
 			switch response {
 			case .success(let response, _):
+				self?.saveCredentials(credentials)
 				self?.performSegue(.login, sender: response)
-			case .parsedError(let response, _):
-				self?.showErrors(response.errors, domain: domain)
-			case .error(let error):
+			case .error(let error, _):
 				self?.showError(error, domain: domain)
 			}
 		}

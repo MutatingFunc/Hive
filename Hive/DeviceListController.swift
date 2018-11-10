@@ -18,23 +18,9 @@ class DeviceListController: UIViewController {
 	
 	var deviceList: DeviceList? {
 		didSet {
-			deviceList?.registerActivities()
 			if self.isViewLoaded {
 				tableView.reloadData()
 			}
-		}
-	}
-	
-	var didRestore = false
-	override func decodeRestorableState(with coder: NSCoder) {
-		super.decodeRestorableState(with: coder)
-		didRestore = true
-	}
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		if self.didRestore {
-			self.didRestore = false
-			(UIApplication.shared.delegate as? AppDelegate)?.reauthenticate()
 		}
 	}
 }

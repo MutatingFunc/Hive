@@ -20,8 +20,7 @@ enum RequestError: String, LocalizedError {
 
 enum Response<Parsed> {
 	case success(Parsed, URLResponse)
-	case parsedError(ErrorResponse, URLResponse)
-	case error(Error)
+	case error(Error, URLResponse?)
 	
 	func map<Result>(_ transform: (Parsed) throws -> Result) -> Response<Result> {
 		switch self {
@@ -29,10 +28,9 @@ enum Response<Parsed> {
 			do {
 				return .success(try transform(parsed), urlResponse)
 			} catch {
-				return .error(error)
+				return .error(error, urlResponse)
 			}
-		case let .parsedError(errorResponse, urlResponse): return .parsedError(errorResponse, urlResponse)
-		case let .error(error): return .error(error)
+		case let .error(error, urlResponse): return .error(error, urlResponse)
 		}
 	}
 }
@@ -58,26 +56,20 @@ extension RequestHandler: RequestHandling {
 						DispatchQueue.main.async {
 							completion(.success(parsed, response))
 						}
-					} else if let error = ErrorResponse(data: data) {
-						DispatchQueue.main.async {
-							completion(.parsedError(error, response))
-						}
 					} else {
+						let error: Error = result.data.flatMap(ErrorResponse.init(data:))
+							?? RequestError.parseFailed
 						DispatchQueue.main.async {
-							return completion(.error(RequestError.parseFailed))
+							completion(.error(error, response))
 						}
 					}
 				}
 			} else {
 				print("Response error: \(result.error?.localizedDescription ?? "Unknown error")")
-				guard let error = result.error else {
-					return completion(.error(RequestError.unknown))
-				}
-				switch (error as NSError).code {
-				case -999:
-					completion(.error(RequestError.loadFailed))
-				case _:
-					completion(.error(error))
+				if (result.error as NSError?)?.code == -999 {
+					completion(.error(RequestError.loadFailed, nil))
+				} else {
+					return completion(.error(result.error ?? RequestError.unknown, nil))
 				}
 			}
 		}
