@@ -18,8 +18,20 @@ enum KeychainError: Error {
 private let hiveWebURL = "https://my.hivehome.com/"
 
 struct LoginCredentials {
-	var username: String
-	var password: String
+	struct Username: Codable, RawRepresentable, LosslessStringConvertible {
+		var rawValue: String
+		init(_ rawValue: String) {self.rawValue = rawValue}
+	}
+	struct Password: Codable, RawRepresentable, LosslessStringConvertible {
+		var rawValue: String
+		init(_ rawValue: String) {self.rawValue = rawValue}
+	}
+	var username: Username
+	var password: Password
+	init(username: String, password: String) {
+		self.username = Username(username)
+		self.password = Password(password)
+	}
 	
 	static func keychainSearchQuery(username: String? = nil) -> [String: Any] {
 		var query: [String: Any] = [
@@ -59,8 +71,8 @@ struct LoginCredentials {
 	}
 	
 	func updateKeychain() throws {
-		let passwordData = password.data(using: .utf8)!
-		let query = LoginCredentials.keychainSearchQuery(username: self.username)
+		let passwordData = password.rawValue.data(using: .utf8)!
+		let query = LoginCredentials.keychainSearchQuery(username: self.username.rawValue)
 		let status = SecItemUpdate(query as CFDictionary, [
 			kSecValueData: passwordData
 		] as CFDictionary)
@@ -68,11 +80,11 @@ struct LoginCredentials {
 		guard status == errSecSuccess else {throw KeychainError.unhandledError(status: status)}
 	}
 	func addToKeychain() throws {
-		let passwordData = password.data(using: .utf8)!
+		let passwordData = password.rawValue.data(using: .utf8)!
 		let query: [String: Any] = [
 			kSecClass as String: kSecClassInternetPassword,
 			kSecAttrServer as String: hiveWebURL,
-			kSecAttrAccount as String: username,
+			kSecAttrAccount as String: username.rawValue,
 			kSecValueData as String: passwordData
 		]
 		let status = SecItemAdd(query as CFDictionary, nil)

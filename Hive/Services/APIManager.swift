@@ -35,7 +35,7 @@ extension APIManager: APIManaging {
 		let request = APIManager.basicRequest(
 			url: URL(string: "https://beekeeper.hivehome.com/1.0/global/login")!,
 			method: .post,
-			body: LoginRequest(username: credentials.username, password: credentials.password),
+			body: LoginRequest(username: credentials.username.rawValue, password: credentials.password.rawValue),
 			sessionID: nil
 		)
 		return requestHandler.perform(request, ofType: LoginResponse.self) {response in
@@ -118,10 +118,10 @@ private extension APIManager {
 		return request
 	}
 	
-	static func updateDeviceURL(deviceType: String, deviceID: String) -> URL {
+	static func updateDeviceURL(deviceType: String, deviceID: DeviceID) -> URL {
 		return URL(string: "https://beekeeper-uk.hivehome.com/1.0/nodes/\(deviceType)/\(deviceID)")!
 	}
-	static func performActionURL(deviceType: String, deviceID: String) -> URL {
+	static func performActionURL(deviceType: String, deviceID: DeviceID) -> URL {
 		return URL(string: "https://beekeeper-uk.hivehome.com/1.0/actions/\(deviceID)/\(deviceType)")!
 	}
 	
@@ -132,7 +132,7 @@ private extension APIManager {
 				isGroup: product.isGroup ?? false,
 				isOnline: product.props.online,
 				name: product.state.name,
-				id: product.id,
+				id: DeviceID(product.id),
 				typeName: product.type,
 				isOn: product.state.status == .on,
 				brightness: product.state.brightness ?? 100
@@ -144,7 +144,7 @@ private extension APIManager {
 					isGroup: product.isGroup ?? false,
 					isOnline: product.props.online,
 					name: product.state.name,
-					id: product.id,
+					id: DeviceID(product.id),
 					typeName: product.type,
 					isOn: product.state.status == .on,
 					state: product.state.colourMode == .colour
@@ -166,7 +166,7 @@ private extension APIManager {
 				isGroup: product.isGroup ?? false,
 				isOnline: product.props.online,
 				name: product.state.name,
-				id: product.id,
+				id: DeviceID(product.id),
 				typeName: product.type
 				)
 			}
@@ -178,7 +178,7 @@ private extension APIManager {
 			return ActionDevice(
 				isOnline: action.enabled,
 				name: action.name,
-				id: action.id,
+				id: DeviceID(action.id),
 				typeName: condition.type
 			)
 		}

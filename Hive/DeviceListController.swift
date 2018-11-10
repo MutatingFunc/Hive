@@ -16,14 +16,35 @@ class DeviceListController: UIViewController {
 		}
 	}
 	
-	var deviceList: DeviceList!
+	var deviceList: DeviceList? {
+		didSet {
+			deviceList?.registerActivities()
+			if self.isViewLoaded {
+				tableView.reloadData()
+			}
+		}
+	}
+	
+	var didRestore = false
+	override func decodeRestorableState(with coder: NSCoder) {
+		super.decodeRestorableState(with: coder)
+		didRestore = true
+	}
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if self.didRestore {
+			self.didRestore = false
+			(UIApplication.shared.delegate as? AppDelegate)?.reauthenticate()
+		}
+	}
 }
 
 extension DeviceListController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return deviceList.devices.count
+		return deviceList?.devices.count ?? 0
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let deviceList = self.deviceList!
 		switch deviceList.devices[indexPath.row] {
 		case let device as LightDevice:
 			let cell = tableView.dequeueReusableCell(for: indexPath) as LightCell

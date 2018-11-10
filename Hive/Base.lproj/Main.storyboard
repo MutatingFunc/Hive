@@ -13,12 +13,12 @@
         <!--Hive-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="Hive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginController" customModule="Hive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TM6-WO-QVy">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="Username" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TM6-WO-QVy">
                                 <rect key="frame" x="16" y="124" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -72,10 +72,34 @@
             </objects>
             <point key="canvasLocation" x="1220" y="-564"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ozo-PS-o3c">
+            <objects>
+                <viewController storyboardIdentifier="Authentication" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="khT-1W-ZCy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f6q-cA-G19">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eGG-ur-Y5C">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eGG-ur-Y5C" firstAttribute="centerX" secondItem="f6q-cA-G19" secondAttribute="centerX" id="JPQ-r9-Jkb"/>
+                            <constraint firstItem="eGG-ur-Y5C" firstAttribute="centerY" secondItem="f6q-cA-G19" secondAttribute="centerY" id="K72-yy-tXt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UBI-Fl-BE4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j47-XJ-bo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="107"/>
+        </scene>
         <!--Devices-->
         <scene sceneID="mBa-Ir-bPU">
             <objects>
-                <viewController id="hfZ-pd-mVZ" customClass="DeviceListController" customModule="Hive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Devices" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hfZ-pd-mVZ" customClass="DeviceListController" customModule="Hive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KEq-bg-doQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,7 +346,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ESI-Mh-GwS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cbf-eI-Kob" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbf-eI-Kob" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mjz-jm-34b">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>

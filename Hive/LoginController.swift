@@ -23,13 +23,12 @@ class LoginController: UIViewController {
 		loginProgressView.isHidden = true
 		do {
 			let credentials = try LoginCredentials.savedCredentials()
-			usernameField.text = credentials.username
-			passwordField.text = credentials.password
-			login(credentials: credentials)
+			usernameField.text = credentials.username.rawValue
+			passwordField.text = credentials.password.rawValue
 		} catch KeychainError.noPassword {
 			//ignore
 		} catch {
-			self.showError(error, domain: KeychainError.domain)
+			//ignore
 		}
 	}
 

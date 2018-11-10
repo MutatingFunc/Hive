@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension RawRepresentable where Self: LosslessStringConvertible {
+	init?(rawValue: String) {self.init(rawValue)}
+}
+extension LosslessStringConvertible where Self: RawRepresentable, Self.RawValue == String {
+	var description: String {return rawValue}
+}
+
 //JSONCodable
 
 protocol JSONCodable: Codable {}
