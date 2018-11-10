@@ -8,6 +8,8 @@
 
 import UIKit
 
+import HiveShared
+
 class ReauthenticationCoordinator {
 	let navigationController: RootNav
 	init(navigationController: RootNav) {
@@ -45,7 +47,7 @@ class ReauthenticationCoordinator {
 		let progress = login.login(credentials: credentials) {[weak self] response in
 			switch response {
 			case .success(let response, _):
-				success(DeviceList(sessionID: response.sessionID, devices: response.devices))
+				success(DeviceList(loginInfo: response))
 			case .error(let error, _):
 				self?.returnToLogin(failure: (error, errorDomain))
 			}

@@ -8,34 +8,44 @@
 
 import Foundation
 
-protocol APIManaging {
-	func login(with credentials: LoginCredentials, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress
+public enum APIContentType {
+	case action
+	case product
+	case all
+}
+public protocol APIManaging {
+	func login(with credentials: LoginCredentials, contentType: APIContentType, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress
 	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
+	func setOn(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 }
 
-struct SessionID {
+public struct SessionID {
 	fileprivate let rawValue: String
 }
-struct LoginInfo {
-	let sessionID: SessionID
-	let devices: [Device]
+public struct LoginInfo {
+	let sessionID: SessionID, devices: [Device]
 }
 
-struct APIManager {
+public struct APIManager {
 	private let requestHandler: RequestHandling
-	init(requestHandler: RequestHandling = RequestHandler()) {
+	public init(requestHandler: RequestHandling = RequestHandler()) {
 		self.requestHandler = requestHandler
 	}
 }
 
 extension APIManager: APIManaging {
-	func login(with credentials: LoginCredentials, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress {
+	public func login(with credentials: LoginCredentials, contentType: APIContentType, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress {
 		let request = APIManager.basicRequest(
 			url: URL(string: "https://beekeeper.hivehome.com/1.0/global/login")!,
 			method: .post,
-			body: LoginRequest(username: credentials.username.rawValue, password: credentials.password.rawValue),
+			body: LoginRequest(
+				username: credentials.username.rawValue,
+				password: credentials.password.rawValue,
+				products: contentType == .product || contentType == .all,
+				actions: contentType == .action || contentType == .all
+			),
 			sessionID: nil
 		)
 		return requestHandler.perform(request, ofType: LoginResponse.self) {response in
@@ -43,7 +53,7 @@ extension APIManager: APIManaging {
 		}
 	}
 	
-	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
 		let setBrightnessRequest = APIManager.basicRequest(
 			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
 			method: .post,
@@ -57,7 +67,19 @@ extension APIManager: APIManaging {
 		}
 	}
 	
-	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func setOn(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+		let setOnRequest = APIManager.basicRequest(
+			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
+			method: .post,
+			body: SetOnRequest(status: light.isOn ? .on : .off),
+			sessionID: sessionID
+		)
+		return requestHandler.perform(setOnRequest, ofType: SetOnResponse.self) {response in
+			completion()
+		}
+	}
+	
+	public func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
 		let body: JSONCodable
 		switch light.state {
 		case let .colour(hue: h, saturation: s, brightness: b):
@@ -87,7 +109,7 @@ extension APIManager: APIManaging {
 		}
 	}
 	
-	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
 		let quickActionRequest = APIManager.basicRequest(
 			url: APIManager.performActionURL(deviceType: action.typeName, deviceID: action.id),
 			method: .post,
@@ -126,7 +148,7 @@ private extension APIManager {
 	}
 	
 	static func loginInfo(_ response: LoginResponse) throws -> LoginInfo {
-		let devices = response.products.map {product -> Device in
+		let devices = response.products?.map {product -> Device in
 			switch product.type {
 			case "warmwhitelight": return LightDevice(
 				isGroup: product.isGroup ?? false,
@@ -170,8 +192,8 @@ private extension APIManager {
 				typeName: product.type
 				)
 			}
-		}
-		let actions = response.actions.compactMap {action -> Device? in
+		} ?? []
+		let actions = response.actions?.compactMap {action -> Device? in
 			guard let condition = action.events.first, condition.group == .when && condition.type == "quick-action" else {
 				return nil
 			}
@@ -181,7 +203,7 @@ private extension APIManager {
 				id: DeviceID(action.id),
 				typeName: condition.type
 			)
-		}
+		} ?? []
 		return LoginInfo(
 			sessionID: SessionID(rawValue: response.token),
 			devices: (actions + devices).sorted(by: {$0.name.lexicographicallyPrecedes($1.name)})

@@ -8,6 +8,8 @@
 
 import UIKit
 
+import HiveShared
+
 class ActionCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var actionButton: UIButton!

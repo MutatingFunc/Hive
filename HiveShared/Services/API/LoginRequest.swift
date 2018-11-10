@@ -12,16 +12,16 @@ struct LoginRequest: JSONCodable {
 	let username: String
 	let password: String
 	let devices = false
-	let products = true
-	let actions = true
+	let products: Bool
+	let actions: Bool
 	let homes = false
 }
 
 struct LoginResponse: JSONCodable {
 	//let user
 	let token: String
-	let products: [ProductResponse]
-	let actions: [ActionResponse]
+	let products: [ProductResponse]?
+	let actions: [ActionResponse]?
 }
 
 struct ProductResponse: JSONCodable {

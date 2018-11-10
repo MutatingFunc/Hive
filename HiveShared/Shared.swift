@@ -6,16 +6,10 @@
 //  Copyright © 2018 James Froggatt. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-extension RawRepresentable where Self: LosslessStringConvertible {
-	init?(rawValue: String) {self.init(rawValue)}
-}
-extension LosslessStringConvertible where Self: RawRepresentable, Self.RawValue == String {
-	var description: String {return rawValue}
-}
-
-extension UIViewController {
+public extension UIViewController {
 	private func showError(title: String, description: String) {
 		let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -28,12 +22,19 @@ extension UIViewController {
 		)
 	}
 }
+#endif
 
+public extension RawRepresentable where Self: LosslessStringConvertible {
+	init?(rawValue: String) {self.init(rawValue)}
+}
+public extension LosslessStringConvertible where Self: RawRepresentable, Self.RawValue == String {
+	var description: String {return rawValue}
+}
 
 //JSONCodable
 
-protocol JSONCodable: Codable {}
-extension JSONCodable {
+public protocol JSONCodable: Codable {}
+public extension JSONCodable {
 	init?(data: Data) {
 		do {
 			self = try JSONDecoder().decode(Self.self, from: data)

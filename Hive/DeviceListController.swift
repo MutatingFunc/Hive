@@ -8,6 +8,8 @@
 
 import UIKit
 
+import HiveShared
+
 class DeviceListController: UIViewController {
 	@IBOutlet var tableView: UITableView! {
 		didSet {

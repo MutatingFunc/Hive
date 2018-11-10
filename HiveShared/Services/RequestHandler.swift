@@ -8,17 +8,17 @@
 
 import Alamofire
 
-enum RequestError: String, LocalizedError {
+public enum RequestError: String, LocalizedError {
 	case loadFailed = "Load failed"
 	case parseFailed = "Failed to parse response"
 	case unknown = "Unknown"
 	
-	var errorDescription: String? {
+	public var errorDescription: String? {
 		return self.rawValue
 	}
 }
 
-enum Response<Parsed> {
+public enum Response<Parsed> {
 	case success(Parsed, URLResponse)
 	case error(Error, URLResponse?)
 	
@@ -35,19 +35,19 @@ enum Response<Parsed> {
 	}
 }
 
-protocol RequestHandling {
+public protocol RequestHandling {
 	func perform<Parsed: JSONCodable>(_ request: URLRequest, ofType type: Parsed.Type, completion: @escaping (Response<Parsed>) -> ()) -> Progress
 }
 
-struct RequestHandler {
+public struct RequestHandler {
 	private let sessionManager: Alamofire.SessionManager
-	init(sessionManager: Alamofire.SessionManager = .default) {
+	public init(sessionManager: Alamofire.SessionManager = .default) {
 		self.sessionManager = sessionManager
 	}
 }
 
 extension RequestHandler: RequestHandling {
-	func perform<Parsed: JSONCodable>(_ request: URLRequest, ofType type: Parsed.Type, completion: @escaping (Response<Parsed>) -> ()) -> Progress {
+	public func perform<Parsed: JSONCodable>(_ request: URLRequest, ofType type: Parsed.Type, completion: @escaping (Response<Parsed>) -> ()) -> Progress {
 		let task = sessionManager.request(request).responseData {result in
 			if let data = result.data, let response = result.response {
 				print("Response: \(response)\n  With data: \(String(data: data, encoding: .ascii) ?? data.description)")

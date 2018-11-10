@@ -8,6 +8,8 @@
 
 import UIKit
 
+import HiveShared
+
 class DefaultDeviceCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var typeLabel: UILabel!

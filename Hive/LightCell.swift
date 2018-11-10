@@ -8,6 +8,8 @@
 
 import UIKit
 
+import HiveShared
+
 class LightCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var brightnessSlider: UISlider!

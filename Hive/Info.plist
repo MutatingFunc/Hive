@@ -20,13 +20,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>NSUserActivityTypes</key>
 	<array>
+		<string>PerformActionIntent</string>
+		<string>SetBrightnessIntent</string>
+		<string>ToggleLightIntent</string>
 		<string>performAction</string>
 		<string>turnOnLight</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

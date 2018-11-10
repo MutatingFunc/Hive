@@ -8,6 +8,8 @@
 
 import UIKit
 
+import HiveShared
+
 class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var saturationLabel: UILabel!
