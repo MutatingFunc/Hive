@@ -11,9 +11,9 @@ import Intents
 
 public struct Light {
 	var api: APIManaging, sessionID: SessionID
-	public internal(set) var device: LightDevice
-	public init(api: APIManaging = APIManager(), sessionID: SessionID, device: LightDevice) {
-		self.api = api; self.sessionID = sessionID; self.device = device
+	public internal(set) var settingsManager: SettingsManaging, device: LightDevice
+	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: LightDevice) {
+		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 	
 	public mutating func setBrightness(_ brightness: Float, completion: @escaping () -> ()) -> Progress {

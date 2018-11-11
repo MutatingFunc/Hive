@@ -10,7 +10,7 @@ import Foundation
 
 public struct Login {
 	var api: APIManaging
-	public init(api: APIManaging = APIManager()) {
+	public init(api: APIManaging = apiManager) {
 		self.api = api
 	}
 	

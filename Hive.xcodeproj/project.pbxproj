@@ -51,6 +51,8 @@
 		1ADF05C32197AC0B00604961 /* PerformAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C22197AC0B00604961 /* PerformAction.swift */; };
 		1ADF05C52197AC1C00604961 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C42197AC1C00604961 /* SetBrightness.swift */; };
 		1ADF05C72197AC2300604961 /* ToggleLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C62197AC2300604961 /* ToggleLight.swift */; };
+		1ADF05C921983A1300604961 /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C821983A1300604961 /* MockAPIManager.swift */; };
+		1ADF05CC21983D3200604961 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05CA21983C4E00604961 /* Debug.swift */; };
 		1AE141A6219768EB00913920 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
 		1AE141A7219768EB00913920 /* HiveShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1E478013AA1D138523CAFB8F /* Pods_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */; };
@@ -186,6 +188,8 @@
 		1ADF05C22197AC0B00604961 /* PerformAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformAction.swift; sourceTree = "<group>"; };
 		1ADF05C42197AC1C00604961 /* SetBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBrightness.swift; sourceTree = "<group>"; };
 		1ADF05C62197AC2300604961 /* ToggleLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLight.swift; sourceTree = "<group>"; };
+		1ADF05C821983A1300604961 /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
+		1ADF05CA21983C4E00604961 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0FA1F13AC95DF9B5F364C7 /* Pods-HiveShared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.release.xcconfig"; sourceTree = "<group>"; };
 		B458DB081403984B608DCA0D /* Pods-Hive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.release.xcconfig"; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 				1A4FF255218F118700EAC20F /* SettingsManager.swift */,
 				1A4FF257218F11AB00EAC20F /* RequestHandler.swift */,
 				1A4FF25C218F120000EAC20F /* APIManager.swift */,
+				1ADF05C821983A1300604961 /* MockAPIManager.swift */,
 				1A29E059218F5A4E00D0351F /* LoginCredentials.swift */,
 				1A4FF24B218F114F00EAC20F /* API */,
 			);
@@ -392,6 +397,7 @@
 				1AA7536B21975A39006DD878 /* Intents.intentdefinition */,
 				1A4FF25A218F11CD00EAC20F /* Shared.swift */,
 				1A29E057218F57EA00D0351F /* Reuseable.swift */,
+				1ADF05CA21983C4E00604961 /* Debug.swift */,
 				1A4FF254218F117C00EAC20F /* Services */,
 				1A4FF260218F19E900EAC20F /* Model */,
 				1A89FACC21917CE4000A98FD /* ViewModels */,
@@ -804,11 +810,13 @@
 			files = (
 				1AA7539C2197615B006DD878 /* DeviceList.swift in Sources */,
 				1AA753952197613A006DD878 /* LoginCredentials.swift in Sources */,
+				1ADF05C921983A1300604961 /* MockAPIManager.swift in Sources */,
 				1A7D778F21976C930055657D /* Intents.intentdefinition in Sources */,
 				1AA75391219760EA006DD878 /* Reuseable.swift in Sources */,
 				1AA75390219760EA006DD878 /* Shared.swift in Sources */,
 				1AA7539B2197615B006DD878 /* Login.swift in Sources */,
 				1AA7539F2197615B006DD878 /* Action.swift in Sources */,
+				1ADF05CC21983D3200604961 /* Debug.swift in Sources */,
 				1AA7539921976142006DD878 /* ActionRequest.swift in Sources */,
 				1AA7539A21976155006DD878 /* Devices.swift in Sources */,
 				1AA753942197613A006DD878 /* APIManager.swift in Sources */,

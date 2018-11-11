@@ -21,12 +21,15 @@ public protocol APIManaging {
 	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 }
 
-public struct SessionID {
-	fileprivate let rawValue: String
+public struct SessionID: JSONCodable, RawRepresentable, LosslessStringConvertible, Hashable {
+	public let rawValue: String
+	public init(_ rawValue: String) {self.rawValue = rawValue}
 }
 public struct LoginInfo {
-	let sessionID: SessionID, devices: [Device]
+	let sessionID: SessionID, devices: [Device], actions: [ActionDevice]
 }
+
+public let apiManager: APIManaging = debug ? MockAPIManager() : APIManager()
 
 public struct APIManager {
 	private let requestHandler: RequestHandling
@@ -193,20 +196,21 @@ private extension APIManager {
 				)
 			}
 		} ?? []
-		let actions = response.actions?.compactMap {action -> Device? in
+		let actions = response.actions?.compactMap {action -> ActionDevice? in
 			guard let condition = action.events.first, condition.group == .when && condition.type == "quick-action" else {
 				return nil
 			}
 			return ActionDevice(
-				isOnline: action.enabled,
+				isEnabled: action.enabled,
 				name: action.name,
 				id: DeviceID(action.id),
 				typeName: condition.type
 			)
 		} ?? []
 		return LoginInfo(
-			sessionID: SessionID(rawValue: response.token),
-			devices: (actions + devices).sorted(by: {$0.name.lexicographicallyPrecedes($1.name)})
+			sessionID: SessionID(response.token),
+			devices: devices,
+			actions: actions
 		)
 	}
 }

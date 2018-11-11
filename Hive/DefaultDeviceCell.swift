@@ -10,15 +10,36 @@ import UIKit
 
 import HiveShared
 
+protocol DeviceCellDelegate: AnyObject {
+	func isFavouriteChanged(device: Device)
+}
+
 class DefaultDeviceCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var typeLabel: UILabel!
 	
-	func setDevice(_ device: Device) {
-		nameLabel.text = device.name
-		typeLabel.text = device.typeName
-		[nameLabel, typeLabel].forEach {
-			$0?.textColor = UIColor(named: device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
+	weak var delegate: DeviceCellDelegate?
+	var device: Device! {
+		didSet {
+			nameLabel.text = device.name
+			typeLabel.text = device.typeName
+			[nameLabel, typeLabel].forEach {
+				$0?.textColor = UIColor(named: device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
+			}
 		}
+	}
+	
+	func setDevice(_ device: Device, delegate: DeviceCellDelegate?) {
+		self.device = device
+		self.delegate = delegate
+	}
+	
+	@objc func favourite() {
+		device.setIsFavourite(true)
+		delegate?.isFavouriteChanged(device: self.device)
+	}
+	@objc func unfavourite() {
+		device.setIsFavourite(false)
+		delegate?.isFavouriteChanged(device: self.device)
 	}
 }

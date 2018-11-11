@@ -8,17 +8,19 @@
 
 import Foundation
 
-protocol SettingsManaging {
+public protocol SettingsManaging {
 	var currentVersion: String {get}
 	var disableAPIWarning: Bool {get nonmutating set}
+	var favourites: Set<DeviceID> {get nonmutating set}
 }
 
 private let keyVersion = "currentVersion"
 private let keyAPIWarningDisabled = "APIWarning"
+private let keyFavourites = "favourites"
 
-struct SettingsManager {
+public struct SettingsManager {
 	private let ud: UserDefaults
-	init(userDefaults: UserDefaults = .standard) {
+	public init(userDefaults: UserDefaults = .standard) {
 		self.ud = userDefaults
 		ud.register(defaults: [
 			keyVersion: "0",
@@ -28,11 +30,24 @@ struct SettingsManager {
 }
 
 extension SettingsManager: SettingsManaging {
-	var currentVersion: String {
+	public var currentVersion: String {
 		return ud.string(forKey: keyVersion)!
 	}
-	var disableAPIWarning: Bool {
+	public var disableAPIWarning: Bool {
 		get {return ud.bool(forKey: keyAPIWarningDisabled)}
 		nonmutating set {ud.set(newValue, forKey: keyAPIWarningDisabled)}
 	}
+	public var favourites: Set<DeviceID> {
+		get {return ud.data(forKey: keyFavourites).flatMap(Set<DeviceID>.init(data:)) ?? []}
+		nonmutating set {
+			if newValue.count > 100 {
+				let newValue = Set(newValue.prefix(100))
+				ud.set(newValue.json(), forKey: keyFavourites)
+			} else {
+				ud.set(newValue.json(), forKey: keyFavourites)
+			}
+		}
+	}
 }
+
+extension Set: JSONCodable where Element: JSONCodable {}

@@ -23,8 +23,20 @@ class ActionCell: UITableViewCell, ReuseIdentifiable {
 		}
 	}
 	
-	func setDevice(_ action: Action) {
+	weak var delegate: DeviceCellDelegate?
+	
+	func setDevice(_ action: Action, delegate: DeviceCellDelegate?) {
 		self.action = action
+		self.delegate = delegate
+	}
+	
+	@objc func favourite() {
+		action.device.setIsFavourite(true)
+		delegate?.isFavouriteChanged(device: self.action.device)
+	}
+	@objc func unfavourite() {
+		action.device.setIsFavourite(false)
+		delegate?.isFavouriteChanged(device: self.action.device)
 	}
 	
 	@IBAction func perform() {

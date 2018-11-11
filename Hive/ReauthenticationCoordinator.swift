@@ -34,7 +34,9 @@ class ReauthenticationCoordinator {
 			authenticate(login: login, credentials: credentials) {[navigationController] deviceList in
 				deviceListController.deviceList = deviceList
 				navigationController.authenticationController = nil
-				authentication.dismiss(animated: true, completion: nil)
+				if authentication.presentingViewController != nil {
+					authentication.dismiss(animated: true, completion: nil)
+				}
 			}
 		} catch KeychainError.noPassword {
 			returnToLogin(failure: nil)

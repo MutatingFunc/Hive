@@ -11,9 +11,9 @@ import Intents
 
 public struct Action {
 	var api: APIManaging, sessionID: SessionID
-	public internal(set) var device: ActionDevice
-	public init(api: APIManaging = APIManager(), sessionID: SessionID, device: ActionDevice) {
-		self.api = api; self.sessionID = sessionID; self.device = device
+	public internal(set) var settingsManager: SettingsManaging, device: ActionDevice
+	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: ActionDevice) {
+		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 
 	public func quickAction(completion: @escaping () -> ()) -> Progress {

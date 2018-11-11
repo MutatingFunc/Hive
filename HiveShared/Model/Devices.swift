@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct DeviceID: Codable, RawRepresentable, LosslessStringConvertible {
+public struct DeviceID: JSONCodable, RawRepresentable, LosslessStringConvertible, Hashable {
 	public var rawValue: String
 	public init(_ rawValue: String) {self.rawValue = rawValue}
 }
@@ -22,6 +22,18 @@ public protocol Device {
 extension Device {
 	var apiTypeName: String {
 		return isGroup ? "productgroup" : typeName
+	}
+}
+public extension Device {
+	func isFavourite(settingsManager: SettingsManaging = SettingsManager()) -> Bool {
+		return settingsManager.favourites.contains(self.id)
+	}
+	func setIsFavourite(_ newValue: Bool, settingsManager: SettingsManaging = SettingsManager()) {
+		if newValue {settingsManager.favourites.insert(self.id)}
+		else {settingsManager.favourites.remove(self.id)}
+	}
+	func toggleIsFavourite(settingsManager: SettingsManaging = SettingsManager()) {
+		self.setIsFavourite(self.isFavourite(settingsManager: settingsManager) == false)
 	}
 }
 
@@ -46,7 +58,10 @@ public struct ColourLightDevice: Device {
 	public var minTemp: Int, maxTemp: Int
 }
 
-public struct ActionDevice: Device {
-	public let isGroup: Bool = false
-	public var isOnline: Bool, name: String, id: DeviceID, typeName: String
+public struct ActionDevice {
+	public var isEnabled: Bool, name: String, id: DeviceID, typeName: String
+}
+extension ActionDevice: Device {
+	public var isGroup: Bool {return false}
+	public var isOnline: Bool {return isEnabled}
 }

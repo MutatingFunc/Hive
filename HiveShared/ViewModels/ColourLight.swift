@@ -10,9 +10,9 @@ import Foundation
 
 public struct ColourLight {
 	var api: APIManaging, sessionID: SessionID
-	public internal(set) var device: ColourLightDevice
-	public init(api: APIManaging = APIManager(), sessionID: SessionID, device: ColourLightDevice) {
-		self.api = api; self.sessionID = sessionID; self.device = device
+	public internal(set) var settingsManager: SettingsManaging, device: ColourLightDevice
+	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: ColourLightDevice) {
+		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 	
 	public mutating func setState(_ state: ColourLightDevice.State?, completion: @escaping () -> ()) -> Progress {

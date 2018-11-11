@@ -18,11 +18,11 @@ public enum KeychainError: Error {
 private let hiveWebURL = "https://my.hivehome.com/"
 
 public struct LoginCredentials {
-	public struct Username: Codable, RawRepresentable, LosslessStringConvertible {
+	public struct Username: JSONCodable, RawRepresentable, LosslessStringConvertible, Hashable {
 		public var rawValue: String
 		public init(_ rawValue: String) {self.rawValue = rawValue}
 	}
-	public struct Password: Codable, RawRepresentable, LosslessStringConvertible {
+	public struct Password: JSONCodable, RawRepresentable, LosslessStringConvertible, Hashable {
 		public var rawValue: String
 		public init(_ rawValue: String) {self.rawValue = rawValue}
 	}

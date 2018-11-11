@@ -24,6 +24,7 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 		self.loadingIndicator?.stopAnimating()
 	}
 	
+	weak var delegate: DeviceCellDelegate?
 	var light: ColourLight! {
 		didSet {
 			nameLabel.text = light.device.name
@@ -48,8 +49,18 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 		}
 	}
 	
-	func setDevice(_ light: ColourLight) {
+	func setDevice(_ light: ColourLight, delegate: DeviceCellDelegate?) {
 		self.light = light
+		self.delegate = delegate
+	}
+	
+	@objc func favourite() {
+		light.device.setIsFavourite(true)
+		delegate?.isFavouriteChanged(device: self.light.device)
+	}
+	@objc func unfavourite() {
+		light.device.setIsFavourite(false)
+		delegate?.isFavouriteChanged(device: self.light.device)
 	}
 	
 	@IBAction func valueChanged() {
