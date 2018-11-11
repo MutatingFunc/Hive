@@ -20,7 +20,7 @@ extension IntentHandler: PerformActionIntentHandling {
 			success: {deviceList in
 				guard
 					let action = deviceList
-						.device(named: intent.actionName!, ofType: ActionDevice.self)
+						.action(named: intent.actionName!)
 						.map(deviceList.action)
 					else {
 						return completion(.failure(actionName: intent.actionName!, error: deviceNotFoundError))

@@ -20,7 +20,7 @@ private let keyFavourites = "favourites"
 
 public struct SettingsManager {
 	private let ud: UserDefaults
-	public init(userDefaults: UserDefaults = .standard) {
+	public init(userDefaults: UserDefaults = UserDefaults(suiteName: "group.James.Hive")!) {
 		self.ud = userDefaults
 		ud.register(defaults: [
 			keyVersion: "0",

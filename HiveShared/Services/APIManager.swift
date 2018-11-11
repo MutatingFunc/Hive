@@ -16,7 +16,7 @@ public enum APIContentType {
 public protocol APIManaging {
 	func login(with credentials: LoginCredentials, contentType: APIContentType, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress
 	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
-	func setOn(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
+	func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
 }
@@ -70,11 +70,11 @@ extension APIManager: APIManaging {
 		}
 	}
 	
-	public func setOn(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
 		let setOnRequest = APIManager.basicRequest(
-			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
+			url: APIManager.updateDeviceURL(deviceType: device.apiTypeName, deviceID: device.id),
 			method: .post,
-			body: SetOnRequest(status: light.isOn ? .on : .off),
+			body: SetOnRequest(status: device.isOn ? .on : .off),
 			sessionID: sessionID
 		)
 		return requestHandler.perform(setOnRequest, ofType: SetOnResponse.self) {response in

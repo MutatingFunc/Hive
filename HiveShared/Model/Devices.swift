@@ -37,17 +37,21 @@ public extension Device {
 	}
 }
 
+public protocol ToggleableDevice: Device {
+	var isOn: Bool {get set}
+}
+
 public struct UnknownDevice: Device {
 	public var isGroup: Bool, isOnline: Bool, name: String, id: DeviceID, typeName: String
 }
 
-public struct LightDevice: Device {
+public struct LightDevice: ToggleableDevice {
 	public var isGroup: Bool, isOnline: Bool, name: String, id: DeviceID, typeName: String
 	public var isOn: Bool
 	/// From 1 to 100
 	public var brightness: Float
 }
-public struct ColourLightDevice: Device {
+public struct ColourLightDevice: ToggleableDevice {
 	public var isGroup: Bool, isOnline: Bool, name: String, id: DeviceID, typeName: String
 	public var isOn: Bool
 	public enum State {

@@ -16,9 +16,9 @@ public struct MockAPIManager: APIManaging {
 			Response.success(
 				LoginInfo(
 					sessionID: SessionID("mock"),
-					devices: Array(repeating: LightDevice(isGroup: false, isOnline: true, name: "Device", id: DeviceID("Device"), typeName: "type", isOn: true, brightness: 50), count: 20)
-						+ [ColourLightDevice(isGroup: false, isOnline: true, name: "Device", id: DeviceID("Device"), typeName: "type", isOn: true, state: .colour(hue: 50, saturation: 50, brightness: 50), minTemp: 0, maxTemp: 100)],
-					actions: Array(repeating: ActionDevice(isEnabled: true, name: "Device", id: DeviceID("Device"), typeName: "type"), count: 20)
+					devices: Array(repeating: LightDevice(isGroup: false, isOnline: true, name: "Device", id: DeviceID("Light"), typeName: "light type", isOn: true, brightness: 50), count: 20)
+						+ [ColourLightDevice(isGroup: false, isOnline: true, name: "Device", id: DeviceID("Colour Light"), typeName: "colour light type", isOn: true, state: .colour(hue: 50, saturation: 50, brightness: 50), minTemp: 0, maxTemp: 100)],
+					actions: Array(repeating: ActionDevice(isEnabled: true, name: "Device", id: DeviceID("Action"), typeName: "action type"), count: 20)
 				),
 				URLResponse()
 			)
@@ -31,7 +31,7 @@ public struct MockAPIManager: APIManaging {
 		return Progress(totalUnitCount: 0)
 	}
 	
-	public func setOn(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
 		completion()
 		return Progress(totalUnitCount: 0)
 	}

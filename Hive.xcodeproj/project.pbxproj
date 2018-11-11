@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A132C632198827F00FC893B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FF224218F10AC00EAC20F /* Assets.xcassets */; };
 		1A1F26FB21974F7A000F7F0C /* ReauthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */; };
 		1A2069D92194F56800AF049F /* RootNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2069D82194F56800AF049F /* RootNav.swift */; };
 		1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
@@ -48,13 +49,24 @@
 		1AA7539F2197615B006DD878 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE92191036F00DC21EB /* Action.swift */; };
 		1AA753A0219761E5006DD878 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
 		1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */; };
+		1ADAE5B82198706700B443E2 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05F021986E1F00604961 /* Toggle.swift */; };
 		1ADF05C32197AC0B00604961 /* PerformAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C22197AC0B00604961 /* PerformAction.swift */; };
 		1ADF05C52197AC1C00604961 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C42197AC1C00604961 /* SetBrightness.swift */; };
 		1ADF05C72197AC2300604961 /* ToggleLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C62197AC2300604961 /* ToggleLight.swift */; };
 		1ADF05C921983A1300604961 /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C821983A1300604961 /* MockAPIManager.swift */; };
 		1ADF05CC21983D3200604961 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05CA21983C4E00604961 /* Debug.swift */; };
+		1ADF05D72198641000604961 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADF05D62198641000604961 /* NotificationCenter.framework */; };
+		1ADF05DA2198641000604961 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05D92198641000604961 /* TodayViewController.swift */; };
+		1ADF05DD2198641000604961 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADF05DB2198641000604961 /* MainInterface.storyboard */; };
+		1ADF05E12198641000604961 /* HiveWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1ADF05D52198641000604961 /* HiveWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1ADF05E82198659F00604961 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE72191024900DC21EB /* ActionCell.swift */; };
+		1ADF05E9219865D500604961 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05D218F6F1600D0351F /* Colors.swift */; };
+		1ADF05EB21986C8600604961 /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
+		1ADF05ED21986CD200604961 /* ToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05EC21986CD200604961 /* ToggleCell.swift */; };
 		1AE141A6219768EB00913920 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
 		1AE141A7219768EB00913920 /* HiveShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AF6B4D4219870BB00F1EFBA /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
+		1D33445D7F2589B520764EB1 /* Pods_HiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */; };
 		1E478013AA1D138523CAFB8F /* Pods_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */; };
 		9FF1639AE0071C426064AA19 /* Pods_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA753A421976388006DD878 /* Pods_Hive.framework */; };
 		C0DF9239130A902BC8EA2F00 /* Pods_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */; };
@@ -96,6 +108,13 @@
 			remoteGlobalIDString = 1A4FF219218F10AC00EAC20F;
 			remoteInfo = Hive;
 		};
+		1ADF05DF2198641000604961 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ADF05D42198641000604961;
+			remoteInfo = HiveWidget;
+		};
 		1AE141A8219768EB00913920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
@@ -112,6 +131,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				1ADF05E12198641000604961 /* HiveWidget.appex in Embed App Extensions */,
 				1AA7536621975861006DD878 /* HiveIntents.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -131,6 +151,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveIntents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationCoordinator.swift; sourceTree = "<group>"; };
 		1A1F26FE219756F9000F7F0C /* Hive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hive.entitlements; sourceTree = "<group>"; };
@@ -190,14 +211,24 @@
 		1ADF05C62197AC2300604961 /* ToggleLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLight.swift; sourceTree = "<group>"; };
 		1ADF05C821983A1300604961 /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
 		1ADF05CA21983C4E00604961 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		1ADF05D52198641000604961 /* HiveWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HiveWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ADF05D62198641000604961 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		1ADF05D92198641000604961 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		1ADF05DC2198641000604961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1ADF05DE2198641000604961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ADF05EA2198673E00604961 /* HiveWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveWidget.entitlements; sourceTree = "<group>"; };
+		1ADF05EC21986CD200604961 /* ToggleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCell.swift; sourceTree = "<group>"; };
+		1ADF05F021986E1F00604961 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
 		5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0FA1F13AC95DF9B5F364C7 /* Pods-HiveShared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.release.xcconfig"; sourceTree = "<group>"; };
+		8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWidget/Pods-HiveWidget.release.xcconfig"; sourceTree = "<group>"; };
 		B458DB081403984B608DCA0D /* Pods-Hive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.release.xcconfig"; sourceTree = "<group>"; };
 		B4CCABDAD85BD9963974DB5C /* Pods-HiveIntents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntents.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntents/Pods-HiveIntents.release.xcconfig"; sourceTree = "<group>"; };
 		BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4498F9BA3F725A8B9475D41 /* Pods-HiveShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.debug.xcconfig"; sourceTree = "<group>"; };
 		D85C1062FB167AE910EEEE70 /* Pods-HiveIntents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntents/Pods-HiveIntents.debug.xcconfig"; sourceTree = "<group>"; };
 		ED6A0ABABC83F921D16A6739 /* Pods-Hive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.debug.xcconfig"; sourceTree = "<group>"; };
+		EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWidget/Pods-HiveWidget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +280,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1ADF05D22198641000604961 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AF6B4D4219870BB00F1EFBA /* HiveShared.framework in Frameworks */,
+				1ADF05D72198641000604961 /* NotificationCenter.framework in Frameworks */,
+				1D33445D7F2589B520764EB1 /* Pods_HiveWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -261,6 +302,8 @@
 				5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */,
 				BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */,
 				1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */,
+				1ADF05D62198641000604961 /* NotificationCenter.framework */,
+				0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -274,6 +317,7 @@
 				1A4FF231218F10AC00EAC20F /* HiveTests */,
 				1A4FF23C218F10AD00EAC20F /* HiveUITests */,
 				1AA7536021975861006DD878 /* HiveIntents */,
+				1ADF05D82198641000604961 /* HiveWidget */,
 				1A4FF21B218F10AC00EAC20F /* Products */,
 				5564316D821E49033B630B0E /* Pods */,
 				0C58F654298F32AE4EEE8CE4 /* Frameworks */,
@@ -289,6 +333,7 @@
 				1AA7535F21975861006DD878 /* HiveIntents.appex */,
 				1AA75372219760D5006DD878 /* HiveShared.framework */,
 				1AA7537A219760D5006DD878 /* HiveSharedTests.xctest */,
+				1ADF05D52198641000604961 /* HiveWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,6 +416,7 @@
 			children = (
 				1A4FF265218F238E00EAC20F /* Login.swift */,
 				1A4FF26B218F35BC00EAC20F /* DeviceList.swift */,
+				1ADF05F021986E1F00604961 /* Toggle.swift */,
 				1A29E05B218F6BCB00D0351F /* Light.swift */,
 				1AD9C3512190DDBC004882E9 /* ColourLight.swift */,
 				1AA41EE92191036F00DC21EB /* Action.swift */,
@@ -416,6 +462,18 @@
 			path = HiveSharedTests;
 			sourceTree = "<group>";
 		};
+		1ADF05D82198641000604961 /* HiveWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1ADF05EA2198673E00604961 /* HiveWidget.entitlements */,
+				1ADF05D92198641000604961 /* TodayViewController.swift */,
+				1ADF05EC21986CD200604961 /* ToggleCell.swift */,
+				1ADF05DB2198641000604961 /* MainInterface.storyboard */,
+				1ADF05DE2198641000604961 /* Info.plist */,
+			);
+			path = HiveWidget;
+			sourceTree = "<group>";
+		};
 		5564316D821E49033B630B0E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +483,8 @@
 				5B0FA1F13AC95DF9B5F364C7 /* Pods-HiveShared.release.xcconfig */,
 				D85C1062FB167AE910EEEE70 /* Pods-HiveIntents.debug.xcconfig */,
 				B4CCABDAD85BD9963974DB5C /* Pods-HiveIntents.release.xcconfig */,
+				EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */,
+				8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -460,6 +520,7 @@
 			dependencies = (
 				1AA7536521975861006DD878 /* PBXTargetDependency */,
 				1AE141A9219768EB00913920 /* PBXTargetDependency */,
+				1ADF05E02198641000604961 /* PBXTargetDependency */,
 			);
 			name = Hive;
 			productName = Hive;
@@ -558,6 +619,24 @@
 			productReference = 1AA7537A219760D5006DD878 /* HiveSharedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1ADF05D42198641000604961 /* HiveWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ADF05E22198641000604961 /* Build configuration list for PBXNativeTarget "HiveWidget" */;
+			buildPhases = (
+				9BEA661041E59FBFF5B768E6 /* [CP] Check Pods Manifest.lock */,
+				1ADF05D12198641000604961 /* Sources */,
+				1ADF05D22198641000604961 /* Frameworks */,
+				1ADF05D32198641000604961 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HiveWidget;
+			productName = HiveWidget;
+			productReference = 1ADF05D52198641000604961 /* HiveWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -608,6 +687,17 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 1A4FF219218F10AC00EAC20F;
 					};
+					1ADF05D42198641000604961 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 1A4FF215218F10AC00EAC20F /* Build configuration list for PBXProject "Hive" */;
@@ -629,6 +719,7 @@
 				1AA7535E21975861006DD878 /* HiveIntents */,
 				1AA75371219760D5006DD878 /* HiveShared */,
 				1AA75379219760D5006DD878 /* HiveSharedTests */,
+				1ADF05D42198641000604961 /* HiveWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -676,6 +767,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADF05D32198641000604961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A132C632198827F00FC893B /* Assets.xcassets in Resources */,
+				1ADF05DD2198641000604961 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +830,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-HiveShared-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BEA661041E59FBFF5B768E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiveWidget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -825,6 +943,7 @@
 				1AA753922197613A006DD878 /* SettingsManager.swift in Sources */,
 				1AA7539621976142006DD878 /* ErrorResponse.swift in Sources */,
 				1AA7539721976142006DD878 /* LoginRequest.swift in Sources */,
+				1ADAE5B82198706700B443E2 /* Toggle.swift in Sources */,
 				1AA7539D2197615B006DD878 /* Light.swift in Sources */,
 				1AA7539821976142006DD878 /* SetBrightnessRequest.swift in Sources */,
 			);
@@ -835,6 +954,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA75382219760D5006DD878 /* HiveSharedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADF05D12198641000604961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ADF05E9219865D500604961 /* Colors.swift in Sources */,
+				1ADF05E82198659F00604961 /* ActionCell.swift in Sources */,
+				1ADF05DA2198641000604961 /* TodayViewController.swift in Sources */,
+				1ADF05EB21986C8600604961 /* DefaultDeviceCell.swift in Sources */,
+				1ADF05ED21986CD200604961 /* ToggleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,6 +997,11 @@
 			target = 1A4FF219218F10AC00EAC20F /* Hive */;
 			targetProxy = 1AA7537E219760D5006DD878 /* PBXContainerItemProxy */;
 		};
+		1ADF05E02198641000604961 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ADF05D42198641000604961 /* HiveWidget */;
+			targetProxy = 1ADF05DF2198641000604961 /* PBXContainerItemProxy */;
+		};
 		1AE141A9219768EB00913920 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1AA75371219760D5006DD878 /* HiveShared */;
@@ -888,6 +1024,14 @@
 				1A4FF227218F10AC00EAC20F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1ADF05DB2198641000604961 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1ADF05DC2198641000604961 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -944,7 +1088,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -999,7 +1143,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1275,6 +1419,48 @@
 			};
 			name = Release;
 		};
+		1ADF05E32198641000604961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HiveWidget/HiveWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				INFOPLIST_FILE = HiveWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.HiveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1ADF05E42198641000604961 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HiveWidget/HiveWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				INFOPLIST_FILE = HiveWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.HiveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1337,6 +1523,15 @@
 			buildConfigurations = (
 				1AA7538E219760D5006DD878 /* Debug */,
 				1AA7538F219760D5006DD878 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ADF05E22198641000604961 /* Build configuration list for PBXNativeTarget "HiveWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ADF05E32198641000604961 /* Debug */,
+				1ADF05E42198641000604961 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

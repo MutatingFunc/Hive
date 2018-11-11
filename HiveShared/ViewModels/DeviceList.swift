@@ -39,6 +39,9 @@ public struct DeviceList {
 	public func device<DeviceType: Device>(named name: String, ofType: DeviceType.Type) -> DeviceType? {
 		return self.devices.lazy.compactMap{$0 as? DeviceType}.first{$0.name == name}
 	}
+	public func action(named name: String) -> ActionDevice? {
+		return self.actions.lazy.compactMap{$0 as? ActionDevice}.first{$0.name == name}
+	}
 	
 	public func light(_ device: LightDevice) -> Light {
 		return Light(api: api, sessionID: sessionID, device: device)
@@ -48,5 +51,8 @@ public struct DeviceList {
 	}
 	public func action(_ device: ActionDevice) -> Action {
 		return Action(api: api, sessionID: sessionID, device: device)
+	}
+	public func toggle(_ device: ToggleableDevice) -> Toggle {
+		return Toggle(api: api, sessionID: sessionID, device: device)
 	}
 }

@@ -18,8 +18,9 @@ class ActionCell: UITableViewCell, ReuseIdentifiable {
 	var action: Action! {
 		didSet {
 			nameLabel.text = action.device.name
-			self.isUserInteractionEnabled = action.device.isOnline
 			nameLabel.textColor = UIColor(named: action.device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
+			self.isUserInteractionEnabled = action.device.isOnline
+			actionButton.isEnabled = action.device.isOnline
 		}
 	}
 	

@@ -3,9 +3,13 @@ use_frameworks!
 
 pod 'Alamofire', '~> 4.7.3'
 
-target 'Hive'
-
-target 'HiveShared' do
+target 'Hive' do
 end
 
-target 'HiveIntents'
+target 'HiveShared'
+
+target 'HiveIntents' do
+end
+
+target 'HiveWidget' do
+end
