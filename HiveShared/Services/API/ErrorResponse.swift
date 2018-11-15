@@ -9,19 +9,18 @@
 import Foundation
 
 //status code 400
-struct ErrorResponse: JSONCodable, LocalizedError {
-	let errors: [Error]
+public struct ErrorResponse: JSONCodable, LocalizedError, Hashable {
+	public static let notAuthorized = ErrorResponse(error: KnownErrors.notAuthorized.rawValue)
+	public static let malformedRequest = ErrorResponse(error: KnownErrors.malformedRequest.rawValue)
 	
-	var errorDescription: String? {
-		return errors.first?.localizedDescription ?? "Unknown error"
+	let error: String
+	
+	public var errorDescription: String? {
+		return error
 	}
 	
-	struct Error: JSONCodable, LocalizedError {
-		let code: String
-		let title: String
-		
-		var errorDescription: String? {
-			return title
-		}
+	enum KnownErrors: String {
+		case notAuthorized = "NOT_AUTHORIZED"
+		case malformedRequest = "MALFORMED_REQUEST"
 	}
 }

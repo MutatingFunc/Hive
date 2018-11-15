@@ -16,7 +16,7 @@ public struct Toggle {
 		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 	
-	public mutating func setOn(_ isOn: Bool, completion: @escaping () -> ()) -> Progress {
+	public mutating func setOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {
 		self.device.isOn = isOn
 		donateIntent(isOn: isOn)
 		return api.setOn(of: self.device, sessionID: self.sessionID, completion: completion)

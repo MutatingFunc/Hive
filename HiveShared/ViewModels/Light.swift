@@ -16,19 +16,19 @@ public struct Light {
 		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 	
-	public mutating func setBrightness(_ brightness: Float, completion: @escaping () -> ()) -> Progress {
+	public mutating func setBrightness(_ brightness: Float, completion: @escaping (Response<()>) -> ()) -> Progress {
 		self.device.isOn = brightness > 0
+		donateIntent(isOn: brightness != 0)
 		if brightness > 0 {
 			self.device.brightness = brightness
-		}
-		donateIntent(isOn: brightness != 0)
-		if brightness != 0 {
 			donateIntent(brightness: brightness)
+			return api.updateBrightness(of: self.device, sessionID: self.sessionID, completion: completion)
+		} else {
+			return api.setOn(of: self.device, sessionID: self.sessionID, completion: completion)
 		}
-		return api.updateBrightness(of: self.device, sessionID: self.sessionID, completion: completion)
 	}
 	
-	public mutating func setOn(_ isOn: Bool, completion: @escaping () -> ()) -> Progress {
+	public mutating func setOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {
 		self.device.isOn = isOn
 		donateIntent(isOn: isOn)
 		return api.setOn(of: self.device, sessionID: self.sessionID, completion: completion)

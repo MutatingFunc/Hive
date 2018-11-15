@@ -67,9 +67,9 @@ extension RequestHandler: RequestHandling {
 			} else {
 				print("Response error: \(result.error?.localizedDescription ?? "Unknown error")")
 				if (result.error as NSError?)?.code == -999 {
-					completion(.error(RequestError.loadFailed, nil))
+					completion(.error(RequestError.loadFailed, result.response))
 				} else {
-					return completion(.error(result.error ?? RequestError.unknown, nil))
+					return completion(.error(result.error ?? RequestError.unknown, result.response))
 				}
 			}
 		}

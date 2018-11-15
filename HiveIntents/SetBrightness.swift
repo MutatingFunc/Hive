@@ -8,7 +8,11 @@
 
 import Foundation
 
+#if canImport(HiveSharedWatch)
+import HiveSharedWatch
+#else
 import HiveShared
+#endif
 
 extension IntentHandler: SetBrightnessIntentHandling {
 	func confirm(intent: SetBrightnessIntent, completion: @escaping (SetBrightnessIntentResponse) -> Void) {
@@ -29,8 +33,13 @@ extension IntentHandler: SetBrightnessIntentHandling {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
 				}
 				let brightness = intent.brightness?.floatValue ?? 0
-				_ = light.setBrightness(brightness) {
-					completion(.success(lightName: intent.lightName!, brightness: intent.brightness!))
+				_ = light.setBrightness(brightness) {response in
+					switch response {
+					case .success(_, _):
+						completion(.success(lightName: intent.lightName!, brightness: NSNumber(value: brightness)))
+					case .error(let error, _):
+						completion(.failure(lightName: intent.lightName!, error: error.localizedDescription))
+					}
 				}
 		},
 			failure: {error in

@@ -15,10 +15,10 @@ public enum APIContentType {
 }
 public protocol APIManaging {
 	func login(with credentials: LoginCredentials, contentType: APIContentType, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress
-	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
-	func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
-	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
-	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress
+	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
+	func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
+	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
+	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
 }
 
 public struct SessionID: JSONCodable, RawRepresentable, LosslessStringConvertible, Hashable {
@@ -56,21 +56,19 @@ extension APIManager: APIManaging {
 		}
 	}
 	
-	public func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
 		let setBrightnessRequest = APIManager.basicRequest(
 			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
 			method: .post,
-			body: light.isOn
-				? SetBrightnessRequest(brightness: light.brightness)
-				: SetOnRequest(status: .off),
+			body: SetBrightnessRequest(brightness: light.brightness),
 			sessionID: sessionID
 		)
 		return requestHandler.perform(setBrightnessRequest, ofType: SetBrightnessResponse.self) {response in
-			completion()
+			completion(response.map{_ in ()})
 		}
 	}
 	
-	public func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
 		let setOnRequest = APIManager.basicRequest(
 			url: APIManager.updateDeviceURL(deviceType: device.apiTypeName, deviceID: device.id),
 			method: .post,
@@ -78,11 +76,11 @@ extension APIManager: APIManaging {
 			sessionID: sessionID
 		)
 		return requestHandler.perform(setOnRequest, ofType: SetOnResponse.self) {response in
-			completion()
+			completion(response.map{_ in ()})
 		}
 	}
 	
-	public func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
 		let body: JSONCodable
 		switch light.state {
 		case let .colour(hue: h, saturation: s, brightness: b):
@@ -103,16 +101,16 @@ extension APIManager: APIManaging {
 		switch light.state {
 		case .colour:
 			return requestHandler.perform(setStateRequest, ofType: SetHSBResponse.self) {response in
-				completion()
+				completion(response.map{_ in ()})
 			}
 		case .white:
 			return requestHandler.perform(setStateRequest, ofType: SetLightTemperatureResponse.self) {response in
-				completion()
+				completion(response.map{_ in ()})
 			}
 		}
 	}
 	
-	public func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
+	public func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
 		let quickActionRequest = APIManager.basicRequest(
 			url: APIManager.performActionURL(deviceType: action.typeName, deviceID: action.id),
 			method: .post,
@@ -120,7 +118,7 @@ extension APIManager: APIManaging {
 			sessionID: sessionID
 		)
 		return requestHandler.perform(quickActionRequest, ofType: QuickActionResponse.self) {response in
-			completion()
+			completion(response.map{_ in ()})
 		}
 	}
 }

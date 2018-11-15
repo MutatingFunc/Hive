@@ -6,23 +6,7 @@
 //  Copyright © 2018 James Froggatt. All rights reserved.
 //
 
-#if canImport(UIKit)
-import UIKit
-
-public extension UIViewController {
-	private func showError(title: String, description: String) {
-		let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-		self.present(alert, animated: true)
-	}
-	func showError(_ error: Error, domain: String) {
-		self.showError(
-			title: domain + " " + ((error as? ErrorResponse.Error)?.code ?? ""),
-			description: (error as? ErrorResponse.Error)?.title ?? error.localizedDescription
-		)
-	}
-}
-#endif
+import Foundation
 
 public extension RawRepresentable where Self: LosslessStringConvertible {
 	init?(rawValue: String) {self.init(rawValue)}

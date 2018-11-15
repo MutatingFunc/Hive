@@ -15,7 +15,7 @@ public struct ColourLight {
 		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 	
-	public mutating func setState(_ state: ColourLightDevice.State?, completion: @escaping () -> ()) -> Progress {
+	public mutating func setState(_ state: ColourLightDevice.State?, completion: @escaping (Response<()>) -> ()) -> Progress {
 		if let state = state {
 			self.device.state = state
 		}

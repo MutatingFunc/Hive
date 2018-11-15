@@ -16,7 +16,7 @@ public struct Action {
 		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 
-	public func quickAction(completion: @escaping () -> ()) -> Progress {
+	public func quickAction(completion: @escaping (Response<()>) -> ()) -> Progress {
 		donateIntent()
 		return api.quickAction(device, sessionID: sessionID, completion: completion)
 	}

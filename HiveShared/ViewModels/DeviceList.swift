@@ -40,7 +40,7 @@ public struct DeviceList {
 		return self.devices.lazy.compactMap{$0 as? DeviceType}.first{$0.name == name}
 	}
 	public func action(named name: String) -> ActionDevice? {
-		return self.actions.lazy.compactMap{$0 as? ActionDevice}.first{$0.name == name}
+		return self.actions.first{$0.name == name}
 	}
 	
 	public func light(_ device: LightDevice) -> Light {

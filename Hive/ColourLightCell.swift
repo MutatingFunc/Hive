@@ -73,9 +73,22 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 				? .colour(hue: colour, saturation: saturation, brightness: brightness)
 				: .white(temperature: colour, brightness: brightness)
 		self.setHighlighted(true, animated: true)
-		_ = self.light.setState(state) {[weak self] in
-			self?.setHighlighted(false, animated: true)
-			self?.loadingIndicator.stopAnimating()
+		_ = self.light.setState(state) {[weak self] response in
+			switch response {
+			case .success(_, _):
+				self?.endPerform()
+			case .error(let error, _):
+				if error as? ErrorResponse == ErrorResponse.notAuthorized {
+					ReauthenticationCoordinator.shared?.reauthenticate()
+				}
+				self?.nameLabel.flashError(error.localizedDescription) {[weak self] in
+					self?.endPerform()
+				}
+			}
 		}
+	}
+	private func endPerform() {
+		self.setHighlighted(false, animated: true)
+		self.loadingIndicator.stopAnimating()
 	}
 }

@@ -11,9 +11,12 @@ import UIKit
 import HiveShared
 
 class ReauthenticationCoordinator {
+	static var shared: ReauthenticationCoordinator?
+	
 	let navigationController: RootNav
 	init(navigationController: RootNav) {
 		self.navigationController = navigationController
+		ReauthenticationCoordinator.shared = self
 	}
 	
 	func authenticationController() -> UIViewController? {

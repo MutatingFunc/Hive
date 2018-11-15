@@ -8,7 +8,11 @@
 
 import Foundation
 
+#if canImport(HiveSharedWatch)
+import HiveSharedWatch
+#else
 import HiveShared
+#endif
 
 extension IntentHandler: PerformActionIntentHandling {
 	func confirm(intent: PerformActionIntent, completion: @escaping (PerformActionIntentResponse) -> Void) {
@@ -25,8 +29,13 @@ extension IntentHandler: PerformActionIntentHandling {
 					else {
 						return completion(.failure(actionName: intent.actionName!, error: deviceNotFoundError))
 				}
-				_ = action.quickAction {
-					completion(.success(actionName: intent.actionName!))
+				_ = action.quickAction {response in
+					switch response {
+					case .success(_, _):
+						completion(.success(actionName: intent.actionName!))
+					case .error(let error, _):
+						completion(.failure(actionName: intent.actionName!, error: error.localizedDescription))
+					}
 				}
 		},
 			failure: {error in

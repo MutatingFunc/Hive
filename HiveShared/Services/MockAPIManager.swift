@@ -26,23 +26,23 @@ public struct MockAPIManager: APIManaging {
 		return Progress(totalUnitCount: 0)
 	}
 	
-	public func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
-		completion()
+	public func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
+		completion(Response.success((), URLResponse()))
 		return Progress(totalUnitCount: 0)
 	}
 	
-	public func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
-		completion()
+	public func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
+		completion(Response.success((), URLResponse()))
 		return Progress(totalUnitCount: 0)
 	}
 	
-	public func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
-		completion()
+	public func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
+		completion(Response.success((), URLResponse()))
 		return Progress(totalUnitCount: 0)
 	}
 	
-	public func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping () -> ()) -> Progress {
-		completion()
+	public func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
+		completion(Response.success((), URLResponse()))
 		return Progress(totalUnitCount: 0)
 	}
 }

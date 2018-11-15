@@ -9,43 +9,55 @@
 import Foundation
 
 public protocol SettingsManaging {
-	var currentVersion: String {get}
-	var disableAPIWarning: Bool {get nonmutating set}
 	var favourites: Set<DeviceID> {get nonmutating set}
 }
 
-private let keyVersion = "currentVersion"
-private let keyAPIWarningDisabled = "APIWarning"
 private let keyFavourites = "favourites"
 
 public struct SettingsManager {
-	private let ud: UserDefaults
-	public init(userDefaults: UserDefaults = UserDefaults(suiteName: "group.James.Hive")!) {
-		self.ud = userDefaults
-		ud.register(defaults: [
-			keyVersion: "0",
-			keyAPIWarningDisabled: false
-		])
+	private let local: UserDefaults
+	#if os(iOS)
+	private let cloud: NSUbiquitousKeyValueStore
+	public init(cloud: NSUbiquitousKeyValueStore = .default, local: UserDefaults = UserDefaults(suiteName: "group.James.Hive")!) {
+		self.cloud = cloud; self.local = local
 	}
+	#else
+	public init(local: UserDefaults = UserDefaults(suiteName: "group.James.Hive")!) {
+		self.local = local
+	}
+	#endif
 }
 
 extension SettingsManager: SettingsManaging {
-	public var currentVersion: String {
-		return ud.string(forKey: keyVersion)!
-	}
-	public var disableAPIWarning: Bool {
-		get {return ud.bool(forKey: keyAPIWarningDisabled)}
-		nonmutating set {ud.set(newValue, forKey: keyAPIWarningDisabled)}
+	static var hasSynced = false
+	public func syncFromCloud(force: Bool = false) {
+		guard force || SettingsManager.hasSynced == false else {
+			return
+		}
+		#if os(iOS)
+		if let favourites = cloud.data(forKey: keyFavourites) {
+			local.set(favourites, forKey: keyFavourites)
+		}
+		#endif
+		SettingsManager.hasSynced = true
 	}
 	public var favourites: Set<DeviceID> {
-		get {return ud.data(forKey: keyFavourites).flatMap(Set<DeviceID>.init(data:)) ?? []}
+		get {
+			syncFromCloud()
+			return local.data(forKey: keyFavourites).flatMap(Set<DeviceID>.init(data:)) ?? []
+		}
 		nonmutating set {
+			syncFromCloud()
+			let json: Data
 			if newValue.count > 100 {
-				let newValue = Set(newValue.prefix(100))
-				ud.set(newValue.json(), forKey: keyFavourites)
+				json = Set(newValue.prefix(100)).json()
 			} else {
-				ud.set(newValue.json(), forKey: keyFavourites)
+				json = newValue.json()
 			}
+			local.set(json, forKey: keyFavourites)
+			#if os(iOS)
+			cloud.set(json, forKey: keyFavourites)
+			#endif
 		}
 	}
 }

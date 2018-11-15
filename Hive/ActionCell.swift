@@ -44,10 +44,23 @@ class ActionCell: UITableViewCell, ReuseIdentifiable {
 		actionButton.isEnabled = false
 		loadingIndicator.startAnimating()
 		self.setHighlighted(true, animated: true)
-		_ = action.quickAction {[weak self] in
-			self?.setHighlighted(false, animated: true)
-			self?.loadingIndicator.stopAnimating()
-			self?.actionButton.isEnabled = true
+		_ = action.quickAction {[weak self] response in
+			switch response {
+			case .success(_, _):
+				self?.endPerform()
+			case .error(let error, _):
+				if error as? ErrorResponse == ErrorResponse.notAuthorized {
+					ReauthenticationCoordinator.shared?.reauthenticate()
+				}
+				self?.nameLabel.flashError(error.localizedDescription) {[weak self] in
+					self?.endPerform()
+				}
+			}
 		}
+	}
+	private func endPerform() {
+		self.setHighlighted(false, animated: true)
+		self.loadingIndicator.stopAnimating()
+		self.actionButton.isEnabled = true
 	}
 }

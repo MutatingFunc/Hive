@@ -19,8 +19,8 @@ class ToggleCell: UITableViewCell, ReuseIdentifiable {
 	var toggle: Toggle! {
 		didSet {
 			nameLabel.text = toggle.device.name
-			self.isUserInteractionEnabled = toggle.device.isOn
 			nameLabel.textColor = UIColor(named: toggle.device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
+			isOnSwitch.isOn = toggle.device.isOn
 		}
 	}
 	
@@ -42,10 +42,23 @@ class ToggleCell: UITableViewCell, ReuseIdentifiable {
 		isOnSwitch.isEnabled = false
 		loadingIndicator.startAnimating()
 		self.setHighlighted(true, animated: true)
-		_ = toggle.setOn(isOnSwitch.isOn) {[weak self] in
-			self?.setHighlighted(false, animated: true)
-			self?.loadingIndicator.stopAnimating()
-			self?.isOnSwitch.isEnabled = true
+		_ = toggle.setOn(isOnSwitch.isOn) {[weak self] response in
+			switch response {
+				case .success(_, _):
+					self?.endPerform()
+				case .error(let error, _):
+					if error as? ErrorResponse == ErrorResponse.notAuthorized {
+						ReauthenticationCoordinator.shared?.reauthenticate()
+					}
+					self?.nameLabel.flashError(error.localizedDescription) {[weak self] in
+						self?.endPerform()
+					}
+			}
 		}
+	}
+	private func endPerform() {
+		self.setHighlighted(false, animated: true)
+		self.loadingIndicator.stopAnimating()
+		self.isOnSwitch.isEnabled = true
 	}
 }

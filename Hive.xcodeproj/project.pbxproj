@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0857868D5AF9BDD85C627ED9 /* Pods_HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7CE70752706D959C1233D5 /* Pods_HiveSharedWatch.framework */; };
 		1A132C632198827F00FC893B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FF224218F10AC00EAC20F /* Assets.xcassets */; };
 		1A1F26FB21974F7A000F7F0C /* ReauthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */; };
 		1A2069D92194F56800AF049F /* RootNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2069D82194F56800AF049F /* RootNav.swift */; };
 		1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
 		1A29E054218F54C000D0351F /* LightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E053218F54C000D0351F /* LightCell.swift */; };
 		1A29E05E218F6F1600D0351F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05D218F6F1600D0351F /* Colors.swift */; };
+		1A46693D2198A48700007772 /* HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; };
+		1A46693E2198A48700007772 /* HiveSharedWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A4669422198A49000007772 /* HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; };
+		1A4669432198A49000007772 /* HiveSharedWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A47E29F2198FEEC00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
+		1A47E2A12198FF0A00A7CD14 /* SetHSBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */; };
+		1A47E2A2219904CD00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
+		1A47E2A3219904CD00A7CD14 /* SetHSBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */; };
 		1A4FF21E218F10AC00EAC20F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF21D218F10AC00EAC20F /* AppDelegate.swift */; };
 		1A4FF220218F10AC00EAC20F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF21F218F10AC00EAC20F /* LoginController.swift */; };
 		1A4FF223218F10AC00EAC20F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FF221218F10AC00EAC20F /* Main.storyboard */; };
@@ -50,6 +59,14 @@
 		1AA753A0219761E5006DD878 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
 		1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */; };
 		1ADAE5B82198706700B443E2 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05F021986E1F00604961 /* Toggle.swift */; };
+		1ADBDE12219896EE008C9521 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBDE10219896EE008C9521 /* Interface.storyboard */; };
+		1ADBDE14219896EF008C9521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBDE13219896EF008C9521 /* Assets.xcassets */; };
+		1ADBDE1B219896EF008C9521 /* HiveWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1ADBDE20219896EF008C9521 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBDE1F219896EF008C9521 /* InterfaceController.swift */; };
+		1ADBDE22219896EF008C9521 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBDE21219896EF008C9521 /* ExtensionDelegate.swift */; };
+		1ADBDE24219896F0008C9521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBDE23219896F0008C9521 /* Assets.xcassets */; };
+		1ADBDE28219896F0008C9521 /* HiveWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1ADBDE0E219896EE008C9521 /* HiveWatch.app */; };
+		1ADBDE3C21989745008C9521 /* HiveIntentsWatch.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1ADBDE3521989745008C9521 /* HiveIntentsWatch.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1ADF05C32197AC0B00604961 /* PerformAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C22197AC0B00604961 /* PerformAction.swift */; };
 		1ADF05C52197AC1C00604961 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C42197AC1C00604961 /* SetBrightness.swift */; };
 		1ADF05C72197AC2300604961 /* ToggleLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C62197AC2300604961 /* ToggleLight.swift */; };
@@ -65,14 +82,60 @@
 		1ADF05ED21986CD200604961 /* ToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05EC21986CD200604961 /* ToggleCell.swift */; };
 		1AE141A6219768EB00913920 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
 		1AE141A7219768EB00913920 /* HiveShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AF6B4D4219870BB00F1EFBA /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
+		1AFE73B22198979E00AA1747 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536121975861006DD878 /* IntentHandler.swift */; };
+		1AFE73B32198979E00AA1747 /* PerformAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C22197AC0B00604961 /* PerformAction.swift */; };
+		1AFE73B42198979E00AA1747 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C42197AC1C00604961 /* SetBrightness.swift */; };
+		1AFE73B52198979E00AA1747 /* ToggleLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C62197AC2300604961 /* ToggleLight.swift */; };
+		1AFE73CA2198980800AA1747 /* HiveSharedWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AFE73C82198980800AA1747 /* HiveSharedWatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AFE73D32198981900AA1747 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF25A218F11CD00EAC20F /* Shared.swift */; };
+		1AFE73D52198981900AA1747 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05CA21983C4E00604961 /* Debug.swift */; };
+		1AFE73D62198981900AA1747 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF255218F118700EAC20F /* SettingsManager.swift */; };
+		1AFE73D72198981900AA1747 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF257218F11AB00EAC20F /* RequestHandler.swift */; };
+		1AFE73D82198981900AA1747 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF25C218F120000EAC20F /* APIManager.swift */; };
+		1AFE73D92198981900AA1747 /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C821983A1300604961 /* MockAPIManager.swift */; };
+		1AFE73DA2198981900AA1747 /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E059218F5A4E00D0351F /* LoginCredentials.swift */; };
+		1AFE73DB2198981900AA1747 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24E218F114F00EAC20F /* ErrorResponse.swift */; };
+		1AFE73DC2198981900AA1747 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24D218F114F00EAC20F /* LoginRequest.swift */; };
+		1AFE73DD2198981900AA1747 /* SetBrightnessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF24F218F114F00EAC20F /* SetBrightnessRequest.swift */; };
+		1AFE73DE2198981900AA1747 /* ActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE52190FC3F00DC21EB /* ActionRequest.swift */; };
+		1AFE73DF2198981900AA1747 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF261218F19F600EAC20F /* Devices.swift */; };
+		1AFE73E02198981900AA1747 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF265218F238E00EAC20F /* Login.swift */; };
+		1AFE73E12198981900AA1747 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FF26B218F35BC00EAC20F /* DeviceList.swift */; };
+		1AFE73E22198981900AA1747 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05F021986E1F00604961 /* Toggle.swift */; };
+		1AFE73E32198981900AA1747 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05B218F6BCB00D0351F /* Light.swift */; };
+		1AFE73E42198981900AA1747 /* ColourLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C3512190DDBC004882E9 /* ColourLight.swift */; };
+		1AFE73E52198981900AA1747 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE92191036F00DC21EB /* Action.swift */; };
+		1AFE73E72198981F00AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		1AFE73E82198981F00AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		1AFE73E92198982000AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		1AFE73EA2198982F00AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		1AFE73F02198984F00AA1747 /* HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; };
+		1AFE73F2219899FA00AA1747 /* SharediOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE73F1219899FA00AA1747 /* SharediOS.swift */; };
+		1AFE73F721989C7800AA1747 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
 		1D33445D7F2589B520764EB1 /* Pods_HiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */; };
 		1E478013AA1D138523CAFB8F /* Pods_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */; };
+		37921F89AEF38D72C9FBA7A8 /* Pods_HiveWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A19AAC299E63AA42A59C2 /* Pods_HiveWatch.framework */; };
+		79EBD51EA8F6BEF30D5851B0 /* Pods_HiveWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E2A92D33D59FFA459B3CCB /* Pods_HiveWatch_Extension.framework */; };
+		99ADC7CFCC68C46664321C0D /* Pods_HiveIntentsWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181FD52DDD022284AB6DA1E /* Pods_HiveIntentsWatch.framework */; };
 		9FF1639AE0071C426064AA19 /* Pods_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA753A421976388006DD878 /* Pods_Hive.framework */; };
 		C0DF9239130A902BC8EA2F00 /* Pods_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1A46693F2198A48700007772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AFE73C52198980800AA1747;
+			remoteInfo = HiveSharedWatch;
+		};
+		1A4669442198A49000007772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AFE73C52198980800AA1747;
+			remoteInfo = HiveSharedWatch;
+		};
 		1A4FF22F218F10AC00EAC20F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
@@ -108,6 +171,27 @@
 			remoteGlobalIDString = 1A4FF219218F10AC00EAC20F;
 			remoteInfo = Hive;
 		};
+		1ADBDE1C219896EF008C9521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ADBDE19219896EF008C9521;
+			remoteInfo = "HiveWatch Extension";
+		};
+		1ADBDE26219896F0008C9521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ADBDE0D219896EE008C9521;
+			remoteInfo = HiveWatch;
+		};
+		1ADBDE3A21989745008C9521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ADBDE3421989745008C9521;
+			remoteInfo = HiveIntentsWatch;
+		};
 		1ADF05DF2198641000604961 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
@@ -125,6 +209,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1A4669412198A48700007772 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A46693E2198A48700007772 /* HiveSharedWatch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4669462198A49000007772 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A4669432198A49000007772 /* HiveSharedWatch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1AA7536A21975861006DD878 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +239,39 @@
 			files = (
 				1ADF05E12198641000604961 /* HiveWidget.appex in Embed App Extensions */,
 				1AA7536621975861006DD878 /* HiveIntents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADBDE2E219896F0008C9521 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1ADBDE1B219896EF008C9521 /* HiveWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADBDE30219896F0008C9521 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1ADBDE28219896F0008C9521 /* HiveWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADBDE4021989745008C9521 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1ADBDE3C21989745008C9521 /* HiveIntentsWatch.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +290,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0181FD52DDD022284AB6DA1E /* Pods_HiveIntentsWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveIntentsWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveIntents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationCoordinator.swift; sourceTree = "<group>"; };
@@ -162,6 +302,10 @@
 		1A29E059218F5A4E00D0351F /* LoginCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
 		1A29E05B218F6BCB00D0351F /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		1A29E05D218F6F1600D0351F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1A46692E21989F5F00007772 /* HiveIntentsWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveIntentsWatch.entitlements; sourceTree = "<group>"; };
+		1A46692F21989F6E00007772 /* HiveWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveWatch.entitlements; sourceTree = "<group>"; };
+		1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOnRequest.swift; sourceTree = "<group>"; };
+		1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHSBRequest.swift; sourceTree = "<group>"; };
 		1A4FF21A218F10AC00EAC20F /* Hive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4FF21D218F10AC00EAC20F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A4FF21F218F10AC00EAC20F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -204,8 +348,20 @@
 		1AA75383219760D5006DD878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA753A421976388006DD878 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA753AB219763AF006DD878 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD75E382198AC0B00BB8531 /* HiveWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HiveWatch Extension.entitlements"; sourceTree = "<group>"; };
 		1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLightCell.swift; sourceTree = "<group>"; };
 		1AD9C3512190DDBC004882E9 /* ColourLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLight.swift; sourceTree = "<group>"; };
+		1ADBDE0E219896EE008C9521 /* HiveWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiveWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ADBDE11219896EE008C9521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		1ADBDE13219896EF008C9521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1ADBDE15219896EF008C9521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HiveWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ADBDE1F219896EF008C9521 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		1ADBDE21219896EF008C9521 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		1ADBDE23219896F0008C9521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1ADBDE25219896F0008C9521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ADBDE3521989745008C9521 /* HiveIntentsWatch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HiveIntentsWatch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ADBDE3921989745008C9521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ADF05C22197AC0B00604961 /* PerformAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformAction.swift; sourceTree = "<group>"; };
 		1ADF05C42197AC1C00604961 /* SetBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBrightness.swift; sourceTree = "<group>"; };
 		1ADF05C62197AC2300604961 /* ToggleLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLight.swift; sourceTree = "<group>"; };
@@ -219,13 +375,30 @@
 		1ADF05EA2198673E00604961 /* HiveWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveWidget.entitlements; sourceTree = "<group>"; };
 		1ADF05EC21986CD200604961 /* ToggleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCell.swift; sourceTree = "<group>"; };
 		1ADF05F021986E1F00604961 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
+		1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HiveSharedWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AFE73C82198980800AA1747 /* HiveSharedWatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiveSharedWatch.h; sourceTree = "<group>"; };
+		1AFE73C92198980800AA1747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AFE73F1219899FA00AA1747 /* SharediOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharediOS.swift; sourceTree = "<group>"; };
+		1AFE73F321989BDC00AA1747 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AFE73F521989BE600AA1747 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F7CE70752706D959C1233D5 /* Pods_HiveSharedWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveSharedWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		208A2D617D51A2E1D4A9FCAC /* Pods-HiveWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		226B9A16EACC714D527DAA03 /* Pods-HiveSharedWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveSharedWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveSharedWatch/Pods-HiveSharedWatch.release.xcconfig"; sourceTree = "<group>"; };
+		2504B70A82E1442EFDA0414C /* Pods-HiveWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch/Pods-HiveWatch.release.xcconfig"; sourceTree = "<group>"; };
+		381A112DBF33F66EF0C9676F /* Pods-HiveSharedWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveSharedWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveSharedWatch/Pods-HiveSharedWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0FA1F13AC95DF9B5F364C7 /* Pods-HiveShared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.release.xcconfig"; sourceTree = "<group>"; };
+		7C50A8B5BD6165BB89EB6F9B /* Pods-HiveIntentsWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntentsWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntentsWatch/Pods-HiveIntentsWatch.release.xcconfig"; sourceTree = "<group>"; };
 		8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWidget/Pods-HiveWidget.release.xcconfig"; sourceTree = "<group>"; };
+		90E2A92D33D59FFA459B3CCB /* Pods_HiveWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95E6DBC97985339584606B72 /* Pods-HiveWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch/Pods-HiveWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		995A19AAC299E63AA42A59C2 /* Pods_HiveWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3C2B077373D686C702D3BF1 /* Pods-HiveWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		B458DB081403984B608DCA0D /* Pods-Hive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.release.xcconfig"; sourceTree = "<group>"; };
 		B4CCABDAD85BD9963974DB5C /* Pods-HiveIntents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntents.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntents/Pods-HiveIntents.release.xcconfig"; sourceTree = "<group>"; };
 		BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4498F9BA3F725A8B9475D41 /* Pods-HiveShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.debug.xcconfig"; sourceTree = "<group>"; };
+		C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntentsWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntentsWatch/Pods-HiveIntentsWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		D85C1062FB167AE910EEEE70 /* Pods-HiveIntents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntents/Pods-HiveIntents.debug.xcconfig"; sourceTree = "<group>"; };
 		ED6A0ABABC83F921D16A6739 /* Pods-Hive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.debug.xcconfig"; sourceTree = "<group>"; };
 		EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWidget/Pods-HiveWidget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,13 +453,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1ADBDE17219896EF008C9521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A46693D2198A48700007772 /* HiveSharedWatch.framework in Frameworks */,
+				79EBD51EA8F6BEF30D5851B0 /* Pods_HiveWatch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADBDE3221989745008C9521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFE73F02198984F00AA1747 /* HiveSharedWatch.framework in Frameworks */,
+				99ADC7CFCC68C46664321C0D /* Pods_HiveIntentsWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1ADF05D22198641000604961 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF6B4D4219870BB00F1EFBA /* HiveShared.framework in Frameworks */,
+				1AFE73F721989C7800AA1747 /* HiveShared.framework in Frameworks */,
 				1ADF05D72198641000604961 /* NotificationCenter.framework in Frameworks */,
 				1D33445D7F2589B520764EB1 /* Pods_HiveWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AFE73C32198980800AA1747 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0857868D5AF9BDD85C627ED9 /* Pods_HiveSharedWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD42EADE8A6D5258F819666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37921F89AEF38D72C9FBA7A8 /* Pods_HiveWatch.framework in Frameworks */,
+				1A4669422198A49000007772 /* HiveSharedWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +504,8 @@
 		0C58F654298F32AE4EEE8CE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AFE73F521989BE600AA1747 /* Alamofire.framework */,
+				1AFE73F321989BDC00AA1747 /* Alamofire.framework */,
 				1A6334E22197660D003DF783 /* Alamofire.framework */,
 				1AA753AB219763AF006DD878 /* Alamofire.framework */,
 				1AA753A421976388006DD878 /* Pods_Hive.framework */,
@@ -304,6 +514,10 @@
 				1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */,
 				1ADF05D62198641000604961 /* NotificationCenter.framework */,
 				0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */,
+				0181FD52DDD022284AB6DA1E /* Pods_HiveIntentsWatch.framework */,
+				995A19AAC299E63AA42A59C2 /* Pods_HiveWatch.framework */,
+				1F7CE70752706D959C1233D5 /* Pods_HiveSharedWatch.framework */,
+				90E2A92D33D59FFA459B3CCB /* Pods_HiveWatch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,6 +532,10 @@
 				1A4FF23C218F10AD00EAC20F /* HiveUITests */,
 				1AA7536021975861006DD878 /* HiveIntents */,
 				1ADF05D82198641000604961 /* HiveWidget */,
+				1ADBDE0F219896EE008C9521 /* HiveWatch */,
+				1ADBDE1E219896EF008C9521 /* HiveWatch Extension */,
+				1ADBDE3621989745008C9521 /* HiveIntentsWatch */,
+				1AFE73C72198980800AA1747 /* HiveSharedWatch */,
 				1A4FF21B218F10AC00EAC20F /* Products */,
 				5564316D821E49033B630B0E /* Pods */,
 				0C58F654298F32AE4EEE8CE4 /* Frameworks */,
@@ -334,6 +552,10 @@
 				1AA75372219760D5006DD878 /* HiveShared.framework */,
 				1AA7537A219760D5006DD878 /* HiveSharedTests.xctest */,
 				1ADF05D52198641000604961 /* HiveWidget.appex */,
+				1ADBDE0E219896EE008C9521 /* HiveWatch.app */,
+				1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */,
+				1ADBDE3521989745008C9521 /* HiveIntentsWatch.appex */,
+				1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -384,7 +606,9 @@
 			children = (
 				1A4FF24E218F114F00EAC20F /* ErrorResponse.swift */,
 				1A4FF24D218F114F00EAC20F /* LoginRequest.swift */,
+				1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */,
 				1A4FF24F218F114F00EAC20F /* SetBrightnessRequest.swift */,
+				1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */,
 				1AA41EE52190FC3F00DC21EB /* ActionRequest.swift */,
 			);
 			path = API;
@@ -442,6 +666,7 @@
 			children = (
 				1AA7536B21975A39006DD878 /* Intents.intentdefinition */,
 				1A4FF25A218F11CD00EAC20F /* Shared.swift */,
+				1AFE73F1219899FA00AA1747 /* SharediOS.swift */,
 				1A29E057218F57EA00D0351F /* Reuseable.swift */,
 				1ADF05CA21983C4E00604961 /* Debug.swift */,
 				1A4FF254218F117C00EAC20F /* Services */,
@@ -462,6 +687,38 @@
 			path = HiveSharedTests;
 			sourceTree = "<group>";
 		};
+		1ADBDE0F219896EE008C9521 /* HiveWatch */ = {
+			isa = PBXGroup;
+			children = (
+				1A46692F21989F6E00007772 /* HiveWatch.entitlements */,
+				1ADBDE10219896EE008C9521 /* Interface.storyboard */,
+				1ADBDE13219896EF008C9521 /* Assets.xcassets */,
+				1ADBDE15219896EF008C9521 /* Info.plist */,
+			);
+			path = HiveWatch;
+			sourceTree = "<group>";
+		};
+		1ADBDE1E219896EF008C9521 /* HiveWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1AD75E382198AC0B00BB8531 /* HiveWatch Extension.entitlements */,
+				1ADBDE1F219896EF008C9521 /* InterfaceController.swift */,
+				1ADBDE21219896EF008C9521 /* ExtensionDelegate.swift */,
+				1ADBDE23219896F0008C9521 /* Assets.xcassets */,
+				1ADBDE25219896F0008C9521 /* Info.plist */,
+			);
+			path = "HiveWatch Extension";
+			sourceTree = "<group>";
+		};
+		1ADBDE3621989745008C9521 /* HiveIntentsWatch */ = {
+			isa = PBXGroup;
+			children = (
+				1A46692E21989F5F00007772 /* HiveIntentsWatch.entitlements */,
+				1ADBDE3921989745008C9521 /* Info.plist */,
+			);
+			path = HiveIntentsWatch;
+			sourceTree = "<group>";
+		};
 		1ADF05D82198641000604961 /* HiveWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +729,15 @@
 				1ADF05DE2198641000604961 /* Info.plist */,
 			);
 			path = HiveWidget;
+			sourceTree = "<group>";
+		};
+		1AFE73C72198980800AA1747 /* HiveSharedWatch */ = {
+			isa = PBXGroup;
+			children = (
+				1AFE73C82198980800AA1747 /* HiveSharedWatch.h */,
+				1AFE73C92198980800AA1747 /* Info.plist */,
+			);
+			path = HiveSharedWatch;
 			sourceTree = "<group>";
 		};
 		5564316D821E49033B630B0E /* Pods */ = {
@@ -485,6 +751,14 @@
 				B4CCABDAD85BD9963974DB5C /* Pods-HiveIntents.release.xcconfig */,
 				EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */,
 				8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */,
+				C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */,
+				7C50A8B5BD6165BB89EB6F9B /* Pods-HiveIntentsWatch.release.xcconfig */,
+				95E6DBC97985339584606B72 /* Pods-HiveWatch.debug.xcconfig */,
+				2504B70A82E1442EFDA0414C /* Pods-HiveWatch.release.xcconfig */,
+				381A112DBF33F66EF0C9676F /* Pods-HiveSharedWatch.debug.xcconfig */,
+				226B9A16EACC714D527DAA03 /* Pods-HiveSharedWatch.release.xcconfig */,
+				B3C2B077373D686C702D3BF1 /* Pods-HiveWatch Extension.debug.xcconfig */,
+				208A2D617D51A2E1D4A9FCAC /* Pods-HiveWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -497,6 +771,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA75384219760D5006DD878 /* HiveShared.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AFE73C12198980800AA1747 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFE73CA2198980800AA1747 /* HiveSharedWatch.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +796,7 @@
 				30AD29594EB80FB655F40A9D /* [CP] Embed Pods Frameworks */,
 				1AA7536A21975861006DD878 /* Embed App Extensions */,
 				1AE141AA219768EB00913920 /* Embed Frameworks */,
+				1ADBDE30219896F0008C9521 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -521,6 +804,7 @@
 				1AA7536521975861006DD878 /* PBXTargetDependency */,
 				1AE141A9219768EB00913920 /* PBXTargetDependency */,
 				1ADF05E02198641000604961 /* PBXTargetDependency */,
+				1ADBDE27219896F0008C9521 /* PBXTargetDependency */,
 			);
 			name = Hive;
 			productName = Hive;
@@ -619,6 +903,68 @@
 			productReference = 1AA7537A219760D5006DD878 /* HiveSharedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1ADBDE0D219896EE008C9521 /* HiveWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ADBDE2F219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch" */;
+			buildPhases = (
+				FD498199B2400F54CD9EC95E /* [CP] Check Pods Manifest.lock */,
+				1ADBDE0C219896EE008C9521 /* Resources */,
+				1ADBDE2E219896F0008C9521 /* Embed App Extensions */,
+				7AD42EADE8A6D5258F819666 /* Frameworks */,
+				1A4669462198A49000007772 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ADBDE1D219896EF008C9521 /* PBXTargetDependency */,
+				1A4669452198A49000007772 /* PBXTargetDependency */,
+			);
+			name = HiveWatch;
+			productName = HiveWatch;
+			productReference = 1ADBDE0E219896EE008C9521 /* HiveWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1ADBDE19219896EF008C9521 /* HiveWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ADBDE2D219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch Extension" */;
+			buildPhases = (
+				0DF397AFA5563CB3D80F5775 /* [CP] Check Pods Manifest.lock */,
+				1ADBDE16219896EF008C9521 /* Sources */,
+				1ADBDE17219896EF008C9521 /* Frameworks */,
+				1ADBDE18219896EF008C9521 /* Resources */,
+				1ADBDE4021989745008C9521 /* Embed App Extensions */,
+				1A4669412198A48700007772 /* Embed Frameworks */,
+				8A8D0F0A466C9F7AE745FDEF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ADBDE3B21989745008C9521 /* PBXTargetDependency */,
+				1A4669402198A48700007772 /* PBXTargetDependency */,
+			);
+			name = "HiveWatch Extension";
+			productName = "HiveWatch Extension";
+			productReference = 1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		1ADBDE3421989745008C9521 /* HiveIntentsWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ADBDE3D21989745008C9521 /* Build configuration list for PBXNativeTarget "HiveIntentsWatch" */;
+			buildPhases = (
+				BE2FD33A06BFF9EBF3853C72 /* [CP] Check Pods Manifest.lock */,
+				1ADBDE3121989745008C9521 /* Sources */,
+				1ADBDE3221989745008C9521 /* Frameworks */,
+				1ADBDE3321989745008C9521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HiveIntentsWatch;
+			productName = HiveIntentsWatch;
+			productReference = 1ADBDE3521989745008C9521 /* HiveIntentsWatch.appex */;
+			productType = "com.apple.product-type.app-extension.intents-service";
+		};
 		1ADF05D42198641000604961 /* HiveWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ADF05E22198641000604961 /* Build configuration list for PBXNativeTarget "HiveWidget" */;
@@ -636,6 +982,25 @@
 			productName = HiveWidget;
 			productReference = 1ADF05D52198641000604961 /* HiveWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		1AFE73C52198980800AA1747 /* HiveSharedWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AFE73CF2198980800AA1747 /* Build configuration list for PBXNativeTarget "HiveSharedWatch" */;
+			buildPhases = (
+				94F284210390D1C44268B47F /* [CP] Check Pods Manifest.lock */,
+				1AFE73C12198980800AA1747 /* Headers */,
+				1AFE73C22198980800AA1747 /* Sources */,
+				1AFE73C32198980800AA1747 /* Frameworks */,
+				1AFE73C42198980800AA1747 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HiveSharedWatch;
+			productName = HiveSharedWatch;
+			productReference = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -656,7 +1021,13 @@
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 0;
+							};
 							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -678,6 +1049,12 @@
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					1AA75371219760D5006DD878 = {
@@ -686,6 +1063,51 @@
 					1AA75379219760D5006DD878 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 1A4FF219218F10AC00EAC20F;
+					};
+					1ADBDE0D219896EE008C9521 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					1ADBDE19219896EF008C9521 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					1ADBDE3421989745008C9521 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					1ADF05D42198641000604961 = {
 						CreatedOnToolsVersion = 10.1;
@@ -696,7 +1118,16 @@
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
+					};
+					1AFE73C52198980800AA1747 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -720,6 +1151,10 @@
 				1AA75371219760D5006DD878 /* HiveShared */,
 				1AA75379219760D5006DD878 /* HiveSharedTests */,
 				1ADF05D42198641000604961 /* HiveWidget */,
+				1ADBDE0D219896EE008C9521 /* HiveWatch */,
+				1ADBDE19219896EF008C9521 /* HiveWatch Extension */,
+				1ADBDE3421989745008C9521 /* HiveIntentsWatch */,
+				1AFE73C52198980800AA1747 /* HiveSharedWatch */,
 			);
 		};
 /* End PBXProject section */
@@ -770,6 +1205,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1ADBDE0C219896EE008C9521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ADBDE14219896EF008C9521 /* Assets.xcassets in Resources */,
+				1ADBDE12219896EE008C9521 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADBDE18219896EF008C9521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ADBDE24219896F0008C9521 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADBDE3321989745008C9521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1ADF05D32198641000604961 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -779,9 +1238,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1AFE73C42198980800AA1747 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0DF397AFA5563CB3D80F5775 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiveWatch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		30AD29594EB80FB655F40A9D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -789,7 +1273,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Hive/Pods-Hive-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -818,6 +1302,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8A8D0F0A466C9F7AE745FDEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-watchOS/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		921DDF324109CA98E04AD3B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -830,6 +1332,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-HiveShared-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94F284210390D1C44268B47F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiveSharedWatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -866,6 +1386,42 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-HiveIntents-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE2FD33A06BFF9EBF3853C72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiveIntentsWatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD498199B2400F54CD9EC95E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HiveWatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -928,6 +1484,7 @@
 			files = (
 				1AA7539C2197615B006DD878 /* DeviceList.swift in Sources */,
 				1AA753952197613A006DD878 /* LoginCredentials.swift in Sources */,
+				1A47E2A12198FF0A00A7CD14 /* SetHSBRequest.swift in Sources */,
 				1ADF05C921983A1300604961 /* MockAPIManager.swift in Sources */,
 				1A7D778F21976C930055657D /* Intents.intentdefinition in Sources */,
 				1AA75391219760EA006DD878 /* Reuseable.swift in Sources */,
@@ -936,6 +1493,7 @@
 				1AA7539F2197615B006DD878 /* Action.swift in Sources */,
 				1ADF05CC21983D3200604961 /* Debug.swift in Sources */,
 				1AA7539921976142006DD878 /* ActionRequest.swift in Sources */,
+				1AFE73F2219899FA00AA1747 /* SharediOS.swift in Sources */,
 				1AA7539A21976155006DD878 /* Devices.swift in Sources */,
 				1AA753942197613A006DD878 /* APIManager.swift in Sources */,
 				1AA7539E2197615B006DD878 /* ColourLight.swift in Sources */,
@@ -946,6 +1504,7 @@
 				1ADAE5B82198706700B443E2 /* Toggle.swift in Sources */,
 				1AA7539D2197615B006DD878 /* Light.swift in Sources */,
 				1AA7539821976142006DD878 /* SetBrightnessRequest.swift in Sources */,
+				1A47E29F2198FEEC00A7CD14 /* SetOnRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,10 +1516,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1ADBDE16219896EF008C9521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFE73E72198981F00AA1747 /* Intents.intentdefinition in Sources */,
+				1ADBDE22219896EF008C9521 /* ExtensionDelegate.swift in Sources */,
+				1ADBDE20219896EF008C9521 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ADBDE3121989745008C9521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFE73B22198979E00AA1747 /* IntentHandler.swift in Sources */,
+				1AFE73B42198979E00AA1747 /* SetBrightness.swift in Sources */,
+				1AFE73B52198979E00AA1747 /* ToggleLight.swift in Sources */,
+				1AFE73E82198981F00AA1747 /* Intents.intentdefinition in Sources */,
+				1AFE73B32198979E00AA1747 /* PerformAction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1ADF05D12198641000604961 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFE73EA2198982F00AA1747 /* Intents.intentdefinition in Sources */,
 				1ADF05E9219865D500604961 /* Colors.swift in Sources */,
 				1ADF05E82198659F00604961 /* ActionCell.swift in Sources */,
 				1ADF05DA2198641000604961 /* TodayViewController.swift in Sources */,
@@ -969,9 +1551,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1AFE73C22198980800AA1747 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFE73E12198981900AA1747 /* DeviceList.swift in Sources */,
+				1AFE73E52198981900AA1747 /* Action.swift in Sources */,
+				1AFE73DA2198981900AA1747 /* LoginCredentials.swift in Sources */,
+				1A47E2A2219904CD00A7CD14 /* SetOnRequest.swift in Sources */,
+				1AFE73E42198981900AA1747 /* ColourLight.swift in Sources */,
+				1AFE73E32198981900AA1747 /* Light.swift in Sources */,
+				1AFE73DE2198981900AA1747 /* ActionRequest.swift in Sources */,
+				1A47E2A3219904CD00A7CD14 /* SetHSBRequest.swift in Sources */,
+				1AFE73D92198981900AA1747 /* MockAPIManager.swift in Sources */,
+				1AFE73D82198981900AA1747 /* APIManager.swift in Sources */,
+				1AFE73DD2198981900AA1747 /* SetBrightnessRequest.swift in Sources */,
+				1AFE73DC2198981900AA1747 /* LoginRequest.swift in Sources */,
+				1AFE73D62198981900AA1747 /* SettingsManager.swift in Sources */,
+				1AFE73E02198981900AA1747 /* Login.swift in Sources */,
+				1AFE73E22198981900AA1747 /* Toggle.swift in Sources */,
+				1AFE73DF2198981900AA1747 /* Devices.swift in Sources */,
+				1AFE73D72198981900AA1747 /* RequestHandler.swift in Sources */,
+				1AFE73DB2198981900AA1747 /* ErrorResponse.swift in Sources */,
+				1AFE73D52198981900AA1747 /* Debug.swift in Sources */,
+				1AFE73E92198982000AA1747 /* Intents.intentdefinition in Sources */,
+				1AFE73D32198981900AA1747 /* Shared.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1A4669402198A48700007772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AFE73C52198980800AA1747 /* HiveSharedWatch */;
+			targetProxy = 1A46693F2198A48700007772 /* PBXContainerItemProxy */;
+		};
+		1A4669452198A49000007772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AFE73C52198980800AA1747 /* HiveSharedWatch */;
+			targetProxy = 1A4669442198A49000007772 /* PBXContainerItemProxy */;
+		};
 		1A4FF230218F10AC00EAC20F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1A4FF219218F10AC00EAC20F /* Hive */;
@@ -996,6 +1616,21 @@
 			isa = PBXTargetDependency;
 			target = 1A4FF219218F10AC00EAC20F /* Hive */;
 			targetProxy = 1AA7537E219760D5006DD878 /* PBXContainerItemProxy */;
+		};
+		1ADBDE1D219896EF008C9521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ADBDE19219896EF008C9521 /* HiveWatch Extension */;
+			targetProxy = 1ADBDE1C219896EF008C9521 /* PBXContainerItemProxy */;
+		};
+		1ADBDE27219896F0008C9521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ADBDE0D219896EE008C9521 /* HiveWatch */;
+			targetProxy = 1ADBDE26219896F0008C9521 /* PBXContainerItemProxy */;
+		};
+		1ADBDE3B21989745008C9521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ADBDE3421989745008C9521 /* HiveIntentsWatch */;
+			targetProxy = 1ADBDE3A21989745008C9521 /* PBXContainerItemProxy */;
 		};
 		1ADF05E02198641000604961 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1024,6 +1659,14 @@
 				1A4FF227218F10AC00EAC20F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1ADBDE10219896EE008C9521 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1ADBDE11219896EE008C9521 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		1ADF05DB2198641000604961 /* MainInterface.storyboard */ = {
@@ -1419,6 +2062,152 @@
 			};
 			name = Release;
 		};
+		1ADBDE29219896F0008C9521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95E6DBC97985339584606B72 /* Pods-HiveWatch.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiveWatch/HiveWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				IBSC_MODULE = HiveWatch_Extension;
+				INFOPLIST_FILE = HiveWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		1ADBDE2A219896F0008C9521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2504B70A82E1442EFDA0414C /* Pods-HiveWatch.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiveWatch/HiveWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				IBSC_MODULE = HiveWatch_Extension;
+				INFOPLIST_FILE = HiveWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		1ADBDE2B219896F0008C9521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3C2B077373D686C702D3BF1 /* Pods-HiveWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HiveWatch Extension/HiveWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				INFOPLIST_FILE = "HiveWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		1ADBDE2C219896F0008C9521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 208A2D617D51A2E1D4A9FCAC /* Pods-HiveWatch Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HiveWatch Extension/HiveWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				INFOPLIST_FILE = "HiveWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		1ADBDE3E21989745008C9521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HiveIntentsWatch/HiveIntentsWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				INFOPLIST_FILE = HiveIntentsWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp.watchkitextension.HiveIntentsWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		1ADBDE3F21989745008C9521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C50A8B5BD6165BB89EB6F9B /* Pods-HiveIntentsWatch.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HiveIntentsWatch/HiveIntentsWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				INFOPLIST_FILE = HiveIntentsWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp.watchkitextension.HiveIntentsWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
 		1ADF05E32198641000604961 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */;
@@ -1458,6 +2247,70 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1AFE73D02198980800AA1747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 381A112DBF33F66EF0C9676F /* Pods-HiveSharedWatch.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HiveSharedWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.HiveSharedWatch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		1AFE73D12198980800AA1747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 226B9A16EACC714D527DAA03 /* Pods-HiveSharedWatch.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VKFDYMU9HJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HiveSharedWatch/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = James.HiveSharedWatch;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};
@@ -1527,11 +2380,47 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1ADBDE2D219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ADBDE2B219896F0008C9521 /* Debug */,
+				1ADBDE2C219896F0008C9521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ADBDE2F219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ADBDE29219896F0008C9521 /* Debug */,
+				1ADBDE2A219896F0008C9521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ADBDE3D21989745008C9521 /* Build configuration list for PBXNativeTarget "HiveIntentsWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ADBDE3E21989745008C9521 /* Debug */,
+				1ADBDE3F21989745008C9521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1ADF05E22198641000604961 /* Build configuration list for PBXNativeTarget "HiveWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ADF05E32198641000604961 /* Debug */,
 				1ADF05E42198641000604961 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AFE73CF2198980800AA1747 /* Build configuration list for PBXNativeTarget "HiveSharedWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AFE73D02198980800AA1747 /* Debug */,
+				1AFE73D12198980800AA1747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

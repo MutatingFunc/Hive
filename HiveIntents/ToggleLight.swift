@@ -8,7 +8,11 @@
 
 import Foundation
 
+#if canImport(HiveSharedWatch)
+import HiveSharedWatch
+#else
 import HiveShared
+#endif
 
 extension IntentHandler: ToggleLightIntentHandling {
 	func confirm(intent: ToggleLightIntent, completion: @escaping (ToggleLightIntentResponse) -> Void) {
@@ -25,8 +29,13 @@ extension IntentHandler: ToggleLightIntentHandling {
 					else {
 						return completion(.failure(lightName: intent.lightName!, state: intent.state, error: deviceNotFoundError))
 				}
-				_ = light.setOn(intent.state == .on) {
-					completion(.success(state: intent.state, lightName: intent.lightName!))
+				_ = light.setOn(intent.state == .on) {response in
+					switch response {
+					case .success(_, _):
+						completion(.success(state: intent.state, lightName: intent.lightName!))
+					case .error(let error, _):
+						completion(.failure(lightName: intent.lightName!, state: intent.state, error: error.localizedDescription))
+					}
 				}
 		},
 			failure: {error in

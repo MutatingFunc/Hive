@@ -11,6 +11,10 @@ import NotificationCenter
 
 import HiveShared
 
+struct ReauthenticationCoordinator {
+	static var shared: ReauthenticationCoordinator?
+	func reauthenticate() {}
+}
 class TodayViewController: UIViewController, NCWidgetProviding {
 	@IBOutlet private var tableView: UITableView!
 	@IBOutlet private var failureLabel: UILabel!
@@ -29,6 +33,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
 	var devices: [Device] = [] {
 		didSet {
+			self.extensionContext?.widgetLargestAvailableDisplayMode = self.devices.count > 1 ? .expanded : .compact
 			if self.isViewLoaded {
 				self.tableView.reloadData()
 				self.preferredContentSize = tableView.contentSize
@@ -37,17 +42,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	}
 	
 	func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-		self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
 		self.failureLabel.isHidden = true
 		self.tableView.isHidden = true
 		self.tryGetDevices(
 			success: {deviceList in
 				self.deviceList = deviceList
-				print("Success")
-				completionHandler(.newData)
+				completionHandler(self.devices.isEmpty ? .noData : .newData)
 			},
 			failure: {error in
-				print("Error: \(error)")
 				self.failureLabel.isHidden = false
 				self.failureLabel.text = error.localizedDescription
 				completionHandler(.failed)
@@ -65,12 +67,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 			_ = login.login(credentials: try .savedCredentials()) {response in
 				switch response {
 				case .success(let loginInfo, _):
+					print("Success")
 					success(DeviceList(loginInfo: loginInfo))
 				case .error(let error, _):
+					print("Failure: \(error)")
 					failure(error)
 				}
 			}
 		} catch {
+			print("Failure: \(error)")
 			failure(error)
 		}
 	}
@@ -82,7 +87,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
 			return 0
 		}
 		if self.extensionContext?.widgetActiveDisplayMode == .compact {
-			return self.devices.isEmpty ? 0 : 1
+			return min(2, self.devices.count)
 		}
 		return self.devices.count
 	}

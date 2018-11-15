@@ -8,7 +8,11 @@
 
 import Intents
 
+#if canImport(HiveSharedWatch)
+import HiveSharedWatch
+#else
 import HiveShared
+#endif
 
 let deviceNotFoundError = "Device not found"
 
@@ -27,12 +31,15 @@ class IntentHandler: INExtension {
 			_ = login.login(credentials: try .savedCredentials(), contentType: contentType) {response in
 				switch response {
 				case .success(let loginInfo, _):
+					print("Success")
 					success(DeviceList(loginInfo: loginInfo))
 				case .error(let error, _):
+					print("Failure: \(error)")
 					failure(error)
 				}
 			}
 		} catch {
+			print("Failure: \(error)")
 			failure(error)
 		}
 	}
