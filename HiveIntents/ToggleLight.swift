@@ -16,7 +16,7 @@ import HiveShared
 
 extension IntentHandler: ToggleLightIntentHandling {
 	func confirm(intent: ToggleLightIntent, completion: @escaping (ToggleLightIntentResponse) -> Void) {
-		completion(.init(code: intent.lightName == nil || intent.state == .unknown ? .failure : .ready, userActivity: nil))
+		completion(.init(code: intent.lightID != nil && intent.state != .unknown ? .ready : .failure, userActivity: nil))
 	}
 	func handle(intent: ToggleLightIntent, completion: @escaping (ToggleLightIntentResponse) -> Void) {
 		tryGetDevices(
@@ -24,7 +24,7 @@ extension IntentHandler: ToggleLightIntentHandling {
 			success: {deviceList in
 				guard
 					var light = deviceList
-						.device(named: intent.lightName!, ofType: LightDevice.self)
+						.device(id: intent.lightID!, ofType: LightDevice.self)
 						.map(deviceList.light)
 					else {
 						return completion(.failure(lightName: intent.lightName!, state: intent.state, error: deviceNotFoundError))

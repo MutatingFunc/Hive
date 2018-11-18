@@ -62,12 +62,12 @@
 			<key>INIntentDescriptionID</key>
 			<string>TIq47l</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>5</integer>
+			<integer>6</integer>
 			<key>INIntentName</key>
 			<string>PerformAction</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>actionName</key>
+				<key>actionID,actionName</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
@@ -88,6 +88,18 @@
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
+					<key>INIntentParameterName</key>
+					<string>actionID</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>6</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
 					<key>INIntentParameterName</key>
 					<string>actionName</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -174,12 +186,12 @@
 			<key>INIntentDescriptionID</key>
 			<string>iSjWCb</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>4</integer>
+			<integer>5</integer>
 			<key>INIntentName</key>
 			<string>SetBrightness</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>brightness,lightName</key>
+				<key>brightness,lightName,lightID</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<false/>
@@ -194,7 +206,7 @@
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>260lwv</string>
 				</dict>
-				<key>lightName</key>
+				<key>lightName,lightID</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
@@ -216,6 +228,18 @@
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterName</key>
+					<string>lightID</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>5</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
+					<key>INIntentParameterName</key>
 					<string>lightName</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
 					<false/>
@@ -226,7 +250,7 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>2</integer>
+					<integer>3</integer>
 					<key>INIntentParameterName</key>
 					<string>brightness</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -325,12 +349,12 @@
 			<key>INIntentDescriptionID</key>
 			<string>ogMBYA</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>2</integer>
+			<integer>3</integer>
 			<key>INIntentName</key>
 			<string>ToggleLight</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>lightName,state</key>
+				<key>state,lightID,lightName</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<false/>
@@ -352,6 +376,18 @@
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterName</key>
+					<string>lightID</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>3</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
+					<key>INIntentParameterName</key>
 					<string>lightName</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
 					<false/>
@@ -362,7 +398,7 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>2</integer>
+					<integer>3</integer>
 					<key>INIntentParameterEnumType</key>
 					<string>State</string>
 					<key>INIntentParameterName</key>
@@ -465,12 +501,12 @@
 			<key>INIntentDescriptionID</key>
 			<string>3gAuQc</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>9</integer>
+			<integer>10</integer>
 			<key>INIntentName</key>
 			<string>SetColour</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>hue,saturation,lightName,brightness</key>
+				<key>hue,saturation,lightName,brightness,lightID</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<false/>
@@ -485,37 +521,7 @@
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>TtXG2S</string>
 				</dict>
-				<key>lightName,hue</key>
-				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<true/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string></string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>FRAKOg</string>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>Set hue of ${lightName} to ${hue}</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>iFgRhf</string>
-				</dict>
-				<key>lightName,saturation</key>
-				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<false/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string></string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>e9SzvF</string>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>Set saturation of ${lightName} to ${saturation}</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>v6pLcP</string>
-				</dict>
-				<key>saturation,lightName,hue</key>
+				<key>hue,saturation,lightName,lightID</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<false/>
@@ -530,12 +536,54 @@
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>SAVeCO</string>
 				</dict>
+				<key>lightID,lightName,hue</key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string></string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>FRAKOg</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Set hue of ${lightName} to ${hue}</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>iFgRhf</string>
+				</dict>
+				<key>lightID,lightName,saturation</key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<false/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string></string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>e9SzvF</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Set saturation of ${lightName} to ${saturation}</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>v6pLcP</string>
+				</dict>
 			</dict>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
+					<key>INIntentParameterName</key>
+					<string>lightID</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>10</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
 					<key>INIntentParameterName</key>
 					<string>lightName</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -547,7 +595,7 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>2</integer>
+					<integer>3</integer>
 					<key>INIntentParameterName</key>
 					<string>hue</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -559,7 +607,7 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>3</integer>
+					<integer>4</integer>
 					<key>INIntentParameterName</key>
 					<string>saturation</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -571,7 +619,7 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>4</integer>
+					<integer>5</integer>
 					<key>INIntentParameterName</key>
 					<string>brightness</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -724,27 +772,12 @@
 			<key>INIntentDescriptionID</key>
 			<string>y8lNbR</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>7</integer>
+			<integer>8</integer>
 			<key>INIntentName</key>
 			<string>SetTemperature</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>lightName,temperature</key>
-				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<true/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string></string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>JniHjb</string>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>Set warmth of ${lightName} to ${temperature}</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>yf8ytm</string>
-				</dict>
-				<key>lightName,temperature,brightness</key>
+				<key>lightName,temperature,brightness,lightID</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<false/>
@@ -759,12 +792,39 @@
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>iQe2Gi</string>
 				</dict>
+				<key>lightName,temperature,lightID</key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string></string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>JniHjb</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Set warmth of ${lightName} to ${temperature}</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>yf8ytm</string>
+				</dict>
 			</dict>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
+					<key>INIntentParameterName</key>
+					<string>lightID</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>8</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
 					<key>INIntentParameterName</key>
 					<string>lightName</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -776,7 +836,7 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>2</integer>
+					<integer>3</integer>
 					<key>INIntentParameterName</key>
 					<string>temperature</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
@@ -788,7 +848,7 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>3</integer>
+					<integer>4</integer>
 					<key>INIntentParameterName</key>
 					<string>brightness</string>
 					<key>INIntentParameterSupportsMultipleValues</key>

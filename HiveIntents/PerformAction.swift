@@ -16,7 +16,7 @@ import HiveShared
 
 extension IntentHandler: PerformActionIntentHandling {
 	func confirm(intent: PerformActionIntent, completion: @escaping (PerformActionIntentResponse) -> Void) {
-		completion(.init(code: intent.actionName == nil ? .failure : .ready, userActivity: nil))
+		completion(.init(code: intent.actionID != nil ? .ready : .failure, userActivity: nil))
 	}
 	func handle(intent: PerformActionIntent, completion: @escaping (PerformActionIntentResponse) -> Void) {
 		tryGetDevices(
@@ -24,7 +24,7 @@ extension IntentHandler: PerformActionIntentHandling {
 			success: {deviceList in
 				guard
 					let action = deviceList
-						.action(named: intent.actionName!)
+						.action(id: intent.actionID!)
 						.map(deviceList.action)
 					else {
 						return completion(.failure(actionName: intent.actionName!, error: deviceNotFoundError))

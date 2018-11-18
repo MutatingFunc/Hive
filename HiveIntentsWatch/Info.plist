@@ -36,6 +36,16 @@
 				<string>SetTemperatureIntent</string>
 				<string>ToggleLightIntent</string>
 			</array>
+			<key>New item</key>
+			<string>PerformActionIntent</string>
+			<key>New item - 2</key>
+			<string>SetBrightnessIntent</string>
+			<key>New item - 3</key>
+			<string>SetColourIntent</string>
+			<key>New item - 4</key>
+			<string>SetTemperatureIntent</string>
+			<key>New item - 5</key>
+			<string>ToggleLightIntent</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.intents-service</string>

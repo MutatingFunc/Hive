@@ -10,6 +10,7 @@ import Intents
 
 func donateActionIntent(_ device: ActionDevice) {
 	let intent = PerformActionIntent()
+	intent.actionID = device.id.rawValue
 	intent.actionName = device.name
 	let interation = INInteraction(intent: intent, response: nil)
 	interation.donate {error in
@@ -22,6 +23,7 @@ func donateActionIntent(_ device: ActionDevice) {
 
 func donateIsOnIntent(_ device: ToggleableDevice) {
 	let intent = ToggleLightIntent()
+	intent.lightID = device.id.rawValue
 	intent.lightName = device.name
 	intent.state = device.isOn ? .on : .off
 	let interation = INInteraction(intent: intent, response: nil)
@@ -35,6 +37,7 @@ func donateIsOnIntent(_ device: ToggleableDevice) {
 
 func donateBrightnessIntent(_ device: AdjustableBrightnessDevice) {
 	let intent = SetBrightnessIntent()
+	intent.lightID = device.id.rawValue
 	intent.lightName = device.name
 	intent.brightness = NSNumber(value: device.brightness)
 	let interation = INInteraction(intent: intent, response: nil)
@@ -51,6 +54,7 @@ func donateColourIntent(_ device: ColourLightDevice, values: Set<ColourLight.Set
 		return
 	}
 	let intent = SetColourIntent()
+	intent.lightID = device.id.rawValue
 	intent.lightName = device.name
 	if values.contains(.hue) {
 		intent.hue = NSNumber(value: hue)
@@ -75,6 +79,7 @@ func donateTemperatureIntent(_ device: ColourLightDevice, values: Set<ColourLigh
 		return
 	}
 	let intent = SetTemperatureIntent()
+	intent.lightID = device.id.rawValue
 	intent.lightName = device.name
 	if values.contains(.temperature) {
 		intent.temperature = NSNumber(value: temperature)

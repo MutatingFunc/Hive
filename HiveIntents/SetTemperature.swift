@@ -20,7 +20,7 @@ extension IntentHandler: SetTemperatureIntentHandling {
 			$0.map((0...100).contains) ?? true
 		}
 		completion(.init(code:
-			intent.lightName != nil
+			intent.lightID != nil
 				&& intent.temperature != nil
 				&& isValid(intent.temperature?.floatValue)
 				&& isValid(intent.brightness?.floatValue)
@@ -33,7 +33,7 @@ extension IntentHandler: SetTemperatureIntentHandling {
 			success: {deviceList in
 				guard
 					var light = deviceList
-						.device(named: intent.lightName!, ofType: ColourLightDevice.self)
+						.device(id: intent.lightID!, ofType: ColourLightDevice.self)
 						.map(deviceList.colourLight)
 					else {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))

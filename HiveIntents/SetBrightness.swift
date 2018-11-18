@@ -19,7 +19,7 @@ extension IntentHandler: SetBrightnessIntentHandling {
 		let isValid: (Float?) -> Bool = {
 			$0.map((0...100).contains) ?? true
 		}
-		completion(.init(code: intent.lightName != nil && isValid(intent.brightness?.floatValue) ? .ready : .failure, userActivity: nil))
+		completion(.init(code: intent.lightID != nil && isValid(intent.brightness?.floatValue) ? .ready : .failure, userActivity: nil))
 	}
 	func handle(intent: SetBrightnessIntent, completion: @escaping (SetBrightnessIntentResponse) -> Void) {
 		tryGetDevices(
@@ -27,7 +27,7 @@ extension IntentHandler: SetBrightnessIntentHandling {
 			success: {deviceList in
 				guard
 					var light = deviceList
-						.device(named: intent.lightName!, ofType: LightDevice.self)
+						.device(id: intent.lightID!, ofType: LightDevice.self)
 						.map(deviceList.light)
 					else {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))

@@ -20,7 +20,7 @@ extension IntentHandler: SetColourIntentHandling {
 			$0.map((0...100).contains) ?? true
 		}
 		completion(.init(code:
-			intent.lightName != nil
+			intent.lightID != nil
 				&& (intent.hue != nil || intent.saturation != nil)
 				&& isValid(intent.hue?.floatValue)
 				&& isValid(intent.saturation?.floatValue)
@@ -34,7 +34,7 @@ extension IntentHandler: SetColourIntentHandling {
 			success: {deviceList in
 				guard
 					var light = deviceList
-						.device(named: intent.lightName!, ofType: ColourLightDevice.self)
+						.device(id: intent.lightID!, ofType: ColourLightDevice.self)
 						.map(deviceList.colourLight)
 				else {
 					return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
