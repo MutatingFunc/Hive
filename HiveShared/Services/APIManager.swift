@@ -15,10 +15,10 @@ public enum APIContentType {
 }
 public protocol APIManaging {
 	func login(with credentials: LoginCredentials, contentType: APIContentType, completion: @escaping (Response<LoginInfo>) -> ()) -> Progress
-	func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
-	func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
-	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
 	func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
+	func setOn(of device: ToggleableDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
+	func updateBrightness(of light: AdjustableBrightnessDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
+	func updateState(of light: ColourLightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress
 }
 
 public struct SessionID: JSONCodable, RawRepresentable, LosslessStringConvertible, Hashable {
@@ -56,14 +56,14 @@ extension APIManager: APIManaging {
 		}
 	}
 	
-	public func updateBrightness(of light: LightDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
-		let setBrightnessRequest = APIManager.basicRequest(
-			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
+	public func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
+		let quickActionRequest = APIManager.basicRequest(
+			url: APIManager.performActionURL(deviceType: action.typeName, deviceID: action.id),
 			method: .post,
-			body: SetBrightnessRequest(brightness: light.brightness),
+			body: QuickActionRequest(),
 			sessionID: sessionID
 		)
-		return requestHandler.perform(setBrightnessRequest, ofType: SetBrightnessResponse.self) {response in
+		return requestHandler.perform(quickActionRequest, ofType: QuickActionResponse.self) {response in
 			completion(response.map{_ in ()})
 		}
 	}
@@ -76,6 +76,18 @@ extension APIManager: APIManaging {
 			sessionID: sessionID
 		)
 		return requestHandler.perform(setOnRequest, ofType: SetOnResponse.self) {response in
+			completion(response.map{_ in ()})
+		}
+	}
+	
+	public func updateBrightness(of light: AdjustableBrightnessDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
+		let setBrightnessRequest = APIManager.basicRequest(
+			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
+			method: .post,
+			body: SetBrightnessRequest(brightness: light.brightness),
+			sessionID: sessionID
+		)
+		return requestHandler.perform(setBrightnessRequest, ofType: SetBrightnessResponse.self) {response in
 			completion(response.map{_ in ()})
 		}
 	}
@@ -93,9 +105,7 @@ extension APIManager: APIManaging {
 		let setStateRequest = APIManager.basicRequest(
 			url: APIManager.updateDeviceURL(deviceType: light.apiTypeName, deviceID: light.id),
 			method: .post,
-			body: light.isOn
-				? body
-				: SetOnRequest(status: .off),
+			body: body,
 			sessionID: sessionID
 		)
 		switch light.state {
@@ -107,18 +117,6 @@ extension APIManager: APIManaging {
 			return requestHandler.perform(setStateRequest, ofType: SetLightTemperatureResponse.self) {response in
 				completion(response.map{_ in ()})
 			}
-		}
-	}
-	
-	public func quickAction(_ action: ActionDevice, sessionID: SessionID, completion: @escaping (Response<()>) -> ()) -> Progress {
-		let quickActionRequest = APIManager.basicRequest(
-			url: APIManager.performActionURL(deviceType: action.typeName, deviceID: action.id),
-			method: .post,
-			body: QuickActionRequest(),
-			sessionID: sessionID
-		)
-		return requestHandler.perform(quickActionRequest, ofType: QuickActionResponse.self) {response in
-			completion(response.map{_ in ()})
 		}
 	}
 }

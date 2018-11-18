@@ -57,6 +57,14 @@
 		1AA7539E2197615B006DD878 /* ColourLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C3512190DDBC004882E9 /* ColourLight.swift */; };
 		1AA7539F2197615B006DD878 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE92191036F00DC21EB /* Action.swift */; };
 		1AA753A0219761E5006DD878 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
+		1AB87ADA21A16C5500393732 /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87AD921A16C5500393732 /* Intents.swift */; };
+		1AB87ADB21A16CCD00393732 /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87AD921A16C5500393732 /* Intents.swift */; };
+		1AB87ADD21A16CF200393732 /* CommonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87ADC21A16CF200393732 /* CommonAPI.swift */; };
+		1AB87ADE21A16CFF00393732 /* CommonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87ADC21A16CF200393732 /* CommonAPI.swift */; };
+		1AB87AE021A17F7900393732 /* SetColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87ADF21A17F7900393732 /* SetColour.swift */; };
+		1AB87AE221A17F8000393732 /* SetTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87AE121A17F8000393732 /* SetTemperature.swift */; };
+		1AB87AE321A17F8500393732 /* SetColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87ADF21A17F7900393732 /* SetColour.swift */; };
+		1AB87AE421A17F8B00393732 /* SetTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87AE121A17F8000393732 /* SetTemperature.swift */; };
 		1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */; };
 		1ADAE5B82198706700B443E2 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05F021986E1F00604961 /* Toggle.swift */; };
 		1ADBDE12219896EE008C9521 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBDE10219896EE008C9521 /* Interface.storyboard */; };
@@ -348,6 +356,10 @@
 		1AA75383219760D5006DD878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA753A421976388006DD878 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA753AB219763AF006DD878 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB87AD921A16C5500393732 /* Intents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intents.swift; sourceTree = "<group>"; };
+		1AB87ADC21A16CF200393732 /* CommonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPI.swift; sourceTree = "<group>"; };
+		1AB87ADF21A17F7900393732 /* SetColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColour.swift; sourceTree = "<group>"; };
+		1AB87AE121A17F8000393732 /* SetTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTemperature.swift; sourceTree = "<group>"; };
 		1AD75E382198AC0B00BB8531 /* HiveWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HiveWatch Extension.entitlements"; sourceTree = "<group>"; };
 		1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLightCell.swift; sourceTree = "<group>"; };
 		1AD9C3512190DDBC004882E9 /* ColourLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLight.swift; sourceTree = "<group>"; };
@@ -640,10 +652,12 @@
 			children = (
 				1A4FF265218F238E00EAC20F /* Login.swift */,
 				1A4FF26B218F35BC00EAC20F /* DeviceList.swift */,
+				1AA41EE92191036F00DC21EB /* Action.swift */,
 				1ADF05F021986E1F00604961 /* Toggle.swift */,
 				1A29E05B218F6BCB00D0351F /* Light.swift */,
 				1AD9C3512190DDBC004882E9 /* ColourLight.swift */,
-				1AA41EE92191036F00DC21EB /* Action.swift */,
+				1AB87ADC21A16CF200393732 /* CommonAPI.swift */,
+				1AB87AD921A16C5500393732 /* Intents.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -654,8 +668,10 @@
 				1A93D55221977A0900E698E2 /* HiveIntents.entitlements */,
 				1AA7536121975861006DD878 /* IntentHandler.swift */,
 				1ADF05C22197AC0B00604961 /* PerformAction.swift */,
-				1ADF05C42197AC1C00604961 /* SetBrightness.swift */,
 				1ADF05C62197AC2300604961 /* ToggleLight.swift */,
+				1ADF05C42197AC1C00604961 /* SetBrightness.swift */,
+				1AB87ADF21A17F7900393732 /* SetColour.swift */,
+				1AB87AE121A17F8000393732 /* SetTemperature.swift */,
 				1AA7536321975861006DD878 /* Info.plist */,
 			);
 			path = HiveIntents;
@@ -1470,10 +1486,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB87AE021A17F7900393732 /* SetColour.swift in Sources */,
 				1ADF05C72197AC2300604961 /* ToggleLight.swift in Sources */,
 				1A7D779121976D550055657D /* Intents.intentdefinition in Sources */,
 				1ADF05C32197AC0B00604961 /* PerformAction.swift in Sources */,
 				1AA7536221975861006DD878 /* IntentHandler.swift in Sources */,
+				1AB87AE221A17F8000393732 /* SetTemperature.swift in Sources */,
 				1ADF05C52197AC1C00604961 /* SetBrightness.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1498,11 +1516,13 @@
 				1AA753942197613A006DD878 /* APIManager.swift in Sources */,
 				1AA7539E2197615B006DD878 /* ColourLight.swift in Sources */,
 				1AA753932197613A006DD878 /* RequestHandler.swift in Sources */,
+				1AB87ADD21A16CF200393732 /* CommonAPI.swift in Sources */,
 				1AA753922197613A006DD878 /* SettingsManager.swift in Sources */,
 				1AA7539621976142006DD878 /* ErrorResponse.swift in Sources */,
 				1AA7539721976142006DD878 /* LoginRequest.swift in Sources */,
 				1ADAE5B82198706700B443E2 /* Toggle.swift in Sources */,
 				1AA7539D2197615B006DD878 /* Light.swift in Sources */,
+				1AB87ADA21A16C5500393732 /* Intents.swift in Sources */,
 				1AA7539821976142006DD878 /* SetBrightnessRequest.swift in Sources */,
 				1A47E29F2198FEEC00A7CD14 /* SetOnRequest.swift in Sources */,
 			);
@@ -1530,10 +1550,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB87AE321A17F8500393732 /* SetColour.swift in Sources */,
 				1AFE73B22198979E00AA1747 /* IntentHandler.swift in Sources */,
 				1AFE73B42198979E00AA1747 /* SetBrightness.swift in Sources */,
 				1AFE73B52198979E00AA1747 /* ToggleLight.swift in Sources */,
 				1AFE73E82198981F00AA1747 /* Intents.intentdefinition in Sources */,
+				1AB87AE421A17F8B00393732 /* SetTemperature.swift in Sources */,
 				1AFE73B32198979E00AA1747 /* PerformAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1556,7 +1578,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AFE73E12198981900AA1747 /* DeviceList.swift in Sources */,
+				1AB87ADB21A16CCD00393732 /* Intents.swift in Sources */,
 				1AFE73E52198981900AA1747 /* Action.swift in Sources */,
+				1AB87ADE21A16CFF00393732 /* CommonAPI.swift in Sources */,
 				1AFE73DA2198981900AA1747 /* LoginCredentials.swift in Sources */,
 				1A47E2A2219904CD00A7CD14 /* SetOnRequest.swift in Sources */,
 				1AFE73E42198981900AA1747 /* ColourLight.swift in Sources */,

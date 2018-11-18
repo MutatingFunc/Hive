@@ -43,16 +43,16 @@ public struct DeviceList {
 		return self.actions.first{$0.name == name}
 	}
 	
-	public func light(_ device: LightDevice) -> Light {
-		return Light(api: api, sessionID: sessionID, device: device)
-	}
-	public func colourLight(_ device: ColourLightDevice) -> ColourLight {
-		return ColourLight(api: api, sessionID: sessionID, device: device)
-	}
 	public func action(_ device: ActionDevice) -> Action {
 		return Action(api: api, sessionID: sessionID, device: device)
 	}
 	public func toggle(_ device: ToggleableDevice) -> Toggle {
 		return Toggle(api: api, sessionID: sessionID, device: device)
+	}
+	public func light(_ device: LightDevice) -> Light {
+		return Light(api: api, sessionID: sessionID, device: device)
+	}
+	public func colourLight(_ device: ColourLightDevice) -> ColourLight {
+		return ColourLight(api: api, sessionID: sessionID, device: device)
 	}
 }

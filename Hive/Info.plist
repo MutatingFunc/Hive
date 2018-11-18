@@ -24,6 +24,8 @@
 	<array>
 		<string>PerformActionIntent</string>
 		<string>SetBrightnessIntent</string>
+		<string>SetColourIntent</string>
+		<string>SetTemperatureIntent</string>
 		<string>ToggleLightIntent</string>
 		<string>performAction</string>
 		<string>turnOnLight</string>

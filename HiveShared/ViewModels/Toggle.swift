@@ -7,31 +7,15 @@
 //
 
 import Foundation
-import Intents
 
-public struct Toggle {
+public struct Toggle: ViewModel {
 	var api: APIManaging, sessionID: SessionID
 	public internal(set) var settingsManager: SettingsManaging, device: ToggleableDevice
 	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: ToggleableDevice) {
 		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 	
-	public mutating func setOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {
-		self.device.isOn = isOn
-		donateIntent(isOn: isOn)
-		return api.setOn(of: self.device, sessionID: self.sessionID, completion: completion)
-	}
-	
-	func donateIntent(isOn: Bool) {
-		let intent = ToggleLightIntent()
-		intent.lightName = device.name
-		intent.state = isOn ? .on : .off
-		let interation = INInteraction(intent: intent, response: nil)
-		interation.donate {error in
-			if let error = error {
-				print("Error donating intent: \(error)")
-			}
-		}
-		//INRelevantShortcut for Siri watchface
+	public mutating func setIsOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {
+		return vmSetIsOn(isOn, viewModel: &self, completion: completion)
 	}
 }

@@ -63,17 +63,27 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 		delegate?.isFavouriteChanged(device: self.light.device)
 	}
 	
-	@IBAction func valueChanged() {
+	@IBAction func valueChanged(sender: UISlider) {
 		let colour = colourSlider.value.rounded()
 		let saturation = saturationSlider.value.rounded()
 		let brightness = brightnessSlider.value.rounded()
 		loadingIndicator.startAnimating()
+		let isColourValue = colourControl.selectedSegmentIndex == 0
 		let state: ColourLightDevice.State =
-			colourControl.selectedSegmentIndex == 0
+			isColourValue
 				? .colour(hue: colour, saturation: saturation, brightness: brightness)
 				: .white(temperature: colour, brightness: brightness)
 		self.setHighlighted(true, animated: true)
-		_ = self.light.setState(state) {[weak self] response in
+		let senderType: ColourLight.SetStateSender
+		switch sender {
+		case colourSlider:
+			senderType = isColourValue ? .hue : .temperature
+		case saturationSlider:
+			senderType = .saturation
+		case _:
+			senderType = .brightness
+		}
+		_ = self.light.setState(state, sender: senderType) {[weak self] response in
 			switch response {
 			case .success(_, _):
 				self?.endPerform()

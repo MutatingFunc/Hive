@@ -40,12 +40,17 @@ public extension Device {
 public protocol ToggleableDevice: Device {
 	var isOn: Bool {get set}
 }
+public protocol AdjustableBrightnessDevice: Device {
+	var brightness: Float {get set}
+}
+
+public typealias AnyLightDevice = ToggleableDevice & AdjustableBrightnessDevice
 
 public struct UnknownDevice: Device {
 	public var isGroup: Bool, isOnline: Bool, name: String, id: DeviceID, typeName: String
 }
 
-public struct LightDevice: ToggleableDevice {
+public struct LightDevice: ToggleableDevice, AdjustableBrightnessDevice {
 	public var isGroup: Bool, isOnline: Bool, name: String, id: DeviceID, typeName: String
 	public var isOn: Bool
 	/// From 1 to 100
@@ -60,6 +65,26 @@ public struct ColourLightDevice: ToggleableDevice {
 	}
 	public var state: State
 	public var minTemp: Int, maxTemp: Int
+}
+extension ColourLightDevice: AdjustableBrightnessDevice {
+	public var brightness: Float {
+		get {
+			switch self.state {
+			case .white(temperature: _, brightness: let brightness):
+				return brightness
+			case .colour(hue: _, saturation: _, brightness: let brightness):
+				return brightness
+			}
+		}
+		set {
+			switch self.state {
+			case .white(temperature: let temperature, brightness: _):
+				self.state = .white(temperature: temperature, brightness: newValue)
+			case .colour(hue: let hue, saturation: let saturation, brightness: _):
+				self.state = .colour(hue: hue, saturation: saturation, brightness: newValue)
+			}
+		}
+	}
 }
 
 public struct ActionDevice {

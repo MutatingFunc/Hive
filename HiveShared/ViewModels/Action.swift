@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Intents
 
-public struct Action {
+public struct Action: ViewModel {
 	var api: APIManaging, sessionID: SessionID
 	public internal(set) var settingsManager: SettingsManaging, device: ActionDevice
 	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: ActionDevice) {
@@ -17,19 +16,7 @@ public struct Action {
 	}
 
 	public func quickAction(completion: @escaping (Response<()>) -> ()) -> Progress {
-		donateIntent()
+		donateActionIntent(device)
 		return api.quickAction(device, sessionID: sessionID, completion: completion)
-	}
-	
-	func donateIntent() {
-		let intent = PerformActionIntent()
-		intent.actionName = device.name
-		let interation = INInteraction(intent: intent, response: nil)
-		interation.donate {error in
-			if let error = error {
-				print("Error donating intent: \(error)")
-			}
-		}
-		//INRelevantShortcut for Siri watchface
 	}
 }

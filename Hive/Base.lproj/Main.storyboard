@@ -207,18 +207,18 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-2y-dJT">
+                                                        <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-2y-dJT">
                                                             <rect key="frame" x="132" y="39.5" width="230" height="31"/>
                                                             <connections>
-                                                                <action selector="valueChanged" destination="7Ra-q6-NMW" eventType="touchUpInside" id="F5z-2w-yjD"/>
-                                                                <action selector="valueChanged" destination="7Ra-q6-NMW" eventType="touchUpOutside" id="fVp-fw-gvx"/>
+                                                                <action selector="valueChangedWithSender:" destination="7Ra-q6-NMW" eventType="touchUpInside" id="TLc-Ec-7F7"/>
+                                                                <action selector="valueChangedWithSender:" destination="7Ra-q6-NMW" eventType="touchUpOutside" id="pIl-pM-tGO"/>
                                                             </connections>
                                                         </slider>
-                                                        <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Y6M-0f-E8V">
+                                                        <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Y6M-0f-E8V">
                                                             <rect key="frame" x="13" y="170" width="349" height="31"/>
                                                             <connections>
-                                                                <action selector="valueChanged" destination="7Ra-q6-NMW" eventType="touchUpOutside" id="IN4-O4-hUq"/>
-                                                                <action selector="valueChanged" destination="7Ra-q6-NMW" eventType="touchUpInside" id="ThQ-Hq-j1v"/>
+                                                                <action selector="valueChangedWithSender:" destination="7Ra-q6-NMW" eventType="touchUpInside" id="Utx-4E-I3A"/>
+                                                                <action selector="valueChangedWithSender:" destination="7Ra-q6-NMW" eventType="touchUpOutside" id="dgB-gr-m9e"/>
                                                             </connections>
                                                         </slider>
                                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="p9g-bb-o1n">
@@ -243,8 +243,8 @@
                                                         <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" verticalCompressionResistancePriority="747" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6oN-HO-PQn">
                                                             <rect key="frame" x="132" y="77.5" width="230" height="85.5"/>
                                                             <connections>
-                                                                <action selector="valueChanged" destination="7Ra-q6-NMW" eventType="touchUpInside" id="Bgf-SG-jnR"/>
-                                                                <action selector="valueChanged" destination="7Ra-q6-NMW" eventType="touchUpOutside" id="Ng6-6J-W5G"/>
+                                                                <action selector="valueChangedWithSender:" destination="7Ra-q6-NMW" eventType="touchUpOutside" id="UF9-6M-mV1"/>
+                                                                <action selector="valueChangedWithSender:" destination="7Ra-q6-NMW" eventType="touchUpInside" id="YcT-Li-Wd1"/>
                                                             </connections>
                                                         </slider>
                                                     </subviews>

@@ -42,7 +42,7 @@ class ToggleCell: UITableViewCell, ReuseIdentifiable {
 		isOnSwitch.isEnabled = false
 		loadingIndicator.startAnimating()
 		self.setHighlighted(true, animated: true)
-		_ = toggle.setOn(isOnSwitch.isOn) {[weak self] response in
+		_ = toggle.setIsOn(isOnSwitch.isOn) {[weak self] response in
 			switch response {
 				case .success(_, _):
 					self?.endPerform()

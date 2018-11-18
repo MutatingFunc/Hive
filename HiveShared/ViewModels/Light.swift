@@ -7,56 +7,19 @@
 //
 
 import Foundation
-import Intents
 
-public struct Light {
+public struct Light: ViewModel {
 	var api: APIManaging, sessionID: SessionID
 	public internal(set) var settingsManager: SettingsManaging, device: LightDevice
 	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: LightDevice) {
 		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
 	}
 	
+	public mutating func setIsOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {
+		return vmSetIsOn(isOn, viewModel: &self, completion: completion)
+	}
+	
 	public mutating func setBrightness(_ brightness: Float, completion: @escaping (Response<()>) -> ()) -> Progress {
-		self.device.isOn = brightness > 0
-		donateIntent(isOn: brightness != 0)
-		if brightness > 0 {
-			self.device.brightness = brightness
-			donateIntent(brightness: brightness)
-			return api.updateBrightness(of: self.device, sessionID: self.sessionID, completion: completion)
-		} else {
-			return api.setOn(of: self.device, sessionID: self.sessionID, completion: completion)
-		}
-	}
-	
-	public mutating func setOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {
-		self.device.isOn = isOn
-		donateIntent(isOn: isOn)
-		return api.setOn(of: self.device, sessionID: self.sessionID, completion: completion)
-	}
-	
-	func donateIntent(brightness: Float) {
-		let intent = SetBrightnessIntent()
-		intent.lightName = device.name
-		intent.brightness = NSNumber(value: brightness)
-		let interation = INInteraction(intent: intent, response: nil)
-		interation.donate {error in
-			if let error = error {
-				print("Error donating intent: \(error)")
-			}
-		}
-		//INRelevantShortcut for Siri watchface
-	}
-	
-	func donateIntent(isOn: Bool) {
-		let intent = ToggleLightIntent()
-		intent.lightName = device.name
-		intent.state = isOn ? .on : .off
-		let interation = INInteraction(intent: intent, response: nil)
-		interation.donate {error in
-			if let error = error {
-				print("Error donating intent: \(error)")
-			}
-		}
-		//INRelevantShortcut for Siri watchface
+		return vmSetBrightness(brightness, viewModel: &self, completion: completion)
 	}
 }
