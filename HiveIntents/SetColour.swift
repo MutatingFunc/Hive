@@ -49,6 +49,7 @@ extension IntentHandler: SetColourIntentHandling {
 					hue = nil
 					saturation = nil
 				}
+				intent.lightName = light.device.name
 				_ = light.setState(.colour(
 					hue: intent.hue?.floatValue ?? hue ?? 100,
 					saturation: intent.saturation?.floatValue ?? saturation ?? 100,
@@ -58,18 +59,18 @@ extension IntentHandler: SetColourIntentHandling {
 					case .success(_, _):
 						switch (intent.hue, intent.saturation, intent.brightness) {
 						case let (h?, s?, b?):
-							completion(.success(lightName: intent.lightName!, hue: h, saturation: s, brightness: b))
+							completion(.success(lightName: light.device.name, hue: h, saturation: s, brightness: b))
 						case let (h?, s?, nil):
-							completion(.successHS(lightName: intent.lightName!, hue: h, saturation: s))
+							completion(.successHS(lightName: light.device.name, hue: h, saturation: s))
 						case let (h?, nil, nil):
-							completion(.successH(lightName: intent.lightName!, hue: h))
+							completion(.successH(lightName: light.device.name, hue: h))
 						case let (nil, s?, nil):
-							completion(.successS(lightName: intent.lightName!, saturation: s))
+							completion(.successS(lightName: light.device.name, saturation: s))
 						case _:
-							completion(.failure(lightName: intent.lightName!, error: "Succeeded with unrecognised parameter combination"))
+							completion(.failure(lightName: light.device.name, error: "Succeeded with unrecognised parameter combination"))
 						}
 					case .error(let error, _):
-						completion(.failure(lightName: intent.lightName!, error: error.localizedDescription))
+						completion(.failure(lightName: light.device.name, error: error.localizedDescription))
 					}
 				}
 		},

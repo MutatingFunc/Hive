@@ -38,6 +38,7 @@ extension IntentHandler: SetTemperatureIntentHandling {
 					else {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
 				}
+				intent.lightName = light.device.name
 				_ = light.setState(.white(
 					temperature: intent.temperature!.floatValue,
 					brightness: intent.brightness?.floatValue ?? light.device.brightness
@@ -46,14 +47,14 @@ extension IntentHandler: SetTemperatureIntentHandling {
 					case .success(_, _):
 						switch (intent.temperature, intent.brightness) {
 						case let (t?, b?):
-							completion(.success(lightName: intent.lightName!, brightness: b, temperature: t))
+							completion(.success(lightName: light.device.name, brightness: b, temperature: t))
 						case let (t?, nil):
-							completion(.successT(lightName: intent.lightName!, temperature: t))
+							completion(.successT(lightName: light.device.name, temperature: t))
 						case _:
-							completion(.failure(lightName: intent.lightName!, error: "Succeeded with unrecognised parameter combination"))
+							completion(.failure(lightName: light.device.name, error: "Succeeded with unrecognised parameter combination"))
 						}
 					case .error(let error, _):
-						completion(.failure(lightName: intent.lightName!, error: error.localizedDescription))
+						completion(.failure(lightName: light.device.name, error: error.localizedDescription))
 					}
 				}
 		},

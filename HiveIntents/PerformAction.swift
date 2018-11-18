@@ -29,12 +29,13 @@ extension IntentHandler: PerformActionIntentHandling {
 					else {
 						return completion(.failure(actionName: intent.actionName!, error: deviceNotFoundError))
 				}
+				intent.actionName = action.device.name
 				_ = action.quickAction {response in
 					switch response {
 					case .success(_, _):
-						completion(.success(actionName: intent.actionName!))
+						completion(.success(actionName: action.device.name))
 					case .error(let error, _):
-						completion(.failure(actionName: intent.actionName!, error: error.localizedDescription))
+						completion(.failure(actionName: action.device.name, error: error.localizedDescription))
 					}
 				}
 		},

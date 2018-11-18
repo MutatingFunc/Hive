@@ -32,13 +32,14 @@ extension IntentHandler: SetBrightnessIntentHandling {
 					else {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
 				}
+				intent.lightName = light.device.name
 				let brightness = intent.brightness?.floatValue ?? 0
 				_ = light.setBrightness(brightness) {response in
 					switch response {
 					case .success(_, _):
-						completion(.success(lightName: intent.lightName!, brightness: NSNumber(value: brightness)))
+						completion(.success(lightName: light.device.name, brightness: NSNumber(value: brightness)))
 					case .error(let error, _):
-						completion(.failure(lightName: intent.lightName!, error: error.localizedDescription))
+						completion(.failure(lightName: light.device.name, error: error.localizedDescription))
 					}
 				}
 		},

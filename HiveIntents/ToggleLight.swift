@@ -29,12 +29,13 @@ extension IntentHandler: ToggleLightIntentHandling {
 					else {
 						return completion(.failure(lightName: intent.lightName!, state: intent.state, error: deviceNotFoundError))
 				}
+				intent.lightName = light.device.name
 				_ = light.setIsOn(intent.state == .on) {response in
 					switch response {
 					case .success(_, _):
 						completion(.success(state: intent.state, lightName: intent.lightName!))
 					case .error(let error, _):
-						completion(.failure(lightName: intent.lightName!, state: intent.state, error: error.localizedDescription))
+						completion(.failure(lightName: light.device.name, state: intent.state, error: error.localizedDescription))
 					}
 				}
 		},
