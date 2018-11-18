@@ -7,27 +7,42 @@
 		<key>Hive.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>12</integer>
 		</dict>
 		<key>HiveIntents.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>9</integer>
 		</dict>
 		<key>HiveIntentsWatch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>14</integer>
 		</dict>
 		<key>HiveShared.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>13</integer>
+		</dict>
+		<key>HiveSharedTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>HiveSharedWatch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>15</integer>
+		</dict>
+		<key>HiveTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>HiveUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>HiveWatch (Glance).xcscheme_^#shared#^_</key>
 		<dict>
@@ -39,15 +54,38 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>HiveWatch.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
-		</dict>
 		<key>HiveWidget.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>11</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1A4FF219218F10AC00EAC20F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1A4FF22D218F10AC00EAC20F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1AA7535E21975861006DD878</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1AA75379219760D5006DD878</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1ADF05D42198641000604961</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

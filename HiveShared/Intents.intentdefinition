@@ -277,7 +277,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>${lightName} is set to ${brightness}</string>
+						<string>${lightName} set to ${brightness}%</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>S3rWJg</string>
 						<key>INIntentResponseCodeName</key>
@@ -646,7 +646,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>${lightName} is set to (h: ${hue}, s: ${saturation}, b: ${brightness})</string>
+						<string>${lightName} set to (h: ${hue}, s: ${saturation}, b: ${brightness})</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>QcJuVh</string>
 						<key>INIntentResponseCodeName</key>
@@ -656,7 +656,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>${lightName} colour is set to (h: ${hue}, s: ${saturation})</string>
+						<string>${lightName} colour set to (h: ${hue}, s: ${saturation})</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>hfYGSY</string>
 						<key>INIntentResponseCodeName</key>
@@ -666,7 +666,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>${lightName} hue is set to ${hue}</string>
+						<string>${lightName} hue set to ${hue}</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>GCiVm6</string>
 						<key>INIntentResponseCodeName</key>
@@ -676,7 +676,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>${lightName} saturation is set to ${saturation}</string>
+						<string>${lightName} saturation set to ${saturation}%</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>zCi6TF</string>
 						<key>INIntentResponseCodeName</key>
@@ -875,7 +875,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>${lightName} is set to ${brightness} with warmth ${temperature}</string>
+						<string>${lightName} set to ${brightness}% with warmth ${temperature}%</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>9oT7hQ</string>
 						<key>INIntentResponseCodeName</key>
@@ -885,7 +885,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>${lightName} warmth is set to ${temperature}</string>
+						<string>${lightName} warmth set to ${temperature}%</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>ydYsI4</string>
 						<key>INIntentResponseCodeName</key>

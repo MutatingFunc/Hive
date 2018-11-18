@@ -18,14 +18,6 @@ target 'HiveWidget' do
   platform :ios, '12.0'
 end
 
-target 'HiveWatch' do
-  platform :watchos, '5.0'
-end
-
-target 'HiveWatch Extension' do
-  platform :watchos, '5.0'
-end
-
 target 'HiveIntentsWatch' do
   platform :watchos, '5.0'
 end

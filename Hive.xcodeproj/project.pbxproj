@@ -14,10 +14,6 @@
 		1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
 		1A29E054218F54C000D0351F /* LightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E053218F54C000D0351F /* LightCell.swift */; };
 		1A29E05E218F6F1600D0351F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05D218F6F1600D0351F /* Colors.swift */; };
-		1A46693D2198A48700007772 /* HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; };
-		1A46693E2198A48700007772 /* HiveSharedWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A4669422198A49000007772 /* HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; };
-		1A4669432198A49000007772 /* HiveSharedWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A47E29F2198FEEC00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
 		1A47E2A12198FF0A00A7CD14 /* SetHSBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */; };
 		1A47E2A2219904CD00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
@@ -67,14 +63,6 @@
 		1AB87AE421A17F8B00393732 /* SetTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87AE121A17F8000393732 /* SetTemperature.swift */; };
 		1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */; };
 		1ADAE5B82198706700B443E2 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05F021986E1F00604961 /* Toggle.swift */; };
-		1ADBDE12219896EE008C9521 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBDE10219896EE008C9521 /* Interface.storyboard */; };
-		1ADBDE14219896EF008C9521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBDE13219896EF008C9521 /* Assets.xcassets */; };
-		1ADBDE1B219896EF008C9521 /* HiveWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1ADBDE20219896EF008C9521 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBDE1F219896EF008C9521 /* InterfaceController.swift */; };
-		1ADBDE22219896EF008C9521 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBDE21219896EF008C9521 /* ExtensionDelegate.swift */; };
-		1ADBDE24219896F0008C9521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADBDE23219896F0008C9521 /* Assets.xcassets */; };
-		1ADBDE28219896F0008C9521 /* HiveWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1ADBDE0E219896EE008C9521 /* HiveWatch.app */; };
-		1ADBDE3C21989745008C9521 /* HiveIntentsWatch.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1ADBDE3521989745008C9521 /* HiveIntentsWatch.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1ADF05C32197AC0B00604961 /* PerformAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C22197AC0B00604961 /* PerformAction.swift */; };
 		1ADF05C52197AC1C00604961 /* SetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C42197AC1C00604961 /* SetBrightness.swift */; };
 		1ADF05C72197AC2300604961 /* ToggleLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05C62197AC2300604961 /* ToggleLight.swift */; };
@@ -113,7 +101,6 @@
 		1AFE73E32198981900AA1747 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05B218F6BCB00D0351F /* Light.swift */; };
 		1AFE73E42198981900AA1747 /* ColourLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C3512190DDBC004882E9 /* ColourLight.swift */; };
 		1AFE73E52198981900AA1747 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE92191036F00DC21EB /* Action.swift */; };
-		1AFE73E72198981F00AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		1AFE73E82198981F00AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		1AFE73E92198982000AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		1AFE73EA2198982F00AA1747 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7536B21975A39006DD878 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
@@ -122,28 +109,12 @@
 		1AFE73F721989C7800AA1747 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
 		1D33445D7F2589B520764EB1 /* Pods_HiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */; };
 		1E478013AA1D138523CAFB8F /* Pods_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */; };
-		37921F89AEF38D72C9FBA7A8 /* Pods_HiveWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995A19AAC299E63AA42A59C2 /* Pods_HiveWatch.framework */; };
-		79EBD51EA8F6BEF30D5851B0 /* Pods_HiveWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E2A92D33D59FFA459B3CCB /* Pods_HiveWatch_Extension.framework */; };
 		99ADC7CFCC68C46664321C0D /* Pods_HiveIntentsWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181FD52DDD022284AB6DA1E /* Pods_HiveIntentsWatch.framework */; };
 		9FF1639AE0071C426064AA19 /* Pods_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA753A421976388006DD878 /* Pods_Hive.framework */; };
 		C0DF9239130A902BC8EA2F00 /* Pods_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A46693F2198A48700007772 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1AFE73C52198980800AA1747;
-			remoteInfo = HiveSharedWatch;
-		};
-		1A4669442198A49000007772 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1AFE73C52198980800AA1747;
-			remoteInfo = HiveSharedWatch;
-		};
 		1A4FF22F218F10AC00EAC20F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
@@ -179,27 +150,6 @@
 			remoteGlobalIDString = 1A4FF219218F10AC00EAC20F;
 			remoteInfo = Hive;
 		};
-		1ADBDE1C219896EF008C9521 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1ADBDE19219896EF008C9521;
-			remoteInfo = "HiveWatch Extension";
-		};
-		1ADBDE26219896F0008C9521 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1ADBDE0D219896EE008C9521;
-			remoteInfo = HiveWatch;
-		};
-		1ADBDE3A21989745008C9521 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1ADBDE3421989745008C9521;
-			remoteInfo = HiveIntentsWatch;
-		};
 		1ADF05DF2198641000604961 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A4FF212218F10AC00EAC20F /* Project object */;
@@ -217,28 +167,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1A4669412198A48700007772 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1A46693E2198A48700007772 /* HiveSharedWatch.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A4669462198A49000007772 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1A4669432198A49000007772 /* HiveSharedWatch.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1AA7536A21975861006DD878 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,37 +179,14 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1ADBDE2E219896F0008C9521 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				1ADBDE1B219896EF008C9521 /* HiveWatch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1ADBDE30219896F0008C9521 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				1ADBDE28219896F0008C9521 /* HiveWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1ADBDE4021989745008C9521 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				1ADBDE3C21989745008C9521 /* HiveIntentsWatch.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1AE141AA219768EB00913920 /* Embed Frameworks */ = {
@@ -311,7 +216,6 @@
 		1A29E05B218F6BCB00D0351F /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		1A29E05D218F6F1600D0351F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1A46692E21989F5F00007772 /* HiveIntentsWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveIntentsWatch.entitlements; sourceTree = "<group>"; };
-		1A46692F21989F6E00007772 /* HiveWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveWatch.entitlements; sourceTree = "<group>"; };
 		1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOnRequest.swift; sourceTree = "<group>"; };
 		1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHSBRequest.swift; sourceTree = "<group>"; };
 		1A4FF21A218F10AC00EAC20F /* Hive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,18 +264,8 @@
 		1AB87ADC21A16CF200393732 /* CommonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPI.swift; sourceTree = "<group>"; };
 		1AB87ADF21A17F7900393732 /* SetColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColour.swift; sourceTree = "<group>"; };
 		1AB87AE121A17F8000393732 /* SetTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTemperature.swift; sourceTree = "<group>"; };
-		1AD75E382198AC0B00BB8531 /* HiveWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HiveWatch Extension.entitlements"; sourceTree = "<group>"; };
 		1AD9C34F2190DD76004882E9 /* ColourLightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLightCell.swift; sourceTree = "<group>"; };
 		1AD9C3512190DDBC004882E9 /* ColourLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourLight.swift; sourceTree = "<group>"; };
-		1ADBDE0E219896EE008C9521 /* HiveWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiveWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ADBDE11219896EE008C9521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		1ADBDE13219896EF008C9521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1ADBDE15219896EF008C9521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HiveWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ADBDE1F219896EF008C9521 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		1ADBDE21219896EF008C9521 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		1ADBDE23219896F0008C9521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1ADBDE25219896F0008C9521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ADBDE3521989745008C9521 /* HiveIntentsWatch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HiveIntentsWatch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADBDE3921989745008C9521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ADF05C22197AC0B00604961 /* PerformAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformAction.swift; sourceTree = "<group>"; };
@@ -465,15 +359,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1ADBDE17219896EF008C9521 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A46693D2198A48700007772 /* HiveSharedWatch.framework in Frameworks */,
-				79EBD51EA8F6BEF30D5851B0 /* Pods_HiveWatch_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1ADBDE3221989745008C9521 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,15 +383,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0857868D5AF9BDD85C627ED9 /* Pods_HiveSharedWatch.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7AD42EADE8A6D5258F819666 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37921F89AEF38D72C9FBA7A8 /* Pods_HiveWatch.framework in Frameworks */,
-				1A4669422198A49000007772 /* HiveSharedWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,8 +420,6 @@
 				1A4FF23C218F10AD00EAC20F /* HiveUITests */,
 				1AA7536021975861006DD878 /* HiveIntents */,
 				1ADF05D82198641000604961 /* HiveWidget */,
-				1ADBDE0F219896EE008C9521 /* HiveWatch */,
-				1ADBDE1E219896EF008C9521 /* HiveWatch Extension */,
 				1ADBDE3621989745008C9521 /* HiveIntentsWatch */,
 				1AFE73C72198980800AA1747 /* HiveSharedWatch */,
 				1A4FF21B218F10AC00EAC20F /* Products */,
@@ -564,8 +438,6 @@
 				1AA75372219760D5006DD878 /* HiveShared.framework */,
 				1AA7537A219760D5006DD878 /* HiveSharedTests.xctest */,
 				1ADF05D52198641000604961 /* HiveWidget.appex */,
-				1ADBDE0E219896EE008C9521 /* HiveWatch.app */,
-				1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */,
 				1ADBDE3521989745008C9521 /* HiveIntentsWatch.appex */,
 				1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */,
 			);
@@ -703,29 +575,6 @@
 			path = HiveSharedTests;
 			sourceTree = "<group>";
 		};
-		1ADBDE0F219896EE008C9521 /* HiveWatch */ = {
-			isa = PBXGroup;
-			children = (
-				1A46692F21989F6E00007772 /* HiveWatch.entitlements */,
-				1ADBDE10219896EE008C9521 /* Interface.storyboard */,
-				1ADBDE13219896EF008C9521 /* Assets.xcassets */,
-				1ADBDE15219896EF008C9521 /* Info.plist */,
-			);
-			path = HiveWatch;
-			sourceTree = "<group>";
-		};
-		1ADBDE1E219896EF008C9521 /* HiveWatch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				1AD75E382198AC0B00BB8531 /* HiveWatch Extension.entitlements */,
-				1ADBDE1F219896EF008C9521 /* InterfaceController.swift */,
-				1ADBDE21219896EF008C9521 /* ExtensionDelegate.swift */,
-				1ADBDE23219896F0008C9521 /* Assets.xcassets */,
-				1ADBDE25219896F0008C9521 /* Info.plist */,
-			);
-			path = "HiveWatch Extension";
-			sourceTree = "<group>";
-		};
 		1ADBDE3621989745008C9521 /* HiveIntentsWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -820,7 +669,6 @@
 				1AA7536521975861006DD878 /* PBXTargetDependency */,
 				1AE141A9219768EB00913920 /* PBXTargetDependency */,
 				1ADF05E02198641000604961 /* PBXTargetDependency */,
-				1ADBDE27219896F0008C9521 /* PBXTargetDependency */,
 			);
 			name = Hive;
 			productName = Hive;
@@ -918,50 +766,6 @@
 			productName = HiveSharedTests;
 			productReference = 1AA7537A219760D5006DD878 /* HiveSharedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1ADBDE0D219896EE008C9521 /* HiveWatch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1ADBDE2F219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch" */;
-			buildPhases = (
-				FD498199B2400F54CD9EC95E /* [CP] Check Pods Manifest.lock */,
-				1ADBDE0C219896EE008C9521 /* Resources */,
-				1ADBDE2E219896F0008C9521 /* Embed App Extensions */,
-				7AD42EADE8A6D5258F819666 /* Frameworks */,
-				1A4669462198A49000007772 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1ADBDE1D219896EF008C9521 /* PBXTargetDependency */,
-				1A4669452198A49000007772 /* PBXTargetDependency */,
-			);
-			name = HiveWatch;
-			productName = HiveWatch;
-			productReference = 1ADBDE0E219896EE008C9521 /* HiveWatch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		1ADBDE19219896EF008C9521 /* HiveWatch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1ADBDE2D219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch Extension" */;
-			buildPhases = (
-				0DF397AFA5563CB3D80F5775 /* [CP] Check Pods Manifest.lock */,
-				1ADBDE16219896EF008C9521 /* Sources */,
-				1ADBDE17219896EF008C9521 /* Frameworks */,
-				1ADBDE18219896EF008C9521 /* Resources */,
-				1ADBDE4021989745008C9521 /* Embed App Extensions */,
-				1A4669412198A48700007772 /* Embed Frameworks */,
-				8A8D0F0A466C9F7AE745FDEF /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1ADBDE3B21989745008C9521 /* PBXTargetDependency */,
-				1A4669402198A48700007772 /* PBXTargetDependency */,
-			);
-			name = "HiveWatch Extension";
-			productName = "HiveWatch Extension";
-			productReference = 1ADBDE1A219896EF008C9521 /* HiveWatch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		1ADBDE3421989745008C9521 /* HiveIntentsWatch */ = {
 			isa = PBXNativeTarget;
@@ -1080,34 +884,6 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 1A4FF219218F10AC00EAC20F;
 					};
-					1ADBDE0D219896EE008C9521 = {
-						CreatedOnToolsVersion = 10.1;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					1ADBDE19219896EF008C9521 = {
-						CreatedOnToolsVersion = 10.1;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.Keychain = {
-								enabled = 1;
-							};
-							com.apple.Push = {
-								enabled = 1;
-							};
-							com.apple.Siri = {
-								enabled = 1;
-							};
-							com.apple.iCloud = {
-								enabled = 1;
-							};
-						};
-					};
 					1ADBDE3421989745008C9521 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -1167,8 +943,6 @@
 				1AA75371219760D5006DD878 /* HiveShared */,
 				1AA75379219760D5006DD878 /* HiveSharedTests */,
 				1ADF05D42198641000604961 /* HiveWidget */,
-				1ADBDE0D219896EE008C9521 /* HiveWatch */,
-				1ADBDE19219896EF008C9521 /* HiveWatch Extension */,
 				1ADBDE3421989745008C9521 /* HiveIntentsWatch */,
 				1AFE73C52198980800AA1747 /* HiveSharedWatch */,
 			);
@@ -1221,23 +995,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1ADBDE0C219896EE008C9521 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1ADBDE14219896EF008C9521 /* Assets.xcassets in Resources */,
-				1ADBDE12219896EE008C9521 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1ADBDE18219896EF008C9521 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1ADBDE24219896F0008C9521 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1ADBDE3321989745008C9521 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1264,24 +1021,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DF397AFA5563CB3D80F5775 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveWatch Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		30AD29594EB80FB655F40A9D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1316,24 +1055,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A8D0F0A466C9F7AE745FDEF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-watchOS/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		921DDF324109CA98E04AD3B0 /* [CP] Check Pods Manifest.lock */ = {
@@ -1420,24 +1141,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-HiveIntentsWatch-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FD498199B2400F54CD9EC95E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveWatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1536,16 +1239,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1ADBDE16219896EF008C9521 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AFE73E72198981F00AA1747 /* Intents.intentdefinition in Sources */,
-				1ADBDE22219896EF008C9521 /* ExtensionDelegate.swift in Sources */,
-				1ADBDE20219896EF008C9521 /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1ADBDE3121989745008C9521 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1606,16 +1299,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1A4669402198A48700007772 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1AFE73C52198980800AA1747 /* HiveSharedWatch */;
-			targetProxy = 1A46693F2198A48700007772 /* PBXContainerItemProxy */;
-		};
-		1A4669452198A49000007772 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1AFE73C52198980800AA1747 /* HiveSharedWatch */;
-			targetProxy = 1A4669442198A49000007772 /* PBXContainerItemProxy */;
-		};
 		1A4FF230218F10AC00EAC20F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1A4FF219218F10AC00EAC20F /* Hive */;
@@ -1640,21 +1323,6 @@
 			isa = PBXTargetDependency;
 			target = 1A4FF219218F10AC00EAC20F /* Hive */;
 			targetProxy = 1AA7537E219760D5006DD878 /* PBXContainerItemProxy */;
-		};
-		1ADBDE1D219896EF008C9521 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1ADBDE19219896EF008C9521 /* HiveWatch Extension */;
-			targetProxy = 1ADBDE1C219896EF008C9521 /* PBXContainerItemProxy */;
-		};
-		1ADBDE27219896F0008C9521 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1ADBDE0D219896EE008C9521 /* HiveWatch */;
-			targetProxy = 1ADBDE26219896F0008C9521 /* PBXContainerItemProxy */;
-		};
-		1ADBDE3B21989745008C9521 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1ADBDE3421989745008C9521 /* HiveIntentsWatch */;
-			targetProxy = 1ADBDE3A21989745008C9521 /* PBXContainerItemProxy */;
 		};
 		1ADF05E02198641000604961 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1683,14 +1351,6 @@
 				1A4FF227218F10AC00EAC20F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		1ADBDE10219896EE008C9521 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1ADBDE11219896EE008C9521 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		1ADF05DB2198641000604961 /* MainInterface.storyboard */ = {
@@ -2086,104 +1746,6 @@
 			};
 			name = Release;
 		};
-		1ADBDE29219896F0008C9521 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95E6DBC97985339584606B72 /* Pods-HiveWatch.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HiveWatch/HiveWatch.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKFDYMU9HJ;
-				IBSC_MODULE = HiveWatch_Extension;
-				INFOPLIST_FILE = HiveWatch/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Debug;
-		};
-		1ADBDE2A219896F0008C9521 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2504B70A82E1442EFDA0414C /* Pods-HiveWatch.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HiveWatch/HiveWatch.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKFDYMU9HJ;
-				IBSC_MODULE = HiveWatch_Extension;
-				INFOPLIST_FILE = HiveWatch/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Release;
-		};
-		1ADBDE2B219896F0008C9521 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3C2B077373D686C702D3BF1 /* Pods-HiveWatch Extension.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "HiveWatch Extension/HiveWatch Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKFDYMU9HJ;
-				INFOPLIST_FILE = "HiveWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Debug;
-		};
-		1ADBDE2C219896F0008C9521 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 208A2D617D51A2E1D4A9FCAC /* Pods-HiveWatch Extension.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "HiveWatch Extension/HiveWatch Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VKFDYMU9HJ;
-				INFOPLIST_FILE = "HiveWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = James.Hive.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.1;
-			};
-			name = Release;
-		};
 		1ADBDE3E21989745008C9521 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */;
@@ -2400,24 +1962,6 @@
 			buildConfigurations = (
 				1AA7538E219760D5006DD878 /* Debug */,
 				1AA7538F219760D5006DD878 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1ADBDE2D219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1ADBDE2B219896F0008C9521 /* Debug */,
-				1ADBDE2C219896F0008C9521 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1ADBDE2F219896F0008C9521 /* Build configuration list for PBXNativeTarget "HiveWatch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1ADBDE29219896F0008C9521 /* Debug */,
-				1ADBDE2A219896F0008C9521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
