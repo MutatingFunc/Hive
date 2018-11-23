@@ -72,7 +72,7 @@ extension APIManager: APIManaging {
 			completion(response)
 		case .error(let error, _):
 			if error as? ErrorResponse == .notAuthorized {
-				self.login(with: auth.credentials, contentType: []) { response in
+				self.login(with: auth.credentials, contentType: []) {response in
 					switch response {
 					case .success(let loginInfo, _):
 						auth.sessionID = loginInfo.auth.sessionID

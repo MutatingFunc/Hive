@@ -24,7 +24,9 @@ class DeviceListController: UIViewController {
 		}
 	}
 	@IBOutlet var scrollView: UIScrollView!
-
+	
+	let refreshControl = UIRefreshControl()
+	
 	var deviceList: DeviceList? {
 		didSet {
 			if self.isViewLoaded {
@@ -36,7 +38,19 @@ class DeviceListController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.deviceTableView.refreshControl = refreshControl
+		refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
+		
 		UIMenuController.shared.menuItems = [UIMenuItem(title: "Favourite", action: #selector(DefaultDeviceCell.favourite)), UIMenuItem(title: "Unfavourite", action: #selector(DefaultDeviceCell.unfavourite))]
+	}
+	
+	@objc func reload() {
+		_ = self.deviceList?.reload {[weak self] deviceList in
+			if let deviceList = deviceList {
+				self?.deviceList = deviceList
+				self?.refreshControl.endRefreshing()
+			}
+		}
 	}
 	
 	override func viewSafeAreaInsetsDidChange() {

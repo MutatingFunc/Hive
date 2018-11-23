@@ -37,6 +37,18 @@ public struct DeviceList {
 		}
 	}
 	
+	public func reload(_ completion: @escaping (DeviceList?) -> ()) -> Progress {
+		return api.login(with: auth.credentials, contentType: .all) {[api] response in
+			switch response {
+			case .success(let loginInfo, _):
+				completion(DeviceList(api: api, loginInfo: loginInfo))
+			case .error(let error, _):
+				completion(nil)
+			}
+			
+		}
+	}
+	
 	public func device<DeviceType: Device>(id: String, ofType: DeviceType.Type) -> DeviceType? {
 		return self.devices.lazy.compactMap{$0 as? DeviceType}.first{$0.id.rawValue == id}
 	}
