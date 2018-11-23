@@ -11,19 +11,19 @@ import Foundation
 protocol ViewModel {
 	associatedtype DeviceType
 	var device: DeviceType {get set}
-	var sessionID: SessionID {get}
+	var auth: Authorization {get}
 	var api: APIManaging {get}
 }
 
 func vmSetIsOn<ViewModelType: ViewModel>(_ isOn: Bool, viewModel: inout ViewModelType, completion: @escaping (Response<()>) -> ()) -> Progress where ViewModelType.DeviceType == ToggleableDevice {
 	viewModel.device.isOn = isOn
 	donateIsOnIntent(viewModel.device)
-	return viewModel.api.setOn(of: viewModel.device, sessionID: viewModel.sessionID, completion: completion)
+	return viewModel.api.setOn(of: viewModel.device, auth: viewModel.auth, completion: completion)
 }
 func vmSetIsOn<ViewModelType: ViewModel>(_ isOn: Bool, viewModel: inout ViewModelType, completion: @escaping (Response<()>) -> ()) -> Progress where ViewModelType.DeviceType: ToggleableDevice {
 	viewModel.device.isOn = isOn
 	donateIsOnIntent(viewModel.device)
-	return viewModel.api.setOn(of: viewModel.device, sessionID: viewModel.sessionID, completion: completion)
+	return viewModel.api.setOn(of: viewModel.device, auth: viewModel.auth, completion: completion)
 }
 
 func vmSetBrightness<ViewModelType: ViewModel>(_ brightness: Float, viewModel: inout ViewModelType, completion: @escaping (Response<()>) -> ()) -> Progress where ViewModelType.DeviceType: AnyLightDevice {
@@ -32,8 +32,8 @@ func vmSetBrightness<ViewModelType: ViewModel>(_ brightness: Float, viewModel: i
 	if brightness > 0 {
 		viewModel.device.brightness = brightness
 		donateBrightnessIntent(viewModel.device)
-		return viewModel.api.updateBrightness(of: viewModel.device, sessionID: viewModel.sessionID, completion: completion)
+		return viewModel.api.updateBrightness(of: viewModel.device, auth: viewModel.auth, completion: completion)
 	} else {
-		return viewModel.api.setOn(of: viewModel.device, sessionID: viewModel.sessionID, completion: completion)
+		return viewModel.api.setOn(of: viewModel.device, auth: viewModel.auth, completion: completion)
 	}
 }

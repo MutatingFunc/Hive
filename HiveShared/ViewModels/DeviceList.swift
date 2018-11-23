@@ -9,10 +9,11 @@
 import Foundation
 
 public struct DeviceList {
-	var api: APIManaging, sessionID: SessionID
+	var api: APIManaging, auth: Authorization
 	public internal(set) var devices: [Device], actions: [ActionDevice]
 	public init(api: APIManaging = apiManager, loginInfo: LoginInfo) {
-		self.api = api; self.sessionID = loginInfo.sessionID
+		self.api = api
+		self.auth = loginInfo.auth
 		self.devices = loginInfo.devices
 		self.actions = loginInfo.actions
 		self.sortActions()
@@ -44,15 +45,15 @@ public struct DeviceList {
 	}
 	
 	public func action(_ device: ActionDevice) -> Action {
-		return Action(api: api, sessionID: sessionID, device: device)
+		return Action(api: api, auth: auth, device: device)
 	}
 	public func toggle(_ device: ToggleableDevice) -> Toggle {
-		return Toggle(api: api, sessionID: sessionID, device: device)
+		return Toggle(api: api, auth: auth, device: device)
 	}
 	public func light(_ device: LightDevice) -> Light {
-		return Light(api: api, sessionID: sessionID, device: device)
+		return Light(api: api, auth: auth, device: device)
 	}
 	public func colourLight(_ device: ColourLightDevice) -> ColourLight {
-		return ColourLight(api: api, sessionID: sessionID, device: device)
+		return ColourLight(api: api, auth: auth, device: device)
 	}
 }

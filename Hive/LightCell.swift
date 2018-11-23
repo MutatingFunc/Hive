@@ -53,9 +53,6 @@ class LightCell: UITableViewCell, ReuseIdentifiable {
 			case .success(_, _):
 				self?.endPerform()
 			case .error(let error, _):
-				if error as? ErrorResponse == ErrorResponse.notAuthorized {
-					ReauthenticationCoordinator.shared?.reauthenticate()
-				}
 				self?.nameLabel.flashError(error.localizedDescription) {[weak self] in
 					self?.endPerform()
 				}

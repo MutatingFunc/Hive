@@ -9,10 +9,10 @@
 import Foundation
 
 public struct ColourLight: ViewModel {
-	var api: APIManaging, sessionID: SessionID
+	var api: APIManaging, auth: Authorization
 	public internal(set) var settingsManager: SettingsManaging, device: ColourLightDevice
-	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: ColourLightDevice) {
-		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
+	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), auth: Authorization, device: ColourLightDevice) {
+		self.api = api; self.settingsManager = settingsManager; self.auth = auth; self.device = device
 	}
 	
 	public mutating func setIsOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {
@@ -53,6 +53,6 @@ public struct ColourLight: ViewModel {
 		if sender != nil, case .white = device.state {
 			donateTemperatureIntent(self.device, values: [.temperature, .brightness])
 		}
-		return api.updateState(of: self.device, sessionID: self.sessionID, completion: completion)
+		return api.updateState(of: self.device, auth: self.auth, completion: completion)
 	}
 }

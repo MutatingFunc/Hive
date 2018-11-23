@@ -9,10 +9,10 @@
 import Foundation
 
 public struct Toggle: ViewModel {
-	var api: APIManaging, sessionID: SessionID
+	var api: APIManaging, auth: Authorization
 	public internal(set) var settingsManager: SettingsManaging, device: ToggleableDevice
-	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: ToggleableDevice) {
-		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
+	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), auth: Authorization, device: ToggleableDevice) {
+		self.api = api; self.settingsManager = settingsManager; self.auth = auth; self.device = device
 	}
 	
 	public mutating func setIsOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {

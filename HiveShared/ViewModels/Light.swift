@@ -9,10 +9,10 @@
 import Foundation
 
 public struct Light: ViewModel {
-	var api: APIManaging, sessionID: SessionID
+	var api: APIManaging, auth: Authorization
 	public internal(set) var settingsManager: SettingsManaging, device: LightDevice
-	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), sessionID: SessionID, device: LightDevice) {
-		self.api = api; self.settingsManager = settingsManager; self.sessionID = sessionID; self.device = device
+	public init(api: APIManaging = apiManager, settingsManager: SettingsManaging = SettingsManager(), auth: Authorization, device: LightDevice) {
+		self.api = api; self.settingsManager = settingsManager; self.auth = auth; self.device = device
 	}
 	
 	public mutating func setIsOn(_ isOn: Bool, completion: @escaping (Response<()>) -> ()) -> Progress {

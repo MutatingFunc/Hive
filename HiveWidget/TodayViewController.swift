@@ -64,7 +64,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
 	func tryGetDevices(login: Login = Login(), success: @escaping (DeviceList) -> (), failure: @escaping (Error) -> ()) {
 		do {
-			_ = login.login(credentials: try .savedCredentials()) {response in
+			let credentials = try LoginCredentials.savedCredentials()
+			_ = login.login(credentials: credentials) {response in
 				switch response {
 				case .success(let loginInfo, _):
 					print("Success")

@@ -28,7 +28,8 @@ class IntentHandler: INExtension {
 	
 	func tryGetDevices(login: Login = Login(), ofType contentType: APIContentType, success: @escaping (DeviceList) -> (), failure: @escaping (Error) -> ()) {
 		do {
-			_ = login.login(credentials: try .savedCredentials(), contentType: contentType) {response in
+			let credentials = try LoginCredentials.savedCredentials()
+			_ = login.login(credentials: credentials, contentType: contentType) {response in
 				switch response {
 				case .success(let loginInfo, _):
 					print("Success")
