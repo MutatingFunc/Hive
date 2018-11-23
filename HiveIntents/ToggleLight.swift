@@ -30,6 +30,9 @@ extension IntentHandler: ToggleLightIntentHandling {
 						return completion(.failure(lightName: intent.lightName!, state: intent.state, error: deviceNotFoundError))
 				}
 				intent.lightName = light.device.name
+				if light.device.isOnline == false {
+					return completion(.offline(state: intent.state, lightName: light.device.name))
+				}
 				_ = light.setIsOn(intent.state == .on) {response in
 					switch response {
 					case .success(_, _):
@@ -41,7 +44,7 @@ extension IntentHandler: ToggleLightIntentHandling {
 		},
 			failure: {error in
 				completion(.failure(lightName: intent.lightName!, state: intent.state, error: error.localizedDescription))
-		}
+			}
 		)
 	}
 }

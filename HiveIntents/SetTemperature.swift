@@ -39,6 +39,9 @@ extension IntentHandler: SetTemperatureIntentHandling {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
 				}
 				intent.lightName = light.device.name
+				if light.device.isOnline == false {
+					return completion(.offline(lightName: light.device.name))
+				}
 				_ = light.setState(.white(
 					temperature: intent.temperature!.floatValue,
 					brightness: intent.brightness?.floatValue ?? light.device.brightness
@@ -60,7 +63,7 @@ extension IntentHandler: SetTemperatureIntentHandling {
 		},
 			failure: {error in
 				completion(.failure(lightName: intent.lightName!, error: error.localizedDescription))
-		}
+			}
 		)
 	}
 }

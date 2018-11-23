@@ -50,6 +50,9 @@ extension IntentHandler: SetColourIntentHandling {
 					saturation = nil
 				}
 				intent.lightName = light.device.name
+				if light.device.isOnline == false {
+					return completion(.offline(lightName: light.device.name))
+				}
 				_ = light.setState(.colour(
 					hue: intent.hue?.floatValue ?? hue ?? 100,
 					saturation: intent.saturation?.floatValue ?? saturation ?? 100,
@@ -76,7 +79,7 @@ extension IntentHandler: SetColourIntentHandling {
 		},
 			failure: {error in
 				completion(.failure(lightName: intent.lightName!, error: error.localizedDescription))
-		}
+			}
 		)
 	}
 }

@@ -10,17 +10,28 @@ import Foundation
 
 //status code 400
 public struct ErrorResponse: JSONCodable, LocalizedError, Hashable {
-	public static let notAuthorized = ErrorResponse(error: KnownErrors.notAuthorized.rawValue)
-	public static let malformedRequest = ErrorResponse(error: KnownErrors.malformedRequest.rawValue)
+	public static let notAuthorized = ErrorResponse(error: KnownError.notAuthorized.rawValue)
+	public static let malformedRequest = ErrorResponse(error: KnownError.malformedRequest.rawValue)
+	public static let notFound = ErrorResponse(error: KnownError.notFound.rawValue)
 	
 	let error: String
 	
 	public var errorDescription: String? {
-		return error
+		switch error {
+		case KnownError.notAuthorized.rawValue: return "Login session timed out"
+		case KnownError.malformedRequest.rawValue: return "Malformed request sent"
+		case KnownError.notFound.rawValue: return "Device offline"
+		case _: return error
+		}
 	}
 	
-	enum KnownErrors: String {
+	public var localizedDescription: String {
+		return errorDescription ?? error
+	}
+	
+	private enum KnownError: String {
 		case notAuthorized = "NOT_AUTHORIZED"
 		case malformedRequest = "MALFORMED_REQUEST"
+		case notFound = "NOT_FOUND"
 	}
 }

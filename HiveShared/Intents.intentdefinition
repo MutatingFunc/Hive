@@ -285,6 +285,16 @@
 						<key>INIntentResponseCodeSuccess</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>${lightName} is offline</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>xV9DWZ</string>
+						<key>INIntentResponseCodeName</key>
+						<string>offline</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
 				<integer>5</integer>
@@ -434,6 +444,16 @@
 						<string>success</string>
 						<key>INIntentResponseCodeSuccess</key>
 						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>${lightName} is offline</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>sXCVfE</string>
+						<key>INIntentResponseCodeName</key>
+						<string>offline</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
@@ -684,6 +704,16 @@
 						<key>INIntentResponseCodeSuccess</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>${lightName} is offline</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>v194Jj</string>
+						<key>INIntentResponseCodeName</key>
+						<string>offline</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
 				<integer>11</integer>
@@ -892,6 +922,16 @@
 						<string>successT</string>
 						<key>INIntentResponseCodeSuccess</key>
 						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>${lightName} is offline</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>TMRFRA</string>
+						<key>INIntentResponseCodeName</key>
+						<string>offline</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>

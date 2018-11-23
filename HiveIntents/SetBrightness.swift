@@ -33,6 +33,9 @@ extension IntentHandler: SetBrightnessIntentHandling {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
 				}
 				intent.lightName = light.device.name
+				if light.device.isOnline == false {
+					return completion(.offline(lightName: light.device.name))
+				}
 				let brightness = intent.brightness?.floatValue ?? 0
 				_ = light.setBrightness(brightness) {response in
 					switch response {
@@ -45,7 +48,7 @@ extension IntentHandler: SetBrightnessIntentHandling {
 		},
 			failure: {error in
 				completion(.failure(lightName: intent.lightName!, error: error.localizedDescription))
-		}
+			}
 		)
 	}
 }

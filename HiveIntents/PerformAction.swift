@@ -41,7 +41,7 @@ extension IntentHandler: PerformActionIntentHandling {
 		},
 			failure: {error in
 				completion(.failure(actionName: intent.actionName!, error: error.localizedDescription))
-		}
+			}
 		)
 	}
 }
