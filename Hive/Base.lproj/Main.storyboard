@@ -105,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqz-TL-Nhm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqz-TL-Nhm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mZ-AI-NB0">
@@ -579,7 +579,18 @@
                                     <constraint firstItem="5mZ-AI-NB0" firstAttribute="leading" secondItem="Tqz-TL-Nhm" secondAttribute="leading" id="yJo-r8-YyP"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hfZ-pd-mVZ" id="sD1-dV-bvv"/>
+                                </connections>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="LIA-Ul-1Yo">
+                                <rect key="frame" x="0.0" y="630" width="375" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="pageChanged" destination="hfZ-pd-mVZ" eventType="valueChanged" id="vwc-7F-vvQ"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.89607843139999999" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -587,7 +598,10 @@
                             <constraint firstAttribute="bottom" secondItem="Tqz-TL-Nhm" secondAttribute="bottom" id="2eE-dd-j31"/>
                             <constraint firstItem="5mZ-AI-NB0" firstAttribute="width" secondItem="KEq-bg-doQ" secondAttribute="width" multiplier="0.5" id="9qn-0K-5d4"/>
                             <constraint firstItem="Tqz-TL-Nhm" firstAttribute="leading" secondItem="KEq-bg-doQ" secondAttribute="leading" id="Fuf-Sp-4bm"/>
+                            <constraint firstItem="Ro2-kM-Bg5" firstAttribute="bottom" secondItem="LIA-Ul-1Yo" secondAttribute="bottom" id="VA1-fz-gEh"/>
                             <constraint firstItem="Tqz-TL-Nhm" firstAttribute="top" secondItem="KEq-bg-doQ" secondAttribute="top" id="bSx-hE-8DX"/>
+                            <constraint firstItem="LIA-Ul-1Yo" firstAttribute="trailing" secondItem="Ro2-kM-Bg5" secondAttribute="trailing" id="dEF-PK-2KD"/>
+                            <constraint firstItem="LIA-Ul-1Yo" firstAttribute="leading" secondItem="Ro2-kM-Bg5" secondAttribute="leading" id="fvJ-3f-4CK"/>
                             <constraint firstItem="5mZ-AI-NB0" firstAttribute="width" secondItem="KEq-bg-doQ" secondAttribute="width" priority="999" id="j17-UX-8b1"/>
                             <constraint firstAttribute="trailing" secondItem="Tqz-TL-Nhm" secondAttribute="trailing" id="pod-aH-Xjc"/>
                             <constraint firstAttribute="bottom" secondItem="5mZ-AI-NB0" secondAttribute="bottom" id="zsa-zk-9HU"/>
@@ -611,6 +625,7 @@
                     <connections>
                         <outlet property="actionTableView" destination="hq6-bR-xEa" id="tFi-tf-IOH"/>
                         <outlet property="deviceTableView" destination="5mZ-AI-NB0" id="sNy-VV-gcM"/>
+                        <outlet property="pageControl" destination="LIA-Ul-1Yo" id="QaR-8C-Z4x"/>
                         <outlet property="scrollView" destination="Tqz-TL-Nhm" id="FE7-oE-Edk"/>
                     </connections>
                 </viewController>

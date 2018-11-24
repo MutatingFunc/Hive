@@ -24,6 +24,7 @@ class DeviceListController: UIViewController {
 		}
 	}
 	@IBOutlet var scrollView: UIScrollView!
+	@IBOutlet var pageControl: UIPageControl!
 	
 	let refreshControl = UIRefreshControl()
 	
@@ -38,6 +39,7 @@ class DeviceListController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		self.deviceTableView.refreshControl = refreshControl
 		refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
 		
@@ -51,6 +53,21 @@ class DeviceListController: UIViewController {
 				self?.refreshControl.endRefreshing()
 			}
 		}
+	}
+	
+	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		super.viewWillTransition(to: size, with: coordinator)
+		coordinator.animate(alongsideTransition: nil) {[weak self] _ in
+			guard let self = self else {return}
+			self.pageControl.numberOfPages = Int(self.scrollView.contentSize.width / self.scrollView.visibleSize.width)
+		}
+	}
+	
+	@IBAction func pageChanged() {
+		let offset = self.scrollView.visibleSize.width * CGFloat(self.pageControl.currentPage)
+		UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState], animations: {
+			self.scrollView.contentOffset.x = offset
+		}, completion: nil)
 	}
 	
 	override func viewSafeAreaInsetsDidChange() {
@@ -143,6 +160,17 @@ extension DeviceListController: UITableViewDataSource, UITableViewDelegate {
 			: action == #selector(DefaultDeviceCell.favourite)
 	}
 	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+	}
+}
+
+extension DeviceListController: UIScrollViewDelegate {
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		guard scrollView === self.scrollView else {
+			return
+		}
+		let index = Int((scrollView.contentOffset.x + (scrollView.visibleSize.width / 2)) / scrollView.visibleSize.width)
+		let limitedIndex = min(max(index, 0), self.pageControl.numberOfPages)
+		self.pageControl.currentPage = limitedIndex
 	}
 }
 
