@@ -50,14 +50,14 @@ extension IntentHandler: SetColourIntentHandling {
 					saturation = nil
 				}
 				intent.lightName = light.device.name
-				if light.device.isOnline == false {
-					return completion(.offline(lightName: light.device.name))
-				}
 				_ = light.setState(.colour(
 					hue: intent.hue?.floatValue ?? hue ?? 100,
 					saturation: intent.saturation?.floatValue ?? saturation ?? 100,
 					brightness: intent.brightness?.floatValue ?? light.device.brightness
 				), sender: nil) {response in
+					if light.device.isOnline == false {
+						return completion(.offline(lightName: light.device.name))
+					}
 					switch response {
 					case .success(_, _):
 						switch (intent.hue, intent.saturation, intent.brightness) {

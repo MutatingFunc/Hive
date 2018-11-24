@@ -30,10 +30,10 @@ extension IntentHandler: ToggleLightIntentHandling {
 						return completion(.failure(lightName: intent.lightName!, state: intent.state, error: deviceNotFoundError))
 				}
 				intent.lightName = light.device.name
-				if light.device.isOnline == false {
-					return completion(.offline(state: intent.state, lightName: light.device.name))
-				}
 				_ = light.setIsOn(intent.state == .on) {response in
+					if light.device.isOnline == false {
+						return completion(.offline(state: intent.state, lightName: light.device.name))
+					}
 					switch response {
 					case .success(_, _):
 						completion(.success(state: intent.state, lightName: intent.lightName!))

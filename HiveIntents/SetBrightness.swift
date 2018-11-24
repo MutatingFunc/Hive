@@ -33,11 +33,11 @@ extension IntentHandler: SetBrightnessIntentHandling {
 						return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
 				}
 				intent.lightName = light.device.name
-				if light.device.isOnline == false {
-					return completion(.offline(lightName: light.device.name))
-				}
 				let brightness = intent.brightness?.floatValue ?? 0
 				_ = light.setBrightness(brightness) {response in
+					if light.device.isOnline == false {
+						return completion(.offline(lightName: light.device.name))
+					}
 					switch response {
 					case .success(_, _):
 						completion(.success(lightName: light.device.name, brightness: NSNumber(value: brightness)))
