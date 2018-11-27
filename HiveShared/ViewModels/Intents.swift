@@ -46,7 +46,19 @@ func donateBrightnessIntent(_ device: AdjustableBrightnessDevice) {
 			print("Error donating intent: \(error)")
 		}
 	}
+	
 	//INRelevantShortcut for Siri watchface
+}
+func donateGetBrightnessIntent(_ device: AdjustableBrightnessDevice) {
+	let intent = GetBrightnessIntent()
+	intent.lightID = device.id.rawValue
+	intent.lightName = device.name
+	let interation = INInteraction(intent: intent, response: nil)
+	interation.donate {error in
+		if let error = error {
+			print("Error donating intent: \(error)")
+		}
+	}
 }
 
 func donateColourIntent(_ device: ColourLightDevice, values: Set<ColourLight.SetStateSender>) {

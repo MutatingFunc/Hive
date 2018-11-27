@@ -53,6 +53,7 @@
 		1AA7539E2197615B006DD878 /* ColourLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9C3512190DDBC004882E9 /* ColourLight.swift */; };
 		1AA7539F2197615B006DD878 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE92191036F00DC21EB /* Action.swift */; };
 		1AA753A0219761E5006DD878 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
+		1AB123F621AA967100994EFD /* GetBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB123F521AA967100994EFD /* GetBrightness.swift */; };
 		1AB87ADA21A16C5500393732 /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87AD921A16C5500393732 /* Intents.swift */; };
 		1AB87ADB21A16CCD00393732 /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87AD921A16C5500393732 /* Intents.swift */; };
 		1AB87ADD21A16CF200393732 /* CommonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87ADC21A16CF200393732 /* CommonAPI.swift */; };
@@ -260,6 +261,7 @@
 		1AA75383219760D5006DD878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA753A421976388006DD878 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA753AB219763AF006DD878 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB123F521AA967100994EFD /* GetBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBrightness.swift; sourceTree = "<group>"; };
 		1AB87AD921A16C5500393732 /* Intents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intents.swift; sourceTree = "<group>"; };
 		1AB87ADC21A16CF200393732 /* CommonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPI.swift; sourceTree = "<group>"; };
 		1AB87ADF21A17F7900393732 /* SetColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColour.swift; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 				1ADF05C22197AC0B00604961 /* PerformAction.swift */,
 				1ADF05C62197AC2300604961 /* ToggleLight.swift */,
 				1ADF05C42197AC1C00604961 /* SetBrightness.swift */,
+				1AB123F521AA967100994EFD /* GetBrightness.swift */,
 				1AB87ADF21A17F7900393732 /* SetColour.swift */,
 				1AB87AE121A17F8000393732 /* SetTemperature.swift */,
 				1AA7536321975861006DD878 /* Info.plist */,
@@ -1196,6 +1199,7 @@
 				1AA7536221975861006DD878 /* IntentHandler.swift in Sources */,
 				1AB87AE221A17F8000393732 /* SetTemperature.swift in Sources */,
 				1ADF05C52197AC1C00604961 /* SetBrightness.swift in Sources */,
+				1AB123F621AA967100994EFD /* GetBrightness.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

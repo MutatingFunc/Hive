@@ -40,6 +40,8 @@ class DeviceListController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.updateNumberOfPages()
+		
 		self.deviceTableView.refreshControl = refreshControl
 		refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
 		
@@ -58,9 +60,12 @@ class DeviceListController: UIViewController {
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 		super.viewWillTransition(to: size, with: coordinator)
 		coordinator.animate(alongsideTransition: nil) {[weak self] _ in
-			guard let self = self else {return}
-			self.pageControl.numberOfPages = Int(self.scrollView.contentSize.width / self.scrollView.visibleSize.width)
+			self?.updateNumberOfPages()
 		}
+	}
+	
+	func updateNumberOfPages() {
+		self.pageControl.numberOfPages = Int(self.scrollView.contentSize.width / self.scrollView.visibleSize.width)
 	}
 	
 	@IBAction func pageChanged() {

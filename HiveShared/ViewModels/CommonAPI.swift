@@ -29,6 +29,7 @@ func vmSetIsOn<ViewModelType: ViewModel>(_ isOn: Bool, viewModel: inout ViewMode
 func vmSetBrightness<ViewModelType: ViewModel>(_ brightness: Float, viewModel: inout ViewModelType, completion: @escaping (Response<()>) -> ()) -> Progress where ViewModelType.DeviceType: AnyLightDevice {
 	viewModel.device.isOn = brightness > 0
 	donateIsOnIntent(viewModel.device)
+	donateGetBrightnessIntent(viewModel.device)
 	if brightness > 0 {
 		viewModel.device.brightness = brightness
 		donateBrightnessIntent(viewModel.device)

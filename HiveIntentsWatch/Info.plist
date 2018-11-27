@@ -30,6 +30,7 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
+				<string>GetBrightnessIntent</string>
 				<string>PerformActionIntent</string>
 				<string>SetBrightnessIntent</string>
 				<string>SetColourIntent</string>
