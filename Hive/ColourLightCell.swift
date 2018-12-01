@@ -64,6 +64,12 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	}
 	
 	@IBAction func valueChanged(sender: UISlider) {
+		self.valueChanged(slider: sender)
+	}
+	@IBAction func controlChanged(sender: UISegmentedControl) {
+		self.valueChanged(slider: nil)
+	}
+	func valueChanged(slider: UISlider?) {
 		let colour = colourSlider.value.rounded()
 		let saturation = saturationSlider.value.rounded()
 		let brightness = brightnessSlider.value.rounded()
@@ -74,14 +80,16 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 				? .colour(hue: colour, saturation: saturation, brightness: brightness)
 				: .white(temperature: colour, brightness: brightness)
 		self.setHighlighted(true, animated: true)
-		let senderType: ColourLight.SetStateSender
-		switch sender {
+		let senderType: ColourLight.SetStateSender?
+		switch slider {
 		case colourSlider:
 			senderType = isColourValue ? .hue : .temperature
 		case saturationSlider:
 			senderType = .saturation
-		case _:
+		case brightnessSlider:
 			senderType = .brightness
+		case _:
+			senderType = nil
 		}
 		_ = self.light.setState(state, sender: senderType) {[weak self] response in
 			switch response {

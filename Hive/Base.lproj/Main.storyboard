@@ -231,7 +231,7 @@
                                                                 <segment title="White"/>
                                                             </segments>
                                                             <connections>
-                                                                <action selector="valueChanged" destination="7Ra-q6-NMW" eventType="valueChanged" id="y6g-2Z-eS9"/>
+                                                                <action selector="controlChangedWithSender:" destination="7Ra-q6-NMW" eventType="valueChanged" id="xhY-6B-nRs"/>
                                                             </connections>
                                                         </segmentedControl>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-6g-C5e">
