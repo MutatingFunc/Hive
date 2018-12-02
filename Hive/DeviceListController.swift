@@ -50,10 +50,14 @@ class DeviceListController: UIViewController {
 	
 	@objc func reload() {
 		_ = self.deviceList?.reload {[weak self] deviceList in
-			if let deviceList = deviceList {
+			do {
+				let deviceList = try deviceList()
 				self?.deviceList = deviceList
-				self?.refreshControl.endRefreshing()
+			} catch {
+				self?.deviceList = nil
+				error //TODO: handle
 			}
+			self?.refreshControl.endRefreshing()
 		}
 	}
 	

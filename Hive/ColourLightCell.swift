@@ -13,8 +13,10 @@ import HiveShared
 class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var saturationLabel: UILabel!
+	@IBOutlet var sliderLabels: [UILabel]!
 	@IBOutlet var colourControl: UISegmentedControl!
 	@IBOutlet var colourSlider: UISlider!
+	@IBOutlet var colourStepper: UIStepper!
 	@IBOutlet var saturationSlider: UISlider!
 	@IBOutlet var brightnessSlider: UISlider!
 	@IBOutlet var loadingIndicator: UIActivityIndicatorView!
@@ -29,21 +31,24 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 		didSet {
 			nameLabel.text = light.device.name
 			self.isUserInteractionEnabled = light.device.isOnline
-			[nameLabel, saturationLabel].forEach{
+			([nameLabel] + sliderLabels).forEach{
 				$0.textColor = UIColor(named: light.device.isOnline ? Color.textColor.rawValue : Color.disabledTextColor.rawValue)
 			}
 			switch light.device.state {
 			case let .colour(hue: h, saturation: s, brightness: b):
 				colourControl.selectedSegmentIndex = 0
 				colourSlider.value = Float(h)
+				colourStepper.value = Double(h)
 				saturationSlider.value = Float(s)
 				saturationSlider.isEnabled = true
 				brightnessSlider.value = light.device.isOn ? Float(b) : 0
 			case let .white(h, b):
 				colourControl.selectedSegmentIndex = 1
 				colourSlider.value = Float(h)
+				colourStepper.value = Double(h)
 				saturationSlider.value = saturationSlider.maximumValue
 				saturationSlider.isEnabled = false
+				saturationLabel.textColor = UIColor(named: Color.disabledTextColor.rawValue)
 				brightnessSlider.value = light.device.isOn ? Float(b) : 0
 			}
 		}
@@ -63,35 +68,43 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 		delegate?.isFavouriteChanged(device: self.light.device)
 	}
 	
-	@IBAction func valueChanged(sender: UISlider) {
-		self.valueChanged(slider: sender)
+	func intentType(for view: UIView, isColourValue: Bool) -> ColourLight.SetStateIntentType? {
+		switch view {
+		case colourControl, colourSlider, colourStepper:
+			return isColourValue ? .hue : .temperature
+		case saturationSlider:
+			return .saturation
+		case brightnessSlider:
+			return .brightness
+		case _:
+			return nil
+		}
 	}
-	@IBAction func controlChanged(sender: UISegmentedControl) {
-		self.valueChanged(slider: nil)
+	
+	func updateColourControls(sender: UIView) {
+		switch sender {
+		case colourSlider: colourStepper.value = Double(colourSlider.value.rounded())
+		case colourStepper: colourSlider.value = Float(colourStepper.value.rounded())
+		case _: break
+		}
 	}
-	func valueChanged(slider: UISlider?) {
+	
+	@IBAction func valueChanged(sender: UIView) {
+		updateColourControls(sender: sender)
 		let colour = colourSlider.value.rounded()
 		let saturation = saturationSlider.value.rounded()
 		let brightness = brightnessSlider.value.rounded()
-		loadingIndicator.startAnimating()
 		let isColourValue = colourControl.selectedSegmentIndex == 0
+		
 		let state: ColourLightDevice.State =
 			isColourValue
 				? .colour(hue: colour, saturation: saturation, brightness: brightness)
 				: .white(temperature: colour, brightness: brightness)
+		let intentType = self.intentType(for: sender, isColourValue: isColourValue)
+		
+		loadingIndicator.startAnimating()
 		self.setHighlighted(true, animated: true)
-		let senderType: ColourLight.SetStateSender?
-		switch slider {
-		case colourSlider:
-			senderType = isColourValue ? .hue : .temperature
-		case saturationSlider:
-			senderType = .saturation
-		case brightnessSlider:
-			senderType = .brightness
-		case _:
-			senderType = nil
-		}
-		_ = self.light.setState(state, sender: senderType) {[weak self] response in
+		_ = self.light.setState(state, intentType: intentType) {[weak self] response in
 			switch response {
 			case .success(_, _):
 				self?.endPerform()

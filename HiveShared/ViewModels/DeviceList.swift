@@ -37,15 +37,14 @@ public struct DeviceList {
 		}
 	}
 	
-	public func reload(_ completion: @escaping (DeviceList?) -> ()) -> Progress {
+	public func reload(_ completion: @escaping (() throws -> DeviceList) -> ()) -> Progress {
 		return api.login(with: auth.credentials, contentType: .all) {[api] response in
 			switch response {
 			case .success(let loginInfo, _):
-				completion(DeviceList(api: api, loginInfo: loginInfo))
+				completion{DeviceList(api: api, loginInfo: loginInfo)}
 			case .error(let error, _):
-				completion(nil)
+				completion{throw error}
 			}
-			
 		}
 	}
 	

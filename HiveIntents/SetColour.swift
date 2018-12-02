@@ -54,7 +54,7 @@ extension IntentHandler: SetColourIntentHandling {
 					hue: intent.hue?.floatValue ?? hue ?? 100,
 					saturation: intent.saturation?.floatValue ?? saturation ?? 100,
 					brightness: intent.brightness?.floatValue ?? light.device.brightness
-				), sender: nil) {response in
+				), intentType: nil) {response in
 					if light.device.isOnline == false {
 						return completion(.offline(lightName: light.device.name))
 					}

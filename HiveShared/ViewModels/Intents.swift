@@ -61,7 +61,7 @@ func donateGetBrightnessIntent(_ device: AdjustableBrightnessDevice) {
 	}
 }
 
-func donateColourIntent(_ device: ColourLightDevice, values: Set<ColourLight.SetStateSender>) {
+func donateColourIntent(_ device: ColourLightDevice, values: Set<ColourLight.SetStateIntentType>) {
 	guard case .colour(hue: let hue, saturation: let saturation, brightness: let brightness) = device.state else {
 		return
 	}
@@ -86,7 +86,7 @@ func donateColourIntent(_ device: ColourLightDevice, values: Set<ColourLight.Set
 	//INRelevantShortcut for Siri watchface
 }
 
-func donateTemperatureIntent(_ device: ColourLightDevice, values: Set<ColourLight.SetStateSender>) {
+func donateTemperatureIntent(_ device: ColourLightDevice, values: Set<ColourLight.SetStateIntentType>) {
 	guard case .white(temperature: let temperature, brightness: let brightness) = device.state else {
 		return
 	}

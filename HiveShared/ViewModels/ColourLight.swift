@@ -23,34 +23,34 @@ public struct ColourLight: ViewModel {
 		return vmSetBrightness(brightness, viewModel: &self, completion: completion)
 	}
 	
-	public enum SetStateSender {
+	public enum SetStateIntentType {
 		case hue, saturation, temperature, brightness
 	}
 	
-	public mutating func setState(_ state: ColourLightDevice.State?, sender: SetStateSender?, completion: @escaping (Response<()>) -> ()) -> Progress {
+	public mutating func setState(_ state: ColourLightDevice.State?, intentType: SetStateIntentType?, completion: @escaping (Response<()>) -> ()) -> Progress {
 		if let state = state {
 			self.device.state = state
 		}
 		self.device.isOn = state != nil
 		donateIsOnIntent(self.device)
-		if sender == .hue {
+		if intentType == .hue {
 			donateColourIntent(self.device, values: [.hue])
 			donateColourIntent(self.device, values: [.hue, .saturation])
 		}
-		if sender == .saturation {
+		if intentType == .saturation {
 			donateColourIntent(self.device, values: [.saturation])
 			donateColourIntent(self.device, values: [.hue, .saturation])
 		}
-		if sender == .brightness {
+		if intentType == .brightness {
 			donateBrightnessIntent(self.device)
 		}
-		if sender == .temperature {
+		if intentType == .temperature {
 			donateTemperatureIntent(self.device, values: [.temperature])
 		}
-		if sender != nil, case .colour = device.state {
+		if intentType != nil, case .colour = device.state {
 			donateColourIntent(self.device, values: [.hue, .saturation, .brightness])
 		}
-		if sender != nil, case .white = device.state {
+		if intentType != nil, case .white = device.state {
 			donateTemperatureIntent(self.device, values: [.temperature, .brightness])
 		}
 		return api.updateState(of: self.device, auth: self.auth, completion: completion)

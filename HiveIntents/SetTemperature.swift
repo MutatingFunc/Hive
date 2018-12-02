@@ -42,7 +42,7 @@ extension IntentHandler: SetTemperatureIntentHandling {
 				_ = light.setState(.white(
 					temperature: intent.temperature!.floatValue,
 					brightness: intent.brightness?.floatValue ?? light.device.brightness
-				), sender: nil) {response in
+				), intentType: nil) {response in
 					if light.device.isOnline == false {
 						return completion(.offline(lightName: light.device.name))
 					}
