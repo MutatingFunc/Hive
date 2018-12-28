@@ -9,6 +9,7 @@
 import UIKit
 
 import HiveShared
+import HueKit
 
 class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var nameLabel: UILabel!
@@ -17,9 +18,12 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	@IBOutlet var colourControl: UISegmentedControl!
 	@IBOutlet var colourSlider: UISlider!
 	@IBOutlet var colourStepper: UIStepper!
+	@IBOutlet var colourBar: ColorBarPicker!
 	@IBOutlet var saturationSlider: UISlider!
 	@IBOutlet var brightnessSlider: UISlider!
 	@IBOutlet var loadingIndicator: UIActivityIndicatorView!
+	@IBOutlet var colourViews: [UIView]!
+	@IBOutlet var whiteViews: [UIView]!
 	
 	override func prepareForReuse() {
 		super.prepareForReuse()
@@ -36,16 +40,22 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 			}
 			switch light.device.state {
 			case let .colour(hue: h, saturation: s, brightness: b):
+				whiteViews.forEach{$0.isHidden = true}
+				colourViews.forEach{$0.isHidden = false}
 				colourControl.selectedSegmentIndex = 0
 				colourSlider.value = Float(h)
 				colourStepper.value = Double(h)
+				colourBar.hue = CGFloat(h) / 100
 				saturationSlider.value = Float(s)
 				saturationSlider.isEnabled = true
 				brightnessSlider.value = light.device.isOn ? Float(b) : 0
 			case let .white(h, b):
+				whiteViews.forEach{$0.isHidden = false}
+				colourViews.forEach{$0.isHidden = true}
 				colourControl.selectedSegmentIndex = 1
 				colourSlider.value = Float(h)
 				colourStepper.value = Double(h)
+				colourBar.hue = CGFloat(h) / 100
 				saturationSlider.value = saturationSlider.maximumValue
 				saturationSlider.isEnabled = false
 				saturationLabel.textColor = UIColor(named: Color.disabledTextColor.rawValue)
@@ -70,7 +80,7 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 	
 	func intentType(for view: UIView, isColourValue: Bool) -> ColourLight.SetStateIntentType? {
 		switch view {
-		case colourControl, colourSlider, colourStepper:
+		case colourBar, colourControl, colourSlider, colourStepper:
 			return isColourValue ? .hue : .temperature
 		case saturationSlider:
 			return .saturation
@@ -81,20 +91,31 @@ class ColourLightCell: UITableViewCell, ReuseIdentifiable {
 		}
 	}
 	
-	func updateColourControls(sender: UIView) {
+	func updateColourControls(sender: UIView, isColourValue: Bool) {
 		switch sender {
-		case colourSlider: colourStepper.value = Double(colourSlider.value.rounded())
-		case colourStepper: colourSlider.value = Float(colourStepper.value.rounded())
+		case colourSlider:
+			colourStepper.value = Double(colourSlider.value.rounded())
+			colourBar.hue = CGFloat(colourSlider.value.rounded() / 100)
+		case colourStepper:
+			colourSlider.value = Float(colourStepper.value.rounded())
+			colourBar.hue = CGFloat(colourStepper.value.rounded() / 100)
+		case colourBar:
+			colourStepper.value = Double(colourBar.hue * 100)
+			colourSlider.value = Float(colourBar.hue * 100)
+		case colourControl:
+			whiteViews.forEach{$0.isHidden = isColourValue == true}
+			colourViews.forEach{$0.isHidden = isColourValue == false}
 		case _: break
 		}
 	}
 	
 	@IBAction func valueChanged(sender: UIView) {
-		updateColourControls(sender: sender)
+		let isColourValue = colourControl.selectedSegmentIndex == 0
+		updateColourControls(sender: sender, isColourValue: isColourValue)
+		
 		let colour = colourSlider.value.rounded()
 		let saturation = saturationSlider.value.rounded()
 		let brightness = brightnessSlider.value.rounded()
-		let isColourValue = colourControl.selectedSegmentIndex == 0
 		
 		let state: ColourLightDevice.State =
 			isColourValue

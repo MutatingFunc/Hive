@@ -14,6 +14,8 @@
 		1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
 		1A29E054218F54C000D0351F /* LightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E053218F54C000D0351F /* LightCell.swift */; };
 		1A29E05E218F6F1600D0351F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05D218F6F1600D0351F /* Colors.swift */; };
+		1A46C0F521D514E000A16F90 /* HueKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46C0F421D514E000A16F90 /* HueKit.framework */; };
+		1A46C0F621D514E000A16F90 /* HueKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46C0F421D514E000A16F90 /* HueKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A47E29F2198FEEC00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
 		1A47E2A12198FF0A00A7CD14 /* SetHSBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */; };
 		1A47E2A2219904CD00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
@@ -196,6 +198,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1A46C0F621D514E000A16F90 /* HueKit.framework in Embed Frameworks */,
 				1AE141A7219768EB00913920 /* HiveShared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -217,6 +220,7 @@
 		1A29E05B218F6BCB00D0351F /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		1A29E05D218F6F1600D0351F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1A46692E21989F5F00007772 /* HiveIntentsWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveIntentsWatch.entitlements; sourceTree = "<group>"; };
+		1A46C0F421D514E000A16F90 /* HueKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HueKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOnRequest.swift; sourceTree = "<group>"; };
 		1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHSBRequest.swift; sourceTree = "<group>"; };
 		1A4FF21A218F10AC00EAC20F /* Hive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +323,7 @@
 			files = (
 				1AE141A6219768EB00913920 /* HiveShared.framework in Frameworks */,
 				9FF1639AE0071C426064AA19 /* Pods_Hive.framework in Frameworks */,
+				1A46C0F521D514E000A16F90 /* HueKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +420,7 @@
 		1A4FF211218F10AC00EAC20F = {
 			isa = PBXGroup;
 			children = (
+				1A46C0F421D514E000A16F90 /* HueKit.framework */,
 				1AA75373219760D5006DD878 /* HiveShared */,
 				1AA75380219760D5006DD878 /* HiveSharedTests */,
 				1A4FF21C218F10AC00EAC20F /* Hive */,

@@ -225,6 +225,13 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="cc5-C2-obo" customClass="ColorBarPicker" customModule="HueKit">
+                                                            <rect key="frame" x="15" y="76.5" width="345" height="30"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <connections>
+                                                                <action selector="valueChangedWithSender:" destination="7Ra-q6-NMW" eventType="editingChanged" id="2KV-27-A6g"/>
+                                                            </connections>
+                                                        </view>
                                                         <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-2y-dJT">
                                                             <rect key="frame" x="13" y="76.5" width="349" height="31"/>
                                                             <connections>
@@ -268,8 +275,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="cc5-C2-obo" firstAttribute="leading" secondItem="7cj-2y-dJT" secondAttribute="leading" id="3Wo-D7-Kd5"/>
                                                         <constraint firstItem="l2Z-ep-FA4" firstAttribute="top" secondItem="TIX-0Y-Ggb" secondAttribute="bottom" constant="8" id="7ZI-e5-0Tt"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="49d-2b-gKW" secondAttribute="trailing" constant="30" id="88L-bH-gpd"/>
+                                                        <constraint firstItem="cc5-C2-obo" firstAttribute="bottom" secondItem="7cj-2y-dJT" secondAttribute="bottom" id="8Bv-k4-doU"/>
                                                         <constraint firstItem="3cX-GX-KbM" firstAttribute="bottom" secondItem="l2Z-ep-FA4" secondAttribute="bottom" id="AOz-ey-1hn"/>
                                                         <constraint firstItem="pi4-6g-C5e" firstAttribute="bottom" secondItem="6oN-HO-PQn" secondAttribute="centerY" id="B3q-Dh-hKW"/>
                                                         <constraint firstItem="Y6M-0f-E8V" firstAttribute="top" secondItem="6oN-HO-PQn" secondAttribute="bottom" constant="8" id="D7k-kj-GuE"/>
@@ -286,12 +295,14 @@
                                                         <constraint firstItem="Y6M-0f-E8V" firstAttribute="leading" secondItem="okv-Yw-8lO" secondAttribute="leadingMargin" id="XL1-mc-MDu"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="Y6M-0f-E8V" secondAttribute="bottom" id="YT1-hA-7H9"/>
                                                         <constraint firstItem="7cj-2y-dJT" firstAttribute="trailing" secondItem="Y6M-0f-E8V" secondAttribute="trailing" id="ZD2-oP-ffj"/>
+                                                        <constraint firstItem="cc5-C2-obo" firstAttribute="trailing" secondItem="7cj-2y-dJT" secondAttribute="trailing" id="b4P-QT-Cox"/>
                                                         <constraint firstItem="7cj-2y-dJT" firstAttribute="top" secondItem="l2Z-ep-FA4" secondAttribute="bottom" constant="8" id="c7c-6R-Jmb"/>
                                                         <constraint firstItem="TIX-0Y-Ggb" firstAttribute="leading" secondItem="okv-Yw-8lO" secondAttribute="leadingMargin" id="he6-T5-j0F"/>
                                                         <constraint firstItem="pi4-6g-C5e" firstAttribute="trailing" secondItem="49d-2b-gKW" secondAttribute="trailing" id="ibS-pe-G7I"/>
                                                         <constraint firstItem="p9g-bb-o1n" firstAttribute="leading" secondItem="TIX-0Y-Ggb" secondAttribute="trailing" constant="2" id="jnc-CT-w2A"/>
                                                         <constraint firstItem="pi4-6g-C5e" firstAttribute="leading" secondItem="49d-2b-gKW" secondAttribute="leading" id="kWw-Py-Eta"/>
                                                         <constraint firstItem="l2Z-ep-FA4" firstAttribute="leading" secondItem="okv-Yw-8lO" secondAttribute="leadingMargin" id="qgV-bf-hcR"/>
+                                                        <constraint firstItem="cc5-C2-obo" firstAttribute="top" secondItem="7cj-2y-dJT" secondAttribute="top" id="qrq-Zk-fN6"/>
                                                         <constraint firstItem="3cX-GX-KbM" firstAttribute="trailing" secondItem="okv-Yw-8lO" secondAttribute="trailingMargin" id="quH-jB-20b"/>
                                                         <constraint firstItem="49d-2b-gKW" firstAttribute="leading" secondItem="okv-Yw-8lO" secondAttribute="leadingMargin" constant="30" id="qvi-eW-c2Q"/>
                                                         <constraint firstItem="6oN-HO-PQn" firstAttribute="top" secondItem="7cj-2y-dJT" secondAttribute="bottom" constant="8" id="y5K-W3-byN"/>
@@ -303,6 +314,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="brightnessSlider" destination="Y6M-0f-E8V" id="Asc-ig-pYS"/>
+                                                    <outlet property="colourBar" destination="cc5-C2-obo" id="xwB-me-qrI"/>
                                                     <outlet property="colourControl" destination="l2Z-ep-FA4" id="Snf-sp-OQn"/>
                                                     <outlet property="colourSlider" destination="7cj-2y-dJT" id="eXh-Dl-Ck2"/>
                                                     <outlet property="colourStepper" destination="3cX-GX-KbM" id="22K-e1-Bi6"/>
@@ -313,6 +325,9 @@
                                                     <outletCollection property="sliderLabels" destination="dpv-2d-Udx" collectionClass="NSMutableArray" id="s4t-qm-AYz"/>
                                                     <outletCollection property="sliderLabels" destination="pi4-6g-C5e" collectionClass="NSMutableArray" id="uoS-2U-7Y7"/>
                                                     <outletCollection property="sliderLabels" destination="49d-2b-gKW" collectionClass="NSMutableArray" id="hVK-fn-EEM"/>
+                                                    <outletCollection property="colourViews" destination="cc5-C2-obo" collectionClass="NSMutableArray" id="ya5-ZP-8d7"/>
+                                                    <outletCollection property="whiteViews" destination="7cj-2y-dJT" collectionClass="NSMutableArray" id="cjR-8z-U66"/>
+                                                    <outletCollection property="whiteViews" destination="dpv-2d-Udx" collectionClass="NSMutableArray" id="T47-qY-FpJ"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActionCell" rowHeight="211" id="EDX-Qv-Hil" customClass="ActionCell" customModule="Hive" customModuleProvider="target">
