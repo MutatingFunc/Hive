@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0857868D5AF9BDD85C627ED9 /* Pods_HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7CE70752706D959C1233D5 /* Pods_HiveSharedWatch.framework */; };
+		12BF337083A193F29076DE46 /* Pods_HiveShared_HiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2941E57196E09DBD55BF35A /* Pods_HiveShared_HiveWidget.framework */; };
 		1A132C632198827F00FC893B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FF224218F10AC00EAC20F /* Assets.xcassets */; };
 		1A1F26FB21974F7A000F7F0C /* ReauthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */; };
 		1A2069D92194F56800AF049F /* RootNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2069D82194F56800AF049F /* RootNav.swift */; };
 		1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
 		1A29E054218F54C000D0351F /* LightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E053218F54C000D0351F /* LightCell.swift */; };
 		1A29E05E218F6F1600D0351F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05D218F6F1600D0351F /* Colors.swift */; };
-		1A46C0F521D514E000A16F90 /* HueKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46C0F421D514E000A16F90 /* HueKit.framework */; };
-		1A46C0F621D514E000A16F90 /* HueKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A46C0F421D514E000A16F90 /* HueKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A47E29F2198FEEC00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
 		1A47E2A12198FF0A00A7CD14 /* SetHSBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */; };
 		1A47E2A2219904CD00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
@@ -110,11 +108,17 @@
 		1AFE73F02198984F00AA1747 /* HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; };
 		1AFE73F2219899FA00AA1747 /* SharediOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE73F1219899FA00AA1747 /* SharediOS.swift */; };
 		1AFE73F721989C7800AA1747 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
-		1D33445D7F2589B520764EB1 /* Pods_HiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */; };
-		1E478013AA1D138523CAFB8F /* Pods_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */; };
-		99ADC7CFCC68C46664321C0D /* Pods_HiveIntentsWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181FD52DDD022284AB6DA1E /* Pods_HiveIntentsWatch.framework */; };
-		9FF1639AE0071C426064AA19 /* Pods_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA753A421976388006DD878 /* Pods_Hive.framework */; };
-		C0DF9239130A902BC8EA2F00 /* Pods_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */; };
+		4224C1D517A236DFD4550878 /* Pods_Hive_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADAE7686C65FF651CF7308A /* Pods_Hive_HiveIntents.framework */; };
+		5ABC908E19C79518EA64AED5 /* Pods_HiveIntentsWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181FD52DDD022284AB6DA1E /* Pods_HiveIntentsWatch.framework */; };
+		5F3EE26498EA418D42FC2CA7 /* Pods_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */; };
+		68FF4B20EA5713ADA56563FD /* Pods_Hive_HiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C1E98CDABC53A9CFBC8244 /* Pods_Hive_HiveWidget.framework */; };
+		799A337A6E13647A874CBCBB /* Pods_HiveShared_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9582123A114F8924D5D7D4B0 /* Pods_HiveShared_HiveIntents.framework */; };
+		9ABB85F915F3A83214113196 /* Pods_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA753A421976388006DD878 /* Pods_Hive.framework */; };
+		9F2255522A1D1DAAA176E682 /* Pods_HiveIntentsWatch_HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7607C0ADD8665006567D044C /* Pods_HiveIntentsWatch_HiveSharedWatch.framework */; };
+		AC5BE7100BDDC4358B6F2E02 /* Pods_HiveSharedWatch_HiveIntentsWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B90D11E6FFDDDC6E0F5187 /* Pods_HiveSharedWatch_HiveIntentsWatch.framework */; };
+		C4D9E4CE425979DCA7A9184C /* Pods_HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7CE70752706D959C1233D5 /* Pods_HiveSharedWatch.framework */; };
+		C72B64895615B135FD7CCE40 /* Pods_Hive_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69B97F34888DB635227EB52 /* Pods_Hive_HiveShared.framework */; };
+		E073F6450D4107110BB2ADED /* Pods_HiveShared_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D19A35025EACF4BFDEA65 /* Pods_HiveShared_Hive.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,7 +202,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1A46C0F621D514E000A16F90 /* HueKit.framework in Embed Frameworks */,
 				1AE141A7219768EB00913920 /* HiveShared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -208,8 +211,12 @@
 
 /* Begin PBXFileReference section */
 		0181FD52DDD022284AB6DA1E /* Pods_HiveIntentsWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveIntentsWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0735DEE038B6B0BD9966CA28 /* Pods-HiveShared-Hive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared-Hive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive.debug.xcconfig"; sourceTree = "<group>"; };
+		07DD0D43922FEAC7AE0A79A6 /* Pods-HiveShared-Hive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared-Hive.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive.release.xcconfig"; sourceTree = "<group>"; };
 		0F9FCCF7F69D7A9F15A4EF2C /* Pods_HiveWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15B90D11E6FFDDDC6E0F5187 /* Pods_HiveSharedWatch_HiveIntentsWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveSharedWatch_HiveIntentsWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1712E41F35A799AA144FEC07 /* Pods_HiveIntents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveIntents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19060D99A9E418D7DE4870A2 /* Pods-Hive-HiveIntents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive-HiveIntents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive-HiveIntents/Pods-Hive-HiveIntents.debug.xcconfig"; sourceTree = "<group>"; };
 		1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticationCoordinator.swift; sourceTree = "<group>"; };
 		1A1F26FE219756F9000F7F0C /* Hive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hive.entitlements; sourceTree = "<group>"; };
 		1A2069D82194F56800AF049F /* RootNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNav.swift; sourceTree = "<group>"; };
@@ -220,7 +227,6 @@
 		1A29E05B218F6BCB00D0351F /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		1A29E05D218F6F1600D0351F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1A46692E21989F5F00007772 /* HiveIntentsWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveIntentsWatch.entitlements; sourceTree = "<group>"; };
-		1A46C0F421D514E000A16F90 /* HueKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HueKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOnRequest.swift; sourceTree = "<group>"; };
 		1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHSBRequest.swift; sourceTree = "<group>"; };
 		1A4FF21A218F10AC00EAC20F /* Hive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,23 +303,43 @@
 		208A2D617D51A2E1D4A9FCAC /* Pods-HiveWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		226B9A16EACC714D527DAA03 /* Pods-HiveSharedWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveSharedWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveSharedWatch/Pods-HiveSharedWatch.release.xcconfig"; sourceTree = "<group>"; };
 		2504B70A82E1442EFDA0414C /* Pods-HiveWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch/Pods-HiveWatch.release.xcconfig"; sourceTree = "<group>"; };
+		2A514E1DD9249C91588A6324 /* Pods-HiveIntentsWatch-HiveSharedWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntentsWatch-HiveSharedWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntentsWatch-HiveSharedWatch/Pods-HiveIntentsWatch-HiveSharedWatch.release.xcconfig"; sourceTree = "<group>"; };
+		36C5BEBA46DCC6389BF04EB8 /* Pods-Hive-HiveWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive-HiveWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive-HiveWidget/Pods-Hive-HiveWidget.release.xcconfig"; sourceTree = "<group>"; };
 		381A112DBF33F66EF0C9676F /* Pods-HiveSharedWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveSharedWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveSharedWatch/Pods-HiveSharedWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		438BA166C95481765AD5E3D0 /* Pods-Hive-HiveShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive-HiveShared.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive-HiveShared/Pods-Hive-HiveShared.debug.xcconfig"; sourceTree = "<group>"; };
+		476AF6754460DDBAB204C58B /* Pods-HiveShared-HiveIntents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared-HiveIntents.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared-HiveIntents/Pods-HiveShared-HiveIntents.release.xcconfig"; sourceTree = "<group>"; };
 		5ABD6020ADA429A2EEA42F31 /* Pods_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0FA1F13AC95DF9B5F364C7 /* Pods-HiveShared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.release.xcconfig"; sourceTree = "<group>"; };
+		67989DEF6DC146CFFED72FBF /* Pods-HiveShared-HiveWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared-HiveWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared-HiveWidget/Pods-HiveShared-HiveWidget.release.xcconfig"; sourceTree = "<group>"; };
+		68F4443CD0E7EC32B92BA5EF /* Pods-HiveSharedWatch-HiveIntentsWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveSharedWatch-HiveIntentsWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveSharedWatch-HiveIntentsWatch/Pods-HiveSharedWatch-HiveIntentsWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		7607C0ADD8665006567D044C /* Pods_HiveIntentsWatch_HiveSharedWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveIntentsWatch_HiveSharedWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C50A8B5BD6165BB89EB6F9B /* Pods-HiveIntentsWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntentsWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntentsWatch/Pods-HiveIntentsWatch.release.xcconfig"; sourceTree = "<group>"; };
 		8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWidget/Pods-HiveWidget.release.xcconfig"; sourceTree = "<group>"; };
 		90E2A92D33D59FFA459B3CCB /* Pods_HiveWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		945C5E85AE321B3E58B01417 /* Pods-Hive-HiveShared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive-HiveShared.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive-HiveShared/Pods-Hive-HiveShared.release.xcconfig"; sourceTree = "<group>"; };
+		94C1E98CDABC53A9CFBC8244 /* Pods_Hive_HiveWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive_HiveWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9582123A114F8924D5D7D4B0 /* Pods_HiveShared_HiveIntents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveShared_HiveIntents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E6DBC97985339584606B72 /* Pods-HiveWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch/Pods-HiveWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		995A19AAC299E63AA42A59C2 /* Pods_HiveWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E7FC470084EF145A03A810C /* Pods-HiveSharedWatch-HiveIntentsWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveSharedWatch-HiveIntentsWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveSharedWatch-HiveIntentsWatch/Pods-HiveSharedWatch-HiveIntentsWatch.release.xcconfig"; sourceTree = "<group>"; };
+		A69B97F34888DB635227EB52 /* Pods_Hive_HiveShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive_HiveShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77F8050E70D693870899AE1 /* Pods-HiveIntentsWatch-HiveSharedWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntentsWatch-HiveSharedWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntentsWatch-HiveSharedWatch/Pods-HiveIntentsWatch-HiveSharedWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		A8C7CD081A3368EC997633D8 /* Pods-HiveShared-HiveIntents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared-HiveIntents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared-HiveIntents/Pods-HiveShared-HiveIntents.debug.xcconfig"; sourceTree = "<group>"; };
+		B08208B472AA98C98C18F8AC /* Pods-Hive-HiveWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive-HiveWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive-HiveWidget/Pods-Hive-HiveWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		B2941E57196E09DBD55BF35A /* Pods_HiveShared_HiveWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveShared_HiveWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C2B077373D686C702D3BF1 /* Pods-HiveWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWatch Extension/Pods-HiveWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		B458DB081403984B608DCA0D /* Pods-Hive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.release.xcconfig"; sourceTree = "<group>"; };
 		B4CCABDAD85BD9963974DB5C /* Pods-HiveIntents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntents.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntents/Pods-HiveIntents.release.xcconfig"; sourceTree = "<group>"; };
+		B62D19A35025EACF4BFDEA65 /* Pods_HiveShared_Hive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveShared_Hive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6647ACB61ED5ED0CE79BBEE /* Pods-HiveShared-HiveWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared-HiveWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared-HiveWidget/Pods-HiveShared-HiveWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4498F9BA3F725A8B9475D41 /* Pods-HiveShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.debug.xcconfig"; sourceTree = "<group>"; };
 		C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntentsWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntentsWatch/Pods-HiveIntentsWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		D85C1062FB167AE910EEEE70 /* Pods-HiveIntents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntents/Pods-HiveIntents.debug.xcconfig"; sourceTree = "<group>"; };
+		DADAE7686C65FF651CF7308A /* Pods_Hive_HiveIntents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive_HiveIntents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6A0ABABC83F921D16A6739 /* Pods-Hive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.debug.xcconfig"; sourceTree = "<group>"; };
 		EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveWidget/Pods-HiveWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		F83504E9DA322C9228680BDB /* Pods-Hive-HiveIntents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive-HiveIntents.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hive-HiveIntents/Pods-Hive-HiveIntents.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,8 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AE141A6219768EB00913920 /* HiveShared.framework in Frameworks */,
-				9FF1639AE0071C426064AA19 /* Pods_Hive.framework in Frameworks */,
-				1A46C0F521D514E000A16F90 /* HueKit.framework in Frameworks */,
+				9ABB85F915F3A83214113196 /* Pods_Hive.framework in Frameworks */,
+				E073F6450D4107110BB2ADED /* Pods_HiveShared_Hive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +372,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA753A0219761E5006DD878 /* HiveShared.framework in Frameworks */,
-				C0DF9239130A902BC8EA2F00 /* Pods_HiveIntents.framework in Frameworks */,
+				4224C1D517A236DFD4550878 /* Pods_Hive_HiveIntents.framework in Frameworks */,
+				799A337A6E13647A874CBCBB /* Pods_HiveShared_HiveIntents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +381,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E478013AA1D138523CAFB8F /* Pods_HiveShared.framework in Frameworks */,
+				C72B64895615B135FD7CCE40 /* Pods_Hive_HiveShared.framework in Frameworks */,
+				5F3EE26498EA418D42FC2CA7 /* Pods_HiveShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +399,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AFE73F02198984F00AA1747 /* HiveSharedWatch.framework in Frameworks */,
-				99ADC7CFCC68C46664321C0D /* Pods_HiveIntentsWatch.framework in Frameworks */,
+				5ABC908E19C79518EA64AED5 /* Pods_HiveIntentsWatch.framework in Frameworks */,
+				AC5BE7100BDDC4358B6F2E02 /* Pods_HiveSharedWatch_HiveIntentsWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +410,8 @@
 			files = (
 				1AFE73F721989C7800AA1747 /* HiveShared.framework in Frameworks */,
 				1ADF05D72198641000604961 /* NotificationCenter.framework in Frameworks */,
-				1D33445D7F2589B520764EB1 /* Pods_HiveWidget.framework in Frameworks */,
+				68FF4B20EA5713ADA56563FD /* Pods_Hive_HiveWidget.framework in Frameworks */,
+				12BF337083A193F29076DE46 /* Pods_HiveShared_HiveWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +419,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0857868D5AF9BDD85C627ED9 /* Pods_HiveSharedWatch.framework in Frameworks */,
+				9F2255522A1D1DAAA176E682 /* Pods_HiveIntentsWatch_HiveSharedWatch.framework in Frameworks */,
+				C4D9E4CE425979DCA7A9184C /* Pods_HiveSharedWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +444,14 @@
 				995A19AAC299E63AA42A59C2 /* Pods_HiveWatch.framework */,
 				1F7CE70752706D959C1233D5 /* Pods_HiveSharedWatch.framework */,
 				90E2A92D33D59FFA459B3CCB /* Pods_HiveWatch_Extension.framework */,
+				DADAE7686C65FF651CF7308A /* Pods_Hive_HiveIntents.framework */,
+				A69B97F34888DB635227EB52 /* Pods_Hive_HiveShared.framework */,
+				94C1E98CDABC53A9CFBC8244 /* Pods_Hive_HiveWidget.framework */,
+				7607C0ADD8665006567D044C /* Pods_HiveIntentsWatch_HiveSharedWatch.framework */,
+				B62D19A35025EACF4BFDEA65 /* Pods_HiveShared_Hive.framework */,
+				9582123A114F8924D5D7D4B0 /* Pods_HiveShared_HiveIntents.framework */,
+				B2941E57196E09DBD55BF35A /* Pods_HiveShared_HiveWidget.framework */,
+				15B90D11E6FFDDDC6E0F5187 /* Pods_HiveSharedWatch_HiveIntentsWatch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -420,7 +459,6 @@
 		1A4FF211218F10AC00EAC20F = {
 			isa = PBXGroup;
 			children = (
-				1A46C0F421D514E000A16F90 /* HueKit.framework */,
 				1AA75373219760D5006DD878 /* HiveShared */,
 				1AA75380219760D5006DD878 /* HiveSharedTests */,
 				1A4FF21C218F10AC00EAC20F /* Hive */,
@@ -633,6 +671,22 @@
 				226B9A16EACC714D527DAA03 /* Pods-HiveSharedWatch.release.xcconfig */,
 				B3C2B077373D686C702D3BF1 /* Pods-HiveWatch Extension.debug.xcconfig */,
 				208A2D617D51A2E1D4A9FCAC /* Pods-HiveWatch Extension.release.xcconfig */,
+				19060D99A9E418D7DE4870A2 /* Pods-Hive-HiveIntents.debug.xcconfig */,
+				F83504E9DA322C9228680BDB /* Pods-Hive-HiveIntents.release.xcconfig */,
+				438BA166C95481765AD5E3D0 /* Pods-Hive-HiveShared.debug.xcconfig */,
+				945C5E85AE321B3E58B01417 /* Pods-Hive-HiveShared.release.xcconfig */,
+				B08208B472AA98C98C18F8AC /* Pods-Hive-HiveWidget.debug.xcconfig */,
+				36C5BEBA46DCC6389BF04EB8 /* Pods-Hive-HiveWidget.release.xcconfig */,
+				A77F8050E70D693870899AE1 /* Pods-HiveIntentsWatch-HiveSharedWatch.debug.xcconfig */,
+				2A514E1DD9249C91588A6324 /* Pods-HiveIntentsWatch-HiveSharedWatch.release.xcconfig */,
+				0735DEE038B6B0BD9966CA28 /* Pods-HiveShared-Hive.debug.xcconfig */,
+				07DD0D43922FEAC7AE0A79A6 /* Pods-HiveShared-Hive.release.xcconfig */,
+				A8C7CD081A3368EC997633D8 /* Pods-HiveShared-HiveIntents.debug.xcconfig */,
+				476AF6754460DDBAB204C58B /* Pods-HiveShared-HiveIntents.release.xcconfig */,
+				B6647ACB61ED5ED0CE79BBEE /* Pods-HiveShared-HiveWidget.debug.xcconfig */,
+				67989DEF6DC146CFFED72FBF /* Pods-HiveShared-HiveWidget.release.xcconfig */,
+				68F4443CD0E7EC32B92BA5EF /* Pods-HiveSharedWatch-HiveIntentsWatch.debug.xcconfig */,
+				9E7FC470084EF145A03A810C /* Pods-HiveSharedWatch-HiveIntentsWatch.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1036,16 +1090,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Hive/Pods-Hive-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HueKit/HueKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HueKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hive/Pods-Hive-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3EC76598C28334F8D6E3E0E3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1059,7 +1115,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hive-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveShared-Hive-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1113,7 +1169,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveWidget-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveShared-HiveWidget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1131,7 +1187,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveIntents-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveShared-HiveIntents-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1149,7 +1205,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveIntentsWatch-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveSharedWatch-HiveIntentsWatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1492,7 +1548,7 @@
 		};
 		1A4FF243218F10AD00EAC20F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED6A0ABABC83F921D16A6739 /* Pods-Hive.debug.xcconfig */;
+			baseConfigurationReference = 0735DEE038B6B0BD9966CA28 /* Pods-HiveShared-Hive.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1513,7 +1569,7 @@
 		};
 		1A4FF244218F10AD00EAC20F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B458DB081403984B608DCA0D /* Pods-Hive.release.xcconfig */;
+			baseConfigurationReference = 07DD0D43922FEAC7AE0A79A6 /* Pods-HiveShared-Hive.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1616,7 +1672,7 @@
 		};
 		1AA7536721975861006DD878 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D85C1062FB167AE910EEEE70 /* Pods-HiveIntents.debug.xcconfig */;
+			baseConfigurationReference = A8C7CD081A3368EC997633D8 /* Pods-HiveShared-HiveIntents.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntents/HiveIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1637,7 +1693,7 @@
 		};
 		1AA7536821975861006DD878 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4CCABDAD85BD9963974DB5C /* Pods-HiveIntents.release.xcconfig */;
+			baseConfigurationReference = 476AF6754460DDBAB204C58B /* Pods-HiveShared-HiveIntents.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntents/HiveIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1758,7 +1814,7 @@
 		};
 		1ADBDE3E21989745008C9521 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */;
+			baseConfigurationReference = 68F4443CD0E7EC32B92BA5EF /* Pods-HiveSharedWatch-HiveIntentsWatch.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntentsWatch/HiveIntentsWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1782,7 +1838,7 @@
 		};
 		1ADBDE3F21989745008C9521 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C50A8B5BD6165BB89EB6F9B /* Pods-HiveIntentsWatch.release.xcconfig */;
+			baseConfigurationReference = 9E7FC470084EF145A03A810C /* Pods-HiveSharedWatch-HiveIntentsWatch.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntentsWatch/HiveIntentsWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1806,7 +1862,7 @@
 		};
 		1ADF05E32198641000604961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */;
+			baseConfigurationReference = B6647ACB61ED5ED0CE79BBEE /* Pods-HiveShared-HiveWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveWidget/HiveWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1827,7 +1883,7 @@
 		};
 		1ADF05E42198641000604961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */;
+			baseConfigurationReference = 67989DEF6DC146CFFED72FBF /* Pods-HiveShared-HiveWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveWidget/HiveWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,16 +1,28 @@
 PODS:
   - Alamofire (4.7.3)
+  - HueKit (1.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
+  - HueKit (from `https://github.com/MutatingFunk/huekit`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
 
+EXTERNAL SOURCES:
+  HueKit:
+    :git: https://github.com/MutatingFunk/huekit
+
+CHECKOUT OPTIONS:
+  HueKit:
+    :commit: 9f07b0e99a4d1c8d80aec4be7a0931315dbd2f10
+    :git: https://github.com/MutatingFunk/huekit
+
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  HueKit: a255770053f7028907db3e84d5cdecc7837197e4
 
-PODFILE CHECKSUM: bfd73ceb580ad786244a4d99bcc8604c49fc8039
+PODFILE CHECKSUM: 98cd4d237e45c07048f046f1367adc41ddd38567
 
 COCOAPODS: 1.5.3
