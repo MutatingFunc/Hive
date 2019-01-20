@@ -25,6 +25,7 @@ class DeviceListController: UIViewController {
 	}
 	@IBOutlet var scrollView: UIScrollView!
 	@IBOutlet var pageControl: UIPageControl!
+	@IBOutlet var pageControlBackground: UIView!
 	
 	let refreshControl = UIRefreshControl()
 	
@@ -40,13 +41,14 @@ class DeviceListController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.updateNumberOfPages()
+		self.pageControlBackground.layer.shadowColor = UIColor.black.cgColor
 		
 		self.deviceTableView.refreshControl = refreshControl
 		refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
 		
 		UIMenuController.shared.menuItems = [UIMenuItem(title: "Favourite", action: #selector(DefaultDeviceCell.favourite)), UIMenuItem(title: "Unfavourite", action: #selector(DefaultDeviceCell.unfavourite))]
 	}
+	
 	
 	@objc func reload() {
 		_ = self.deviceList?.reload {[weak self] deviceList in
@@ -61,6 +63,10 @@ class DeviceListController: UIViewController {
 		}
 	}
 	
+	override func didMove(toParent parent: UIViewController?) {
+		self.updateNumberOfPages()
+	}
+	
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 		super.viewWillTransition(to: size, with: coordinator)
 		coordinator.animate(alongsideTransition: nil) {[weak self] _ in
@@ -69,7 +75,11 @@ class DeviceListController: UIViewController {
 	}
 	
 	func updateNumberOfPages() {
-		self.pageControl.numberOfPages = Int(self.scrollView.contentSize.width / self.scrollView.visibleSize.width)
+		let numberOfPages = Int(self.scrollView.contentSize.width / self.scrollView.visibleSize.width)
+		let pageControlHidden = numberOfPages < 2
+		self.pageControl.numberOfPages = numberOfPages
+		self.pageControlBackground.isHidden = pageControlHidden
+		updateInsets()
 	}
 	
 	@IBAction func pageChanged() {
@@ -81,19 +91,24 @@ class DeviceListController: UIViewController {
 	
 	override func viewSafeAreaInsetsDidChange() {
 		super.viewSafeAreaInsetsDidChange()
-		scrollView.scrollIndicatorInsets = view.safeAreaInsets
-		let insets = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom, right: 0)
-		deviceTableView.scrollIndicatorInsets = insets
-		actionTableView.scrollIndicatorInsets = insets
-		
-		deviceTableView.layoutMargins = tableMargins(sharedSide: \.right)
-		actionTableView.layoutMargins = tableMargins(sharedSide: \.left)
-		
-		deviceTableView.separatorInset = separatorInset(edgeSide: \.left)
-		actionTableView.separatorInset = separatorInset(edgeSide: \.right)
+		updateInsets()
 	}
 	override func viewLayoutMarginsDidChange() {
 		super.viewLayoutMarginsDidChange()
+		updateInsets()
+	}
+
+	func updateInsets() {
+		self.view.setNeedsLayout()
+		self.view.layoutIfNeeded()
+		
+		scrollView.scrollIndicatorInsets = view.safeAreaInsets
+		let pageControlInset = self.pageControl.frame.height
+		// A value of 0 removes safe area insets from scroll indicator
+		deviceTableView.scrollIndicatorInsets.bottom = max(self.pageControl.frame.height, .leastNormalMagnitude)
+		actionTableView.scrollIndicatorInsets.bottom = max(self.pageControl.frame.height, .leastNormalMagnitude)
+		deviceTableView.contentInset.bottom = pageControlInset
+		actionTableView.contentInset.bottom = pageControlInset
 		
 		deviceTableView.layoutMargins = tableMargins(sharedSide: \.right)
 		actionTableView.layoutMargins = tableMargins(sharedSide: \.left)
@@ -101,6 +116,7 @@ class DeviceListController: UIViewController {
 		deviceTableView.separatorInset = separatorInset(edgeSide: \.left)
 		actionTableView.separatorInset = separatorInset(edgeSide: \.right)
 	}
+
 	func tableMargins(sharedSide: WritableKeyPath<UIEdgeInsets, CGFloat>) -> UIEdgeInsets {
 		var margins = view.layoutMargins
 		if self.traitCollection.horizontalSizeClass != .compact {

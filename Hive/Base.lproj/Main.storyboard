@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="1220" y="107"/>
         </scene>
-        <!--Devices-->
+        <!--Home-->
         <scene sceneID="mBa-Ir-bPU">
             <objects>
                 <viewController storyboardIdentifier="Devices" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hfZ-pd-mVZ" customClass="DeviceListController" customModule="Hive" customModuleProvider="target" sceneMemberID="viewController">
@@ -105,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqz-TL-Nhm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" scrollEnabled="NO" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqz-TL-Nhm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mZ-AI-NB0">
@@ -630,28 +630,54 @@
                                     <outlet property="delegate" destination="hfZ-pd-mVZ" id="sD1-dV-bvv"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="LIA-Ul-1Yo">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVo-jq-iWi">
                                 <rect key="frame" x="0.0" y="630" width="375" height="37"/>
-                                <color key="pageIndicatorTintColor" red="1" green="0.62352941176470589" blue="0.039215686274509803" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="1" green="0.62352941179999999" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="pageChanged" destination="hfZ-pd-mVZ" eventType="valueChanged" id="vwc-7F-vvQ"/>
-                                </connections>
-                            </pageControl>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tFq-tR-bhh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="LIA-Ul-1Yo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
+                                            <color key="pageIndicatorTintColor" red="1" green="0.62352941176470589" blue="0.039215686274509803" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="currentPageIndicatorTintColor" red="1" green="0.62352941179999999" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="pageChanged" destination="hfZ-pd-mVZ" eventType="valueChanged" id="vwc-7F-vvQ"/>
+                                            </connections>
+                                        </pageControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LIA-Ul-1Yo" firstAttribute="top" secondItem="tFq-tR-bhh" secondAttribute="top" id="IXs-45-tTc"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="-0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.89607843139999999" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5mZ-AI-NB0" firstAttribute="top" secondItem="KEq-bg-doQ" secondAttribute="top" id="0ek-kE-GEr"/>
                             <constraint firstAttribute="bottom" secondItem="Tqz-TL-Nhm" secondAttribute="bottom" id="2eE-dd-j31"/>
                             <constraint firstItem="5mZ-AI-NB0" firstAttribute="width" secondItem="KEq-bg-doQ" secondAttribute="width" multiplier="0.5" id="9qn-0K-5d4"/>
+                            <constraint firstItem="Ro2-kM-Bg5" firstAttribute="bottom" secondItem="LIA-Ul-1Yo" secondAttribute="bottom" id="Bg5-c2-f6Y"/>
                             <constraint firstItem="Tqz-TL-Nhm" firstAttribute="leading" secondItem="KEq-bg-doQ" secondAttribute="leading" id="Fuf-Sp-4bm"/>
-                            <constraint firstItem="Ro2-kM-Bg5" firstAttribute="bottom" secondItem="LIA-Ul-1Yo" secondAttribute="bottom" id="VA1-fz-gEh"/>
+                            <constraint firstItem="5mZ-AI-NB0" firstAttribute="height" secondItem="KEq-bg-doQ" secondAttribute="height" id="GOF-HN-B4p"/>
+                            <constraint firstItem="OVo-jq-iWi" firstAttribute="leading" secondItem="KEq-bg-doQ" secondAttribute="leading" id="GuK-Y0-eKT"/>
+                            <constraint firstItem="Ro2-kM-Bg5" firstAttribute="trailing" secondItem="LIA-Ul-1Yo" secondAttribute="trailing" id="LbH-ZW-eI5"/>
+                            <constraint firstAttribute="bottom" secondItem="OVo-jq-iWi" secondAttribute="bottom" id="Pxd-aB-rj7"/>
                             <constraint firstItem="Tqz-TL-Nhm" firstAttribute="top" secondItem="KEq-bg-doQ" secondAttribute="top" id="bSx-hE-8DX"/>
-                            <constraint firstItem="LIA-Ul-1Yo" firstAttribute="trailing" secondItem="Ro2-kM-Bg5" secondAttribute="trailing" id="dEF-PK-2KD"/>
-                            <constraint firstItem="LIA-Ul-1Yo" firstAttribute="leading" secondItem="Ro2-kM-Bg5" secondAttribute="leading" id="fvJ-3f-4CK"/>
                             <constraint firstItem="5mZ-AI-NB0" firstAttribute="width" secondItem="KEq-bg-doQ" secondAttribute="width" priority="999" id="j17-UX-8b1"/>
+                            <constraint firstItem="Ro2-kM-Bg5" firstAttribute="leading" secondItem="LIA-Ul-1Yo" secondAttribute="leading" id="mBX-Ma-l8u"/>
                             <constraint firstAttribute="trailing" secondItem="Tqz-TL-Nhm" secondAttribute="trailing" id="pod-aH-Xjc"/>
-                            <constraint firstAttribute="bottom" secondItem="5mZ-AI-NB0" secondAttribute="bottom" id="zsa-zk-9HU"/>
+                            <constraint firstAttribute="trailing" secondItem="OVo-jq-iWi" secondAttribute="trailing" id="wk5-tg-Zpf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ro2-kM-Bg5"/>
                         <variation key="default">
@@ -666,13 +692,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Devices" largeTitleDisplayMode="never" id="t8M-dq-aeD">
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="never" id="t8M-dq-aeD">
                         <barButtonItem key="backBarButtonItem" title="Log out" id="o74-cs-y1c"/>
                     </navigationItem>
                     <connections>
                         <outlet property="actionTableView" destination="hq6-bR-xEa" id="tFi-tf-IOH"/>
                         <outlet property="deviceTableView" destination="5mZ-AI-NB0" id="sNy-VV-gcM"/>
                         <outlet property="pageControl" destination="LIA-Ul-1Yo" id="QaR-8C-Z4x"/>
+                        <outlet property="pageControlBackground" destination="OVo-jq-iWi" id="hRB-1u-SFN"/>
                         <outlet property="scrollView" destination="Tqz-TL-Nhm" id="FE7-oE-Edk"/>
                     </connections>
                 </viewController>
