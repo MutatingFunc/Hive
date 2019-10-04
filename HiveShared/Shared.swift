@@ -19,12 +19,8 @@ public extension LosslessStringConvertible where Self: RawRepresentable, Self.Ra
 
 public protocol JSONCodable: Codable {}
 public extension JSONCodable {
-	init?(data: Data) {
-		do {
-			self = try JSONDecoder().decode(Self.self, from: data)
-		} catch {
-			return nil
-		}
+	init(data: Data) throws {
+		self = try JSONDecoder().decode(Self.self, from: data)
 	}
 	func json() -> Data {
 		do {

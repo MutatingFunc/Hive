@@ -40,7 +40,7 @@ struct ProductResponse: JSONCodable {
 }
 struct State: JSONCodable {
 	let name: String
-	let status: Status
+	let status: Status?
 	enum Status: String, JSONCodable {
 		case on = "ON"
 		case off = "OFF"

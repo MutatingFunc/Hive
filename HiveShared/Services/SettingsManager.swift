@@ -44,7 +44,7 @@ extension SettingsManager: SettingsManaging {
 	public var favourites: Set<DeviceID> {
 		get {
 			syncFromCloud()
-			return local.data(forKey: keyFavourites).flatMap(Set<DeviceID>.init(data:)) ?? []
+			return local.data(forKey: keyFavourites).flatMap{try? Set<DeviceID>(data: $0)} ?? []
 		}
 		nonmutating set {
 			syncFromCloud()

@@ -10,7 +10,6 @@ import Alamofire
 
 public enum RequestError: String, LocalizedError {
 	case loadFailed = "Load failed"
-	case parseFailed = "Failed to parse response"
 	case unknown = "Unknown"
 	
 	public var errorDescription: String? {
@@ -52,15 +51,21 @@ extension RequestHandler: RequestHandling {
 			if let data = result.data, let response = result.response {
 				print("Response: \(response)\n  With data: \(String(data: data, encoding: .ascii) ?? data.description)")
 				DispatchQueue.global(qos: .userInitiated).async {
-					if let parsed = Parsed(data: data) {
+					do {
+						let parsed = try Parsed(data: data)
 						DispatchQueue.main.async {
 							completion(.success(parsed, response))
 						}
-					} else {
-						let error: Error = result.data.flatMap(ErrorResponse.init(data:))
-							?? RequestError.parseFailed
-						DispatchQueue.main.async {
-							completion(.error(error, response))
+					} catch(let originalError) {
+						do {
+							let errorResponse: Error = try ErrorResponse(data: data)
+							DispatchQueue.main.async {
+								completion(.error(errorResponse, response))
+							}
+						} catch {
+							DispatchQueue.main.async {
+								completion(.error(originalError, response))
+							}
 						}
 					}
 				}
