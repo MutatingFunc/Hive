@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A19486CDB6995A37DCF4F58 /* Pods_HiveShared_HiveWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2941E57196E09DBD55BF35A /* Pods_HiveShared_HiveWidget.framework */; };
 		1A132C632198827F00FC893B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FF224218F10AC00EAC20F /* Assets.xcassets */; };
 		1A1F26FB21974F7A000F7F0C /* ReauthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */; };
 		1A2069D92194F56800AF049F /* RootNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2069D82194F56800AF049F /* RootNav.swift */; };
 		1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
 		1A29E054218F54C000D0351F /* LightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E053218F54C000D0351F /* LightCell.swift */; };
-		1A29E05E218F6F1600D0351F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05D218F6F1600D0351F /* Colors.swift */; };
+		1A433D722347FBCE008F24AA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A433D712347FBCE008F24AA /* Colors.swift */; };
+		1A433D732347FCF1008F24AA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A433D712347FBCE008F24AA /* Colors.swift */; };
 		1A47E29F2198FEEC00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
 		1A47E2A12198FF0A00A7CD14 /* SetHSBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */; };
 		1A47E2A2219904CD00A7CD14 /* SetOnRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */; };
@@ -73,7 +75,6 @@
 		1ADF05DD2198641000604961 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADF05DB2198641000604961 /* MainInterface.storyboard */; };
 		1ADF05E12198641000604961 /* HiveWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1ADF05D52198641000604961 /* HiveWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1ADF05E82198659F00604961 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41EE72191024900DC21EB /* ActionCell.swift */; };
-		1ADF05E9219865D500604961 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E05D218F6F1600D0351F /* Colors.swift */; };
 		1ADF05EB21986C8600604961 /* DefaultDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29E051218F54B900D0351F /* DefaultDeviceCell.swift */; };
 		1ADF05ED21986CD200604961 /* ToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF05EC21986CD200604961 /* ToggleCell.swift */; };
 		1AE141A6219768EB00913920 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
@@ -107,6 +108,11 @@
 		1AFE73F02198984F00AA1747 /* HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE73C62198980800AA1747 /* HiveSharedWatch.framework */; };
 		1AFE73F2219899FA00AA1747 /* SharediOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE73F1219899FA00AA1747 /* SharediOS.swift */; };
 		1AFE73F721989C7800AA1747 /* HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA75372219760D5006DD878 /* HiveShared.framework */; };
+		4D0FEA1753B926629BD080E0 /* Pods_HiveShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */; };
+		4EC7E0E7B42C9750DBF9F4BC /* Pods_HiveSharedWatch_HiveIntentsWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B90D11E6FFDDDC6E0F5187 /* Pods_HiveSharedWatch_HiveIntentsWatch.framework */; };
+		A12A52C3A82FB69FB4B7E6BB /* Pods_HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0B69ED21F495C300850F9A /* Pods_HiveSharedWatch.framework */; };
+		CF7CE92F7C43E21ECAF32DCA /* Pods_HiveShared_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D19A35025EACF4BFDEA65 /* Pods_HiveShared_Hive.framework */; };
+		E9A2CD5B6B675E15254A10CD /* Pods_HiveShared_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9582123A114F8924D5D7D4B0 /* Pods_HiveShared_HiveIntents.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,7 +221,7 @@
 		1A29E057218F57EA00D0351F /* Reuseable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reuseable.swift; sourceTree = "<group>"; };
 		1A29E059218F5A4E00D0351F /* LoginCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
 		1A29E05B218F6BCB00D0351F /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
-		1A29E05D218F6F1600D0351F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1A433D712347FBCE008F24AA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1A46692E21989F5F00007772 /* HiveIntentsWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiveIntentsWatch.entitlements; sourceTree = "<group>"; };
 		1A47E29E2198FEEC00A7CD14 /* SetOnRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOnRequest.swift; sourceTree = "<group>"; };
 		1A47E2A02198FF0A00A7CD14 /* SetHSBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetHSBRequest.swift; sourceTree = "<group>"; };
@@ -338,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AE141A6219768EB00913920 /* HiveShared.framework in Frameworks */,
+				CF7CE92F7C43E21ECAF32DCA /* Pods_HiveShared_Hive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA753A0219761E5006DD878 /* HiveShared.framework in Frameworks */,
+				E9A2CD5B6B675E15254A10CD /* Pods_HiveShared_HiveIntents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +375,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0FEA1753B926629BD080E0 /* Pods_HiveShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AFE73F02198984F00AA1747 /* HiveSharedWatch.framework in Frameworks */,
+				4EC7E0E7B42C9750DBF9F4BC /* Pods_HiveSharedWatch_HiveIntentsWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +402,7 @@
 			files = (
 				1AFE73F721989C7800AA1747 /* HiveShared.framework in Frameworks */,
 				1ADF05D72198641000604961 /* NotificationCenter.framework in Frameworks */,
+				0A19486CDB6995A37DCF4F58 /* Pods_HiveShared_HiveWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +410,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12A52C3A82FB69FB4B7E6BB /* Pods_HiveSharedWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,8 +487,8 @@
 			children = (
 				1A1F26FE219756F9000F7F0C /* Hive.entitlements */,
 				1A4FF267218F2EC200EAC20F /* Segues.swift */,
-				1A29E05D218F6F1600D0351F /* Colors.swift */,
 				1A4FF21D218F10AC00EAC20F /* AppDelegate.swift */,
+				1A433D712347FBCE008F24AA /* Colors.swift */,
 				1A1F26FA21974F79000F7F0C /* ReauthenticationCoordinator.swift */,
 				1A2069D82194F56800AF049F /* RootNav.swift */,
 				1A4FF21F218F10AC00EAC20F /* LoginController.swift */,
@@ -1070,18 +1082,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Hive/Pods-Hive-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/HueKit/HueKit.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HueKit/HueKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HueKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HueKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hive/Pods-Hive-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3EC76598C28334F8D6E3E0E3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1095,7 +1107,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hive-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveShared-Hive-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1149,7 +1161,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveWidget-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveShared-HiveWidget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1167,7 +1179,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveIntents-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveShared-HiveIntents-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1185,7 +1197,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HiveIntentsWatch-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HiveSharedWatch-HiveIntentsWatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1200,11 +1212,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD9C3502190DD76004882E9 /* ColourLightCell.swift in Sources */,
+				1A433D722347FBCE008F24AA /* Colors.swift in Sources */,
 				1A4FF26A218F356600EAC20F /* DeviceListController.swift in Sources */,
 				1A4FF268218F2EC200EAC20F /* Segues.swift in Sources */,
 				1A2069D92194F56800AF049F /* RootNav.swift in Sources */,
 				1A29E052218F54B900D0351F /* DefaultDeviceCell.swift in Sources */,
-				1A29E05E218F6F1600D0351F /* Colors.swift in Sources */,
 				1A7D779021976D540055657D /* Intents.intentdefinition in Sources */,
 				1A1F26FB21974F7A000F7F0C /* ReauthenticationCoordinator.swift in Sources */,
 				1AA41EE82191024900DC21EB /* ActionCell.swift in Sources */,
@@ -1304,7 +1316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AFE73EA2198982F00AA1747 /* Intents.intentdefinition in Sources */,
-				1ADF05E9219865D500604961 /* Colors.swift in Sources */,
+				1A433D732347FCF1008F24AA /* Colors.swift in Sources */,
 				1ADF05E82198659F00604961 /* ActionCell.swift in Sources */,
 				1ADF05DA2198641000604961 /* TodayViewController.swift in Sources */,
 				1ADF05EB21986C8600604961 /* DefaultDeviceCell.swift in Sources */,
@@ -1528,7 +1540,7 @@
 		};
 		1A4FF243218F10AD00EAC20F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED6A0ABABC83F921D16A6739 /* Pods-Hive.debug.xcconfig */;
+			baseConfigurationReference = 0735DEE038B6B0BD9966CA28 /* Pods-HiveShared-Hive.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1549,7 +1561,7 @@
 		};
 		1A4FF244218F10AD00EAC20F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B458DB081403984B608DCA0D /* Pods-Hive.release.xcconfig */;
+			baseConfigurationReference = 07DD0D43922FEAC7AE0A79A6 /* Pods-HiveShared-Hive.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1652,7 +1664,7 @@
 		};
 		1AA7536721975861006DD878 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D85C1062FB167AE910EEEE70 /* Pods-HiveIntents.debug.xcconfig */;
+			baseConfigurationReference = A8C7CD081A3368EC997633D8 /* Pods-HiveShared-HiveIntents.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntents/HiveIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1673,7 +1685,7 @@
 		};
 		1AA7536821975861006DD878 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4CCABDAD85BD9963974DB5C /* Pods-HiveIntents.release.xcconfig */;
+			baseConfigurationReference = 476AF6754460DDBAB204C58B /* Pods-HiveShared-HiveIntents.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntents/HiveIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1794,7 +1806,7 @@
 		};
 		1ADBDE3E21989745008C9521 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */;
+			baseConfigurationReference = 68F4443CD0E7EC32B92BA5EF /* Pods-HiveSharedWatch-HiveIntentsWatch.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntentsWatch/HiveIntentsWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1818,7 +1830,7 @@
 		};
 		1ADBDE3F21989745008C9521 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C50A8B5BD6165BB89EB6F9B /* Pods-HiveIntentsWatch.release.xcconfig */;
+			baseConfigurationReference = 9E7FC470084EF145A03A810C /* Pods-HiveSharedWatch-HiveIntentsWatch.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveIntentsWatch/HiveIntentsWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1842,7 +1854,7 @@
 		};
 		1ADF05E32198641000604961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFB1B0F0AADBF6548D9BC99B /* Pods-HiveWidget.debug.xcconfig */;
+			baseConfigurationReference = B6647ACB61ED5ED0CE79BBEE /* Pods-HiveShared-HiveWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveWidget/HiveWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1863,7 +1875,7 @@
 		};
 		1ADF05E42198641000604961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A9A166855D43172319A7B5D /* Pods-HiveWidget.release.xcconfig */;
+			baseConfigurationReference = 67989DEF6DC146CFFED72FBF /* Pods-HiveShared-HiveWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = HiveWidget/HiveWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
