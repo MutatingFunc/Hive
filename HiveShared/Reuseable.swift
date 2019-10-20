@@ -46,13 +46,13 @@ public extension UICollectionView {
 
 @available(iOSApplicationExtension 11.0, *)
 public extension UITableViewDropPlaceholder {
-	public convenience init<Identifiable: UITableViewCell & ReuseIdentifiable>(insertionIndexPath: IndexPath, ofType: Identifiable.Type, rowHeight: CGFloat) {
+    convenience init<Identifiable: UITableViewCell & ReuseIdentifiable>(insertionIndexPath: IndexPath, ofType: Identifiable.Type, rowHeight: CGFloat) {
 		self.init(insertionIndexPath: insertionIndexPath, reuseIdentifier: Identifiable.reuseID, rowHeight: rowHeight)
 	}
 }
 @available(iOSApplicationExtension 11.0, *)
 public extension UICollectionViewDropPlaceholder {
-	public convenience init<Identifiable: UICollectionViewCell & ReuseIdentifiable>(insertionIndexPath: IndexPath, ofType: Identifiable.Type) {
+    convenience init<Identifiable: UICollectionViewCell & ReuseIdentifiable>(insertionIndexPath: IndexPath, ofType: Identifiable.Type) {
 		self.init(insertionIndexPath: insertionIndexPath, reuseIdentifier: Identifiable.reuseID)
 	}
 }

@@ -29,7 +29,7 @@ extension IntentHandler: SetColourIntentHandling {
 				: .failure, userActivity: nil))
 	}
 	func handle(intent: SetColourIntent, completion: @escaping (SetColourIntentResponse) -> Void) {
-		tryGetDevices(
+		DeviceFetcher().getDevices(
 			ofType: .product,
 			success: {deviceList in
 				guard

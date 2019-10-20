@@ -19,7 +19,7 @@ extension IntentHandler: PerformActionIntentHandling {
 		completion(.init(code: intent.actionID != nil ? .ready : .failure, userActivity: nil))
 	}
 	func handle(intent: PerformActionIntent, completion: @escaping (PerformActionIntentResponse) -> Void) {
-		tryGetDevices(
+		DeviceFetcher().getDevices(
 			ofType: .action,
 			success: {deviceList in
 				guard

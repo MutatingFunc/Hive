@@ -48,6 +48,9 @@ public struct DeviceList {
 		}
 	}
 	
+    public func device<DeviceType: Device>(name: String, ofType: DeviceType.Type) -> DeviceType? {
+        return self.devices.lazy.compactMap{$0 as? DeviceType}.first{$0.name == name}
+    }
 	public func device<DeviceType: Device>(id: String, ofType: DeviceType.Type) -> DeviceType? {
 		return self.devices.lazy.compactMap{$0 as? DeviceType}.first{$0.id.rawValue == id}
 	}

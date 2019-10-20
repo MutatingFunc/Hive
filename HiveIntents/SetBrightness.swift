@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Intents
 
 #if canImport(HiveSharedWatch)
 import HiveSharedWatch
@@ -15,6 +16,40 @@ import HiveShared
 #endif
 
 extension IntentHandler: SetBrightnessIntentHandling {
+	func resolveLightName(for intent: SetBrightnessIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
+        if let name = intent.lightName {
+            return completion(.success(with: name))
+        } else {
+            DeviceFetcher().getProduct(
+                {$0.device(named: intent.lightName.)},
+                success: <#T##(ResultType) -> ()#>,
+                failure: {error, deviceList in
+                    
+                }
+            )
+            DeviceFetcher().getDevices(
+                ofType: .product,
+                success: {deviceList in
+                    guard
+                        var light = deviceList
+                            .device(id: intent.lightID!, ofType: LightDevice.self)
+                            .map(deviceList.light)
+                        else {
+                            return completion(.failure(lightName: intent.lightName!, error: deviceNotFoundError))
+                    }
+            }
+        }
+	}
+	
+	func resolveBrightness(for intent: SetBrightnessIntent, with completion: @escaping (SetBrightnessBrightnessResolutionResult) -> Void) {
+		<#code#>
+	}
+	
+	func provideLightNameOptions(for intent: SetBrightnessIntent, with completion: @escaping ([String]?, Error?) -> Void) {
+		<#code#>
+	}
+	
+	
 	func confirm(intent: SetBrightnessIntent, completion: @escaping (SetBrightnessIntentResponse) -> Void) {
 		let isValid: (Float?) -> Bool = {
 			$0.map((0...100).contains) ?? true
@@ -22,7 +57,7 @@ extension IntentHandler: SetBrightnessIntentHandling {
 		completion(.init(code: intent.lightID != nil && isValid(intent.brightness?.floatValue) ? .ready : .failure, userActivity: nil))
 	}
 	func handle(intent: SetBrightnessIntent, completion: @escaping (SetBrightnessIntentResponse) -> Void) {
-		tryGetDevices(
+        DeviceFetcher().getDevices(
 			ofType: .product,
 			success: {deviceList in
 				guard

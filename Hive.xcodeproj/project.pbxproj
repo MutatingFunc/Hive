@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -112,6 +112,7 @@
 		4EC7E0E7B42C9750DBF9F4BC /* Pods_HiveSharedWatch_HiveIntentsWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B90D11E6FFDDDC6E0F5187 /* Pods_HiveSharedWatch_HiveIntentsWatch.framework */; };
 		A12A52C3A82FB69FB4B7E6BB /* Pods_HiveSharedWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0B69ED21F495C300850F9A /* Pods_HiveSharedWatch.framework */; };
 		CF7CE92F7C43E21ECAF32DCA /* Pods_HiveShared_Hive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D19A35025EACF4BFDEA65 /* Pods_HiveShared_Hive.framework */; };
+		D6325E33235C9016007E2CA9 /* DeviceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6325E31235C8FE3007E2CA9 /* DeviceFetcher.swift */; };
 		E9A2CD5B6B675E15254A10CD /* Pods_HiveShared_HiveIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9582123A114F8924D5D7D4B0 /* Pods_HiveShared_HiveIntents.framework */; };
 /* End PBXBuildFile section */
 
@@ -331,6 +332,7 @@
 		BF680F076C3576E8DE263CCE /* Pods_HiveShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiveShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4498F9BA3F725A8B9475D41 /* Pods-HiveShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveShared.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveShared/Pods-HiveShared.debug.xcconfig"; sourceTree = "<group>"; };
 		C53644ADBE8ED8733AA6FD63 /* Pods-HiveIntentsWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntentsWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntentsWatch/Pods-HiveIntentsWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		D6325E31235C8FE3007E2CA9 /* DeviceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFetcher.swift; sourceTree = "<group>"; };
 		D85C1062FB167AE910EEEE70 /* Pods-HiveIntents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveIntents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveIntents/Pods-HiveIntents.debug.xcconfig"; sourceTree = "<group>"; };
 		DADAE7686C65FF651CF7308A /* Pods_Hive_HiveIntents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hive_HiveIntents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6A0ABABC83F921D16A6739 /* Pods-Hive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hive/Pods-Hive.debug.xcconfig"; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				1A93D55221977A0900E698E2 /* HiveIntents.entitlements */,
+				D6325E31235C8FE3007E2CA9 /* DeviceFetcher.swift */,
 				1AA7536121975861006DD878 /* IntentHandler.swift */,
 				1ADF05C22197AC0B00604961 /* PerformAction.swift */,
 				1ADF05C62197AC2300604961 /* ToggleLight.swift */,
@@ -1081,19 +1084,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/HueKit/HueKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HueKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HiveShared-Hive/Pods-HiveShared-Hive-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3EC76598C28334F8D6E3E0E3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1248,6 +1248,7 @@
 			files = (
 				1AB87AE021A17F7900393732 /* SetColour.swift in Sources */,
 				1ADF05C72197AC2300604961 /* ToggleLight.swift in Sources */,
+				D6325E33235C9016007E2CA9 /* DeviceFetcher.swift in Sources */,
 				1A7D779121976D550055657D /* Intents.intentdefinition in Sources */,
 				1ADF05C32197AC0B00604961 /* PerformAction.swift in Sources */,
 				1AA7536221975861006DD878 /* IntentHandler.swift in Sources */,

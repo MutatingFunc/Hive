@@ -19,7 +19,7 @@ extension IntentHandler: ToggleLightIntentHandling {
 		completion(.init(code: intent.lightID != nil && intent.state != .unknown ? .ready : .failure, userActivity: nil))
 	}
 	func handle(intent: ToggleLightIntent, completion: @escaping (ToggleLightIntentResponse) -> Void) {
-		tryGetDevices(
+		DeviceFetcher().getDevices(
 			ofType: .product,
 			success: {deviceList in
 				guard

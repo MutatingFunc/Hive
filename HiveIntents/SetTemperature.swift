@@ -28,7 +28,7 @@ extension IntentHandler: SetTemperatureIntentHandling {
 				: .failure, userActivity: nil))
 	}
 	func handle(intent: SetTemperatureIntent, completion: @escaping (SetTemperatureIntentResponse) -> Void) {
-		tryGetDevices(
+		DeviceFetcher().getDevices(
 			ofType: .product,
 			success: {deviceList in
 				guard

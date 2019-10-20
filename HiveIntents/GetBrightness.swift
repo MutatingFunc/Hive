@@ -19,7 +19,7 @@ extension IntentHandler: GetBrightnessIntentHandling {
 		completion(.init(code: intent.lightID != nil ? .ready : .failure, userActivity: nil))
 	}
 	func handle(intent: GetBrightnessIntent, completion: @escaping (GetBrightnessIntentResponse) -> Void) {
-		tryGetDevices(
+		DeviceFetcher().getDevices(
 			ofType: .product,
 			success: {deviceList in
 				guard
